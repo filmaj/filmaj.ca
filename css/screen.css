@@ -1,0 +1,7 @@
+ul.horizontal {
+  list-style-type:none;
+}
+ul.horizontal li {
+  float:left;
+  margin:5px;
+}
