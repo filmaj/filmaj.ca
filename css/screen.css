@@ -1,3 +1,7 @@
+header {
+  clear:both;
+}
+
 ul.horizontal {
   list-style-type:none;
 }
