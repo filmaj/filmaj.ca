@@ -5,17 +5,38 @@ title: "Introducing Cordova-JS"
 
 <h1>Introducing Cordova-JS</h1>
 
-<p>If it's not obvious, I'm trying to get back to tech blogging, this time on my own personal site. A lot of exciting things happened in the past six months or so:
-my former employer <a href="http://nitobi.com">Nitobi</a> got acquired by <a href="http://adobe.com">Adobe</a> and our team of about 18 more or less got split up
-right down the middle. Half are now settling into San Francisco, while the rest (me included) are manning the Canadian fort in Vancouver and doing our best to represent
-<a href="http://adobe.com">Adobe</a> up in the Great White North.
+A lot of exciting things have happened in the past six months or so:
+my former employer Nitobi got acquired by Adobe and our team of about 18 more or less got split
+right down the middle. Half are now settling into San Francisco, while the rest (me included) are holding down the Canadian fort in Vancouver and doing our best to represent
+Adobe up in the Great White North.</p>
 
-- Road to 2.0: plugins encapsulating device apis
-    - composed of javascript and native
-    - api with objectives to be easily composable and as platform-agnostic as possible
-- A big step towards this is modular javascript, shout out to people involved
-- Uses simple, synchronous modular javascript definition
-    - talk about require syntax 
-- Base is a common API definition, however allows for platform overrides
-- Status: landed in Android; BlackBerry and iOS lined up
+<p>I'm still working on PhoneGap, now reborn as an Apache Software Foundation project known as Cordova. My most recent task has involved bringing the disparate
+implementations of Cordova's JavaScript API - a consistent, cross-platform API - under one repository. Up until this point, each platform maintained its own
+set of JavaScript files implementing the Cordova API. The idea behind the unification into one code base is that 90+ percent of the JavaScript
+for any given Cordova platform is identical. Most of the Cordova API boils down to sending simple one-off messages to the native framework, with the
+expectation that a failure or success callback will be fired in the future. The unified JavaScript for Cordova project is called cordova-js.</p>
+
+<p>In Cordova 1.5 we landed cordova-js in the Android implmentation. In Cordova 1.6 we are going to drop it into the iOS implementation. The project has been
+an up-and-down ride. Dave Johnson and Michael
+Brooks initially championed this idea with the phonegap-js project. Since then it's been hijacked by Gord Tanner (and some daleks). I jumped in to help out
+where I could. Joe Bowser and Simon MacDonald made it happen on Android. Becky Gibson and Shazron Abdullah put a lot of work in to get it going on iOS. Patrick Mueller
+and Brian LeRoux chimed in to offer advice and guidance. Truly a team effort - thanks to everyone for making it happen.</p>
+
+<h2>Why?</h2>
+
+<p>If it works, why f*** with it? The answer lies in the road ahead to Cordova 2.0. We want any arbitrary device APIs - be they Cordova "core" APIs
+or not - to be installable, discoverable and removable at a developer's discretion. For those familiar with PhoneGap plugins, this is exactly the same idea. A stock
+Cordova API is no different from a plugin. We've been part of the way there for some time now; all of the various native implementations employ some manner of plugin
+architecture. The JavaScript, however, has been a wild-west of sorts. We are changing that with the introduction of cordova-js.</p>
+
+<p>The biggest change is the use of modules in JavaScript. CommonJS-inspired but much simpler, it does the job for now. A simple define + require syntax is used and
+scoped only to the cordova.js file.</p>
+
+<p>Another interesting feature of this code base is we can use it interchangeable between node and PhoneGap/Cordova contexts. Due to our simple module system for use
+in WebView contexts, we can maintain the convention of one-closure-per-file employed in other CommonJS environments, or piggy-back off of node's module system to do
+cool things such as run unit tests locally in node. Winning!</p>
+
+
+TODO:
 - Lots to do: better api definition method, platform implementations, native tweaks to line it all up
+- link it all up
