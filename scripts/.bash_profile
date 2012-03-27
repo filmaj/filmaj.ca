@@ -4,3 +4,5 @@ source ~/src/filmaj.github.com/scripts/git-completion.bash
 
 alias ls='ls -aGl'
 alias static='node ~/src/filmaj.github.com/scripts/static_server.js'
+
+export PATH=$PATH:/Users/fil/src/mobify-js-tools/bin
