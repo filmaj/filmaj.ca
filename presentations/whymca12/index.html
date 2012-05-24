@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>PhoneGap: Hybrid Application Framework</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+
+		<link rel="stylesheet" href="lib/zenburn.css">
+	</head>
+	
+	<body>
+		
+		<div id="reveal">
+
+			<div class="state-background"></div>
+			
+			<div class="slides">
+				<section data-state="whiteout">
+					<h3>PhoneGap: Hybrid Application Framework</h3>
+          <img src="assets/img/Logo.png" />
+          <p>Fil Maj, Adobe Systems</p>
+				</section>
+				
+				<section>
+					<h1>Who's This?</h1>
+					<p>Fil Maj</p>
+          <p>Master Exploder at Adobe Systems, <em>eh</em></p>
+          <img src="assets/img/me.jpg" height="50%"/>
+					<p>
+						<i><small>- <a href="http://filmaj.ca">Fil Maj</a> / <a href="http://twitter.com/filmaj">@filmaj</a></small></i>
+					</p>
+				</section>
+
+        <section data-state="whiteout">
+          <img src="assets/img/html5.png" />
+        </section>
+				
+        <section data-state="alert">
+          <img src="assets/img/html5eh.png" />
+        </section>
+
+        <section>
+          <h2>HTML5 in the Real World</h2>
+          <h3>Web vs. Native</h3>
+          <p>Native apps are kicking web's ass</p>
+          <p class="fragment">APIs like accelerometer, compass, contacts, etc.</p>
+          <p class="fragment">BUT! Geo is here. Accelerometer is next. W3C DAP group leading the way.</p>
+        </section>
+
+        <section>
+          <h3>PhoneGap</h3>
+          <p><a href="phonegap.com">phonegap.com</a></p>
+          <img src="assets/img/phonegap_lab.png" height="300" />
+          <p>MIT license, as open as it gets!</p>
+          <p>Acquired by Adobe in November 2011</p>
+        </section>
+
+        <section>
+          <img src="assets/img/cordova_256.png" />
+          <h1 class="fragment">Apache Cordova</h1>
+          <p class="fragment"><a href="cordova.io">cordova.io</a></p>
+          <p class="fragment">PhoneGap -&gt; Cordova as Chrome -&gt; WebKit</p>
+        </section>
+
+        <section>
+          <h2>Write Apps With Web Tech</h2>
+          <img src="assets/img/html5eh.png" />
+        </section>
+
+        <section data-state="whiteout">
+          <h2>Deploy To Six Platforms</h2>
+          <div class="stack">
+            <img src="assets/img/wp7.png" width="200"/>
+            <img src="assets/img/android.jpeg" width="200" />
+            <img src="assets/img/ios.png" width="200" />
+            <img src="assets/img/bada.jpg" width="200" />
+            <img src="assets/img/webos.jpg" width="200" />
+            <img src="assets/img/blackberry.jpg" width="200" />
+          </div>
+        </section>
+
+        <section data-state="soothe">
+          <h2>Augment The Web With Native APIs</h2>
+          <img src="assets/img/javascript.png" />
+          <p>Get at those sensors!</p>
+          <p>Full API docs available at <a href="docs.phonegap.com">docs.phonegap.com</a></p>
+        </section>
+
+        <section>
+          <h1>Example: Accelerometer</h1>
+          <pre><code>
+            function onSuccess(acceleration) {
+              console.log('Acceleration X: ' + acceleration.x + '\n' +
+                    'Acceleration Y: ' + acceleration.y + '\n' +
+                    'Acceleration Z: ' + acceleration.z + '\n' +
+                    'Timestamp: '      + acceleration.timestamp + '\n');
+            };
+
+            function onError(e) {
+              console.log('Error! ' + e.message);
+            };
+
+            var options = {frequency:100}; // get updates every 100 ms
+
+            navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Deploy To App Stores</h2>
+          <p>PhoneGap/Cordova "wraps" your web assets into a native binary.</p>
+        </section>
+
+				<section>
+          <h1>PhoneGap Core Beliefs</h1>
+          <p><a href="http://phonegap.com/2012/05/09/phonegap-beliefs-goals-and-philosophy/">http://phonegap.com/2012/05/09/phonegap-beliefs-goals-and-philosophy/</a></p>
+          <ul>
+            <li class="fragment"><big>The web solved cross platform.</big></li>
+            <li class="fragment"><big>All technology deprecates with time.</big></li>
+            <blockquote class="fragment">Anyone, at any time, can publish anything from anywhere. <strong>That is the stuff of revolutions, and our evolution as a species.</strong></blockquote>
+          </ul>
+        </section>
+
+				<section>
+          <h1>PhoneGap Goals</h1>
+          <p><a href="http://phonegap.com/2012/05/09/phonegap-beliefs-goals-and-philosophy/">http://phonegap.com/2012/05/09/phonegap-beliefs-goals-and-philosophy/</a></p>
+          <ul>
+            <li class="fragment"><big>The web as a first-class development platform.</big></li>
+            <li class="fragment"><big>The ultimate purpose of PhoneGap is to cease to exist.</big></li>
+          </ul>
+        </section>
+
+        <section data-state="whiteout">
+          <img src="assets/img/zen.png" height="500" />
+        </section>
+
+        <section>
+          <h1>Progress</h1>
+        </section>
+
+
+        <section data-state="alert">
+          <h2>Not A Silver Bullet</h2>
+          <p>Will not wash your dishes.</p>
+        </section>
+
+        <section data-state="alert">
+          <h2>Write Once, <em>Debug</em> Everywhere</h2>
+          <img src="assets/img/troll.jpg" />
+        </section>
+
+        <section data-state="alert">
+          <h2>Hardcore 3D Shit</h2>
+          <p>Web tech is probably not the best choice for this problem.</p>
+          <p class="fragment">But! BlackBerry 6+ supports WebGL...</p>
+        </section>
+
+        <section data-state="alert">
+          <h2>PhoneGap API Finite</h2>
+          <img src="assets/img/docs.png" />
+        </section>
+
+        <section data-state="soothe">
+          <h1>Demo Time?</h1>
+          <img src="assets/img/demotime.jpg" />
+        </section>
+
+        <section data-state="soothe">
+          <h1>Grazie, <em>eh</em></h1>
+          <img src="assets/img/drinking.png" />
+          <p style="clear:both;"><a href="cordova.io">cordova.io</a>
+          <a href="phonegap.com">phonegap.com</a>
+          <a href="filmaj.ca">filmaj.ca</a>
+          <a href="twitter.com/filmaj">@filmaj</a></p>
+        </section>
+			</div>
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+		
+		<script src="js/reveal.js"></script>
+
+		<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+		<script src="lib/highlight.js"></script>
+		<script src="lib/classList.js"></script>
+		
+		<script>
+			// Parse the query string into a key/value object
+			var query = {};
+			location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+				query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+			} );
+
+			// Fires each time a new slide is activated
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				// event.indexh & event.indexv
+			} );
+
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// If true; each slide will be pushed to the browser history
+				history: true,
+
+				// Loops the presentation, defaults to false
+				loop: false,
+
+				// Flags if mouse wheel navigation should be enabled
+				mouseWheel: false,
+
+				// Apply a 3D roll to links on hover
+				rollingLinks: true,
+
+				// UI style
+				theme: query.theme || 'default', // default/neon
+
+				// Transition style
+				transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+			});
+
+			hljs.initHighlightingOnLoad();
+		</script>
+
+	</body>
+</html>
