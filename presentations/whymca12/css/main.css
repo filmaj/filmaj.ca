@@ -213,6 +213,10 @@ html {
 	vertical-align: top;
 }
 
+#reveal big {
+  font-size:150%;
+}
+
 #reveal q {	
 	font-style: italic;
 }

@@ -37,7 +37,7 @@
           <p>Master Exploder at Adobe Systems, <em>eh</em></p>
           <img src="assets/img/me.jpg" height="50%"/>
 					<p>
-						<i><small>- <a href="http://filmaj.ca">Fil Maj</a> / <a href="http://twitter.com/filmaj">@filmaj</a></small></i>
+						<a href="http://filmaj.ca">filmaj.ca</a> / <a href="http://twitter.com/filmaj">@filmaj</a>
 					</p>
 				</section>
 
@@ -122,7 +122,7 @@
         </section>
 
 				<section>
-          <h1>PhoneGap Core Beliefs</h1>
+          <h2>PhoneGap Core Beliefs</h2>
           <p><a href="http://phonegap.com/2012/05/09/phonegap-beliefs-goals-and-philosophy/">http://phonegap.com/2012/05/09/phonegap-beliefs-goals-and-philosophy/</a></p>
           <ul>
             <li class="fragment"><big>The web solved cross platform.</big></li>
@@ -146,11 +146,42 @@
 
         <section>
           <h1>Progress</h1>
+          <p>Web-based SDKs for mobile platforms + apps are here, more are coming</p>
         </section>
 
+        <section>
+          <h1>BlackBerry WebWorks</h1>
+          <img src="assets/img/webworks.png" style="float:left;display:inline" />
+          <style>
+            #reveal section img#phonegaplogo.visible.fragment {
+              -moz-transition: all 4s ease;
+              -webkit-transition: all 4s ease;
+              -moz-transform: rotate(-90deg);
+              -webkit-transform: rotate(-90deg);
+            }
+          </style>
+          <img id="phonegaplogo" class="fragment" src="assets/img/Logo.png" style="float:right;display:inline" height="300" />
+        </section>
+
+        <section data-state="whiteout">
+          <img src="assets/img/windows8.png" />
+        </section>
+
+        <section data-state="whiteout">
+          <img src="assets/img/tizen.jpg" />
+        </section>
+
+        <section>
+          <img src="assets/img/b2g.png" />
+        </section>
+
+        <section data-state="whiteout">
+          <h2>Others Aren't Into The Web As Much</h2>
+          <img src="assets/img/android.jpeg" style="float:right;display:inline;"/><img src="assets/img/ios.png" style="float:right;display:inline;"/>
+        </section>
 
         <section data-state="alert">
-          <h2>Not A Silver Bullet</h2>
+          <h2>PhoneGap Is Not A Silver Bullet</h2>
           <p>Will not wash your dishes.</p>
         </section>
 
@@ -171,14 +202,170 @@
         </section>
 
         <section data-state="soothe">
+          <h2>PhoneGap Plugins!</h2>
+          <img src="assets/img/plugins.png" />
+          <p class="fragment">JavaScript</p>
+          <p class="fragment">Native Code</p>
+        </section>
+
+        <section>
+          <img src="assets/img/javascript.png" height="300" />
+          <h2>Unified JavaScript Layer</h2>
+          <a href="http://github.com/apache/incubator-cordova-js">http://github.com/apache/incubator-cordova-js</a>
+        </section>
+
+        <section>
+          <h1>The Bridge</h1>
+          <pre><code><big>
+            var exec = cordova.require('cordova/exec');
+            exec(function(){}, function(){},
+              'MyClass', 'MyMethod',
+              ["arguments", "here", 1]
+            );
+          </big></code></pre>
+        </section>
+
+        <section>
+          <h2>Plugin Class Mapping</h2>
+          <ul>
+            <li><strong>Android</strong>: <code>res/xml/plugins.xml</code></li>
+            <li><strong>iOS</strong>: <code>www/Cordova.plist</code></li>
+            <li><strong>BlackBerry</strong>: <code>www/plugins.xml</code></li>
+          </ul>
+          <pre class="fragment"><code><big>
+            &lt;plugin
+              name="Accelerometer"
+              value="org.apache.cordova.AccelListener"
+            /&gt;
+          </big></code></pre>
+          <pre class="fragment"><code><big>
+            &lt;key&gt;Plugins&lt;/key&gt;
+            &lt;dict&gt;
+              &lt;key&gt;Accelerometer&lt;/key&gt;
+              &lt;string&gt;CDVAccelerometer&lt;/string&gt;
+          </big></code></pre>
+        </section>
+
+        <section>
+          <h1>Native Code!</h1>
+          <h2>YAY!</h2>
+          <p class="fragment">Each project has a native Plugin interface that you need to use</p>
+        </section>
+
+        <section data-state="alert">
+          <h1>Android</h1>
+          <p>Java! Who is excited?!</p>
+          <p class="fragment">Cordova has a <code>AbstractPluginFactoryManager</code> class (org.apache.cordova.api.AbstractPluginFactoryManager)</p>
+          <p class="fragment">Then you define a <code>PluginFactoryManager</code> class</p>
+          <p class="fragment">You can then access the <code>PluginFactory</code> class</p>
+          <p class="fragment">Then you can create <code>Plugin</code>s! Yus!</p>
+          <p class="fragment">...</p>
+        </section>
+
+        <section>
+          <h1>KIDDING!</h1>
+          <img src="assets/img/troll.jpg" height="300" />
+          <p>That was my Java joke, har har</p>
+        </section>
+
+        <section>
+          <h1>Android Plugins</h1>
+          <p class="fragment">Cordova has a <code>Plugin</code> abstract class (org.apache.cordova.api.Plugin)</p>
+          <p class="fragment">You extend the Plugin class with your own Plugin</p>
+          <p class="fragment">You implement a special method:</p>
+          <pre class="fragment"><code>
+            public abstract PluginResult execute(String action, JSONArray args, String callbackId);
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Android, cont.</h1>
+          <h2>Synchronous Execution</h2>
+          <pre class="fragment"><code>
+            public PluginResult execute(String action, JSONArray args, String callbackId) {
+                return new PluginResult(PluginResult.Status.OK, "&lt;3");
+            }
+          </code></pre>
+          <pre class="fragment"><code>
+            public PluginResult execute(String action, JSONArray args, String callbackId) {
+                return new PluginResult(PluginResult.Status.ERROR, "you're a bad boy");
+            }
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>Android, cont.</h1>
+          <h2>Asynchronous Execution</h2>
+          <pre class="fragment"><code>
+            // Call the JavaScript success callback for this plugin.
+            // This can be used if the execute code for the plugin is asynchronous
+            public void success(PluginResult pluginResult, String callbackId) {
+                this.webView.sendJavascript(pluginResult.toSuccessCallbackString(callbackId));
+            }
+          </code></pre>
+          <pre class="fragment"><code>
+            public PluginResult execute(String action, JSONArray args, String callbackId) {
+                this.callbackId = callbackId;
+                PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
+                r.setKeepCallback(true);
+                return r;
+            }
+
+            private void someNativeInvocation() {
+                this.success(new PluginResult(PluginResult.Status.OK, "we did it!"),
+                    this.callbackId);
+            }
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>BlackBerry Plugins</h1>
+          <h2>MOAR JAVA!</h2>
+          <p class="fragment">Good news: identical to Android</p>
+          <img src="assets/img/victorybaby.png" class="fragment" />
+        </section>
+
+        <section>
+          <h1>iOS Plugins</h1>
+          <p class="fragment">Cordova has a <code>CDVPlugin</code> class</p>
+          <p class="fragment">You extend the Plugin class with your own Plugin</p>
+          <p class="fragment"><em>NO</em> <code>execute</code> method</p>
+          <p class="fragment"><code>action</code> parameter directly invokes methods with a specific signature</p>
+          <pre class="fragment"><code>
+            - (void)MyMethod:(NSArray*)arguments withDict:(NSDictionary*)options
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>iOS Plugins, cont.</h1>
+          <p class="fragment"><code>CDVPlugin</code> provides <code>success</code> and <code>error</code> methods</p>
+          <pre class="fragment"><code>
+            - (void)MyMethod:(NSArray*)arguments withDict:(NSDictionary*)options {
+              NSString* callbackId = [arguments objectAtIndex:0];
+              CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"hi"];
+              [self success:result callbackId:callbackId];
+            }
+          </code></pre>
+        </section>
+
+        <section data-state="soothe">
           <h1>Demo Time?</h1>
           <img src="assets/img/demotime.jpg" />
+        </section>
+
+        <section data-state="alert">
+          <h1>Embed PhoneGap</h1>
+          <p>Brand spankin' new: Use PhoneGap as a component in a larger native app</p>
+          <p class="fragment">On iOS, this is called Cleaver</p>
+          <p class="fragment"><a href="http://github.com/apache/incubator-cordova-ios/guides">http://github.com/apache/incubator-cordova-ios/guides</a></p>
+          <p class="fragment">On Android: CordovaWebView</p>
+          <p class="fragment"><a href="http://github.com/apache/incubator-cordova-android/tree/CordovaWebView">http://github.com/apache/incubator-cordova-android/tree/CordovaWebView</a></p>
         </section>
 
         <section data-state="soothe">
           <h1>Grazie, <em>eh</em></h1>
           <img src="assets/img/drinking.png" />
-          <p style="clear:both;"><a href="cordova.io">cordova.io</a>
+          <p style="clear:both;"><a href="http://cordova.io">cordova.io</a>
           <a href="phonegap.com">phonegap.com</a>
           <a href="filmaj.ca">filmaj.ca</a>
           <a href="twitter.com/filmaj">@filmaj</a></p>
@@ -232,7 +419,7 @@
 				mouseWheel: false,
 
 				// Apply a 3D roll to links on hover
-				rollingLinks: true,
+				rollingLinks: false,
 
 				// UI style
 				theme: query.theme || 'default', // default/neon

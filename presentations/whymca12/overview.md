@@ -33,11 +33,15 @@ not without its limitations
 plugins!
 --------
 what is it
-overview of native interfaces
- * ios
- * android
- * wp7
- * blackberry
+* a bit of JS + a bit of native code that you can access from your
+  phonegap app
+ * JS (http://github.com/apache/incubator-cordova-js
+  * exec()
+  * how service names are mapped to native code
+ * overview of native interfaces
+  * ios
+  * android
+  * blackberry
 barcode scanner example
 demo
 phonegap build support on the way
