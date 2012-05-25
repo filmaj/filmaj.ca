@@ -34,11 +34,19 @@
 				<section>
 					<h1>Who's This?</h1>
 					<p>Fil Maj</p>
+          <p>Vancouver, Canada</p>
           <p>Master Exploder at Adobe Systems, <em>eh</em></p>
           <img src="assets/img/me.jpg" height="50%"/>
 					<p>
 						<a href="http://filmaj.ca">filmaj.ca</a> / <a href="http://twitter.com/filmaj">@filmaj</a>
 					</p>
+				</section>
+
+				<section>
+					<h1>I Used To Live In Italy</h1>
+          <p>Beautiful country, people and culture. Thank you for having me!</p>
+          <p class="fragment">Io sono Transformer!</p>
+          <p class="fragment">Dov'è la birra?</p>
 				</section>
 
         <section data-state="whiteout">
@@ -203,7 +211,7 @@
 
         <section data-state="soothe">
           <h2>PhoneGap Plugins!</h2>
-          <img src="assets/img/plugins.png" />
+          <img src="assets/img/plugin.png" height="400"/>
           <p class="fragment">JavaScript</p>
           <p class="fragment">Native Code</p>
         </section>
@@ -322,7 +330,7 @@
           <h1>BlackBerry Plugins</h1>
           <h2>MOAR JAVA!</h2>
           <p class="fragment">Good news: identical to Android</p>
-          <img src="assets/img/victorybaby.png" class="fragment" />
+          <img src="assets/img/victorybaby.jpg" class="fragment" height="300" />
         </section>
 
         <section>
@@ -331,9 +339,10 @@
           <p class="fragment">You extend the Plugin class with your own Plugin</p>
           <p class="fragment"><em>NO</em> <code>execute</code> method</p>
           <p class="fragment"><code>action</code> parameter directly invokes methods with a specific signature</p>
-          <pre class="fragment"><code>
-            - (void)MyMethod:(NSArray*)arguments withDict:(NSDictionary*)options
-          </code></pre>
+          <pre class="fragment"><code><big>
+            - (void)MyMethod:(NSArray*)arguments
+                             withDict:(NSDictionary*)options;
+          </big></code></pre>
         </section>
 
         <section>
@@ -342,7 +351,8 @@
           <pre class="fragment"><code>
             - (void)MyMethod:(NSArray*)arguments withDict:(NSDictionary*)options {
               NSString* callbackId = [arguments objectAtIndex:0];
-              CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"hi"];
+              CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                  messageAsString:@"hi"];
               [self success:result callbackId:callbackId];
             }
           </code></pre>
@@ -364,7 +374,7 @@
 
         <section data-state="soothe">
           <h1>Grazie, <em>eh</em></h1>
-          <img src="assets/img/drinking.png" />
+          <img src="assets/img/drinking.png" height="400"/>
           <p style="clear:both;"><a href="http://cordova.io">cordova.io</a>
           <a href="phonegap.com">phonegap.com</a>
           <a href="filmaj.ca">filmaj.ca</a>
