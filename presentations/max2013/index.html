@@ -29,7 +29,7 @@
 			<div class="slides">
 				<section data-state="title">
                     <h1>Expanding PhoneGap with Plugins</h1>
-                    <p>LA 05/2013</p>
+                    <p>05/2013</p>
                 </section>
 
                 <section>
@@ -47,30 +47,12 @@
                 </section>
 
                 <section>
-                    <h1>PhoneGap, powered by Cordova</h1>
-                    <img src="img/cordova.png" width="400" />
-                    <p>"Spelled Cordova, pronounced PhoneGap"</p>
-                </section>
-
-                <section>
-                    <h2>PhoneGap = WebApps on Steroids</h2>
-                    <ul>
-                        <li class="fragment">"bundled" app</li>
-                        <li class="fragment">native apis such as:</li>
-                        <li class="fragment">camera</li>
-                        <li class="fragment">accelerometer</li>
-                        <li class="fragment">contacts</li>
-                        <li class="fragment">etc: anything native can offer</li>
-                    </ul>
-                </section>
-
-                <section>
                     <h1>PhoneGap APIs are Plugins</h1>
                     <img src="img/Plugin.png" height="300" />
                 </section>
 
                 <section>
-                    <h1>PhoneGap's "Stack"</h1>
+                    <h1>Understanding PhoneGap</h1>
                     <ul>
                         <li class="fragment">Chromeless Browser "View" (WebView)</li>
                         <li class="fragment">Native Runtime</li>
@@ -110,9 +92,10 @@
 
                 <section>
                     <h2><code>cordova.exec();</code></h2>
-                    <pre><code style="font-size:200%;line-height:120%;">
-cordova.exec(win, fail, service,
-             action, args);
+                    <img src="img/js.png" style="float:left;height:200px" />
+                    <pre style="width:690px;float:right;margin-top:32px;"><code style="font-size:175%;line-height:120%;">
+cordova.exec(win, fail,
+        service, action, args);
                     </code></pre>
                     <ul>
                         <li><code>win</code>: success callback</li>
@@ -124,10 +107,11 @@ cordova.exec(win, fail, service,
                 </section>
 
                 <section>
-                    <h2>How Does PhoneGap Map Service+Action to Native Code?</h2>
+                    <h2>Service + Action</h2>
                     <div class="fragment"> 
                         <img src="img/config.png" height="300" />
                         <h3>config.xml document</h3>
+                        <p>Routes JavaScript <code>exec</code> to native code</p>
                     </div>
                 </section>
 
@@ -146,103 +130,13 @@ cordova.exec(win, fail, service,
                 </section>
 
                 <section data-state="alert">
-                    <h2>PhoneGap Init Sequence</h2>
+                    <h2>PhoneGap Bootup</h2>
                     <img src="img/Plugin.png" height="300" />
                     <ol>
-                    <li class="fragment">Each <code>&lt;plugin&gt;</code> is loaded during PhoneGap's bootup</p>
-                    <li class="fragment">Once all plugins are loaded, main PhoneGap event <code>deviceready</code> is fired</li>
+                    <li class="fragment">Each <code>&lt;plugin&gt;</code> is loaded first</p>
+                    <li class="fragment">Once all plugins are loaded, main PhoneGap event <code>deviceready</code> is fired and WebView is shown</li>
                     <li class="fragment">Calls to <code>cordova.exec</code> are routed to appropriate class</p>
                     </ol>
-                </section>
-
-                <section>
-                    <h2>Down the Rabbit Hole We Go:</h2>
-                    <img src="img/rabbithole.jpeg" width="400"/>
-                    <br />
-                    <h3>Native Code</h3>
-                </section>
-
-                <section data-state="alert">
-                    <h2>Step 1: Native Interface</h2>
-                    <ul>
-                        <li class="fragment">Each platform has <code>CordovaPlugin</code> class / interface</li>
-                        <li class="fragment">Extend it to make your own PhoneGap plugin!</li>
-                    </ul>
-                </section>
-
-                <section data-state="alert">
-                    <h2>Step 2: Native Methods</h2>
-                    <ul>
-                        <li class="fragment">JS' <code>cordova.exec</code> invokes Plugin method</li>
-                        <li class="fragment">PhoneGap keeps track of invocation via a Callback ID</li>
-                        <li class="fragment">Expects method to return a <code>Result</code>: error, data (JSON), nothing, whatever.</li>
-                        <li class="fragment">Method can Keep The Callback (more on this later)</li>
-                    </ul>
-                </section>
-
-                <section data-state="soothe">
-                    <h1>Android</h1>
-                    <img src="img/Android_Robot_200.png" />
-                </section>
-
-                <section>
-                    <img src="img/java.png" style="float:left;"/>
-                    <p>PhoneGap Plugin interface: <a href="CordovaPlugin.java">CordovaPlugin.java</a> &lt;-- extend this.</p>
-                    <ul>
-                        <li class="fragment">Has hooks into lifecycle events</li>
-                        <li class="fragment">All <code>cordova.exec</code> calls route through <pre><code>public boolean execute(String action, JSONArray args, CallbackContext callbackContext)</code></pre></li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Android Contacts Search Example</h2>
-                    <pre><code>
-public boolean execute(String action, JSONArray args,
-                       final CallbackContext callbackContext) {
-    if (action.equals("search")) {
-        final JSONArray filter = args.getJSONArray(0);
-        final JSONObject options = args.getJSONObject(1);
-        this.cordova.getThreadPool().execute(new Runnable() {
-            public void run() {
-                JSONArray res = contactAccessor.search(filter,
-                                                       options);
-                callbackContext.success(res);
-            }
-        });
-    }
-}
-                    </code></pre>
-                </section>
-
-                <section>
-                    <h1>iOS</h1>
-                    <img src="img/apple.png" height="400" />
-                </section>
-
-                <section>
-                    <img src="img/objc.png" style="float:left;"/>
-                    <p>PhoneGap Plugin interface: <a href="CDVPlugin.h">CDVPlugin.h/m</a> &lt;-- extend this.</p>
-                    <ul>
-                        <li class="fragment">Has hooks into lifecycle events</li>
-                        <li class="fragment">All <code>cordova.exec</code> calls route directly to methods</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>iOS Contacts Search Example</h2>
-                    <pre><code>
-- (void)search:(CDVInvokedUrlCommand*)command
-{
-    NSString* callbackId = command.callbackId;
-    NSArray* fields = [command.arguments objectAtIndex:0];
-    NSDictionary* findOptions = [command.arguments objectAtIndex:1 withDefault:[NSNull null]];
-
-    NSMutableArray* returnContacts = /* ios search code goes here (its long!) */
-
-    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsArray:returnContacts];
-    [self.commandDelegate sendPluginResult:result callbackId:callbackId];
-}
-                    </code></pre>
                 </section>
 
                 <section>
@@ -252,26 +146,9 @@ public boolean execute(String action, JSONArray args,
                 </section>
 
                 <section>
-                    <h2>Plugin Level-up: KeepCallback</h2>
-                    <img src="img/Plugin.png" height="300" />
-                    <p>When do we use it?</p>
-                    <p>When you want the same callback in JS to fire multiple times</p>
-                    <p class="fragment">Let's look at PhoneGap's Android &amp; iOS code</p>
-                </section>
-
-                <section>
                     <h1>The Future</h1>
                     <h3>PhoneGap 3.0 in July</h3>
                     <img src="img/future.png" />
-                </section>
-
-                <section>
-                    <h2>Plugin Manifest &amp; Tooling</h2>
-                    <ul>
-                        <li class="fragment">Plugin Manifest describing what makes up a PhoneGap Plugin</li>
-                        <li class="fragment">.. which sets the stage for ..</li>
-                        <li class="fragment">Plugin Tooling for painless plugin management</li>
-                    </ul>
                 </section>
 
                 <section>
@@ -279,13 +156,12 @@ public boolean execute(String action, JSONArray args,
                     <p><code>plugin.xml</code> describes:</p>
                     <ul>
                         <li class="fragment">Native bits: classes, frameworks, libraries, and where to put them</li>
-                        <li class="fragment">Web assets: HTML, CSS, images, etc.</li>
-                        <li class="fragment">JavaScript modules: <code>require</code>-friendly and attached to <code>window</code> at runtime</li>
+                        <li class="fragment">Web assets: HTML, CSS, JS, images, etc.</li>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Plugman Tool</h2>
+                    <h2>Plugin Tooling: Plugman!</h2>
                     <img src="img/plugman.png" height="250" />
                     <p>(Un)installs plugin.xml-ready PhoneGap Plugins</p>
                     <p>Supports Android, iOS, BlackBerry 10</p>
