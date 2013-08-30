@@ -16,15 +16,10 @@ html, body {
 	position: relative;
 	padding: 0;
 	margin: 0;
-	
-  font: 15px "helvetica",sans-serif;
-	
+    font: 15px "helvetica",sans-serif;
 	color: black;
-	
 	width: 100%;
-	height: 100%;
-
-	min-height: 600px;
+	min-height: 100%;
 }
 
 p { clear:both; }
@@ -78,7 +73,11 @@ nav {
   text-shadow: 0 1px 0 #fff;
   -webkit-tansition: all 10s linear infinite;
 }
-
+@media (max-width: 450px) {
+    nav {
+        display: block;
+    }
+}
 a {
   /*transition*/
   -webkit-transition: all 0.2s ease;
