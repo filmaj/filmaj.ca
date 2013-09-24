@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/filmaj/src/io.appium.gappium.sampleapp/www/tpl'
+let g:netrw_dirhist_2='/Users/filmaj/src/io.appium.gappium.sampleapp'
+let g:netrw_dirhist_3='/Users/filmaj/src/io.appium.gappium.sampleapp/www'
+let g:netrw_dirhist_4='/Users/filmaj/src/io.appium.gappium.sampleapp/www/tpl'
