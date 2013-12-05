@@ -1,2 +1,2 @@
-_site
-presentations/pgday2012/node_modules
+.DS_Store
+*.swp
