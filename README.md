@@ -2,14 +2,14 @@
 
 > Personal website of @filmaj ported to [Harp](http://harpjs.com)
 
-### install harp
+#### install harp
 
-  npm install -g harp
+    npm install -g harp
 
-### run local server
+#### run local server
 
-  harp server
+    harp server
 
-### compile
+#### compile
 
-  harp compile
+    harp compile
