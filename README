@@ -1,4 +1,13 @@
-my webpage :D
+# Fil Maj
+
+> Personal website of @filmaj. Ported to [Harp](http://harpjs.com).
+
+### run local server
 
     npm install -g harp
     harp server
+
+### compile
+
+    harp compile
+
