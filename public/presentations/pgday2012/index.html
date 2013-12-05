@@ -1,0 +1,171 @@
+<!doctype html 
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>PhoneGap Day 2012: What's New in PhoneGap 2.0</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-state="title">
+          <h1>What's New in PhoneGap 2.0</h1>
+          <p>PDX 2012</p>
+          <small>Fil Maj, Master Exploder, Adobe</small>
+        </section>
+
+        <section>
+          <h1>Long Way Since 1.0</h1>
+          <img src="img/PhoneGap-Lab-New.png" width="75%" />
+          <p>Back in PDX after a year!</p>
+          <aside class="notes">lots of changes! holy shit where to begin</aside>
+        </section>
+
+        <section>
+          <h2>Apache Software Foundation</h2>
+          <img src="img/BuildApache.png" width="50%"/>
+          <aside class="notes">biggest change by far: incubating at apache.
+            trying at times, but necessary. more process, which usually is not a good thing.
+            in this case, the process introduced in the name of open governance is a good thing.
+            super close to graduation from incubation. a release ready to roll.
+          </aside>
+        </section>
+
+        <section data-state="gord">
+          <h1>cordova.js</h1>
+          <p>Shared JavaScript Across Platforms</p>
+          <aside class="notes">
+            big undertaking
+            this is the benevolent original author of cordova-js
+            he was a bit tired after SXSW, little sidewalk break
+            we have maintainers of all platforms working together on a common js layer
+          </aside>
+        </section>
+        
+        <section data-state="soothe">
+          <h1>New Platforms</h1>
+          <p>WP7</p>
+          <p>Bada-WAC</p>
+        </section>
+
+        <section>
+          <h1>Embedded WebView</h1>
+          <p>Integrate PhoneGap into larger iOS and Android applications</p>
+        </section>
+
+        <section data-state="alert">
+          <h1>Plugins</h1>
+          <p class="fragment">serious this time: <a href="http://github.com/alunny/cordova-plugin-spec">http://github.com/alunny/cordova-plugin-spec</a></p>
+          <p class="fragment">authoring is documented! wtf! <a href="http://docs.phonegap.com">http://docs.phonegap.com</a></p>
+        </section>
+
+        <section>
+          <h1>CLI</h1>
+          <p class="fragment">every platform has <code>create</code> and <code>debug</code> commands!</p>
+          <pre class="fragment"><code>
+$ cd cordova-ios
+$ ./bin/create ~/apps/myIosCordovaApp ca.filmaj.cordovaios MyIosCordovaApp
+$ cd ~/apps/myIosCordovaApp
+$ ./cordova/debug
+$ ./cordova/emulate
+          </pre></code>
+        </section>
+
+        <section>
+          <h1>CLI, turned up to 11</h1>
+          <img src="img/spinaltap-11.jpeg" />
+          <h2>WARNING: Incoming Live Demo</h2>
+          <p><a href="http://github.com/filmaj/cordova-client">http://github.com/filmaj/cordova-client</a></p>
+        </section>
+				
+				<section>
+					<h1>Thanks eh</h1>
+          <img src="img/i-suggest-we-drink-before-we-go-out-drinking.png" />
+          <p><a href="http://github.com/filmaj/cordova-client">http://github.com/filmaj/cordova-client</a></p>
+          <p><a href="http://twitter.com/filmaj">@filmaj</a></p>
+				</section>
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+		<script src="lib/js/head.min.js"></script>
+
+		<script>
+			// Load the main reveal.js script
+			head.js( 'js/reveal.js', function() {
+				// Parse the query string into a key/value object
+				var query = {};
+
+				location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+					query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+				} );
+
+				// Full list of configuration options available here:
+				// https://github.com/hakimel/reveal.js#configuration
+				Reveal.initialize({
+					controls: false,
+					progress: true,
+					history: true,
+
+					theme: query.theme || 'default', // default/neon/beige
+					transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+				});
+			} );
+			
+			// Load third party scripts
+			head.js( 'lib/js/classList.js' );
+			head.js( 'lib/js/highlight.js', function() {
+				// Fire off syntax highlighting for potential code samples in the slides
+				hljs.initHighlightingOnLoad();
+			} );
+
+			// If we're runnning the notes server we need to include some additional JS
+			// TODO Is there a better way to determine if we're running the notes server?
+			if( window.location.host === 'localhost:1947' ) {
+				head.js( 'socket.io/socket.io.js', 'plugin/speakernotes/client.js' );
+			}
+		</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-27149382-1']);
+            _gaq.push(['_trackPageview']);
+
+                (function() {
+                          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                                      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                                          })();
+                                            </script>
+	</body>
+</html>

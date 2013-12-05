@@ -1,0 +1,253 @@
+<!doctype html 
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>PhoneGap Meetup Vancouver (01/2013)</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+	
+	<body>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-state="title">
+                  <h1>Testing In A Hybrid World</h1>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <a href="http://twitter.com/filmaj">Fil Maj, Master Exploder, Adobe</a>
+                  <br/>
+                  <a href="http://twitter.com/filmaj">@filmaj</a>
+                </section>
+
+                <section>
+                  <h1>What I Do</h1>
+                  <img src="img/fil.jpeg" />
+                  <br/>
+                  <ul>
+                    <li>Work on Apache Cordova</li>
+                    <li>Drink beer</li>
+                    <li>Watch hockey</li>
+                    <li>Drink beer</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h1>Quick Recap: wtf is PhoneGap?</h1>
+                  <ul>
+                    <li class="fragment">Framework that helps you build native applications</li>
+                    <li class="fragment">You write your app with HTML, CSS and JavaScript</li>
+                    <li class="fragment">"wrap" it up with PhoneGap</li>
+                    <li class="fragment roll-in">Boom: native app based on web tech</li>
+                    <li class="fragment highlight-green">Bonus: you can access device APIs through JavaScript</li>
+                  </ul>
+                </section>
+
+                <section>
+                    <h1>Testing</h1>
+                    <img src="img/monkey.jpg" width="300" />
+                    <p class="fragment">Who works on a web and/or native application?</p>
+                    <p class="fragment">Who has a test suite for their app?</p>
+                    <p class="fragment">Who runs tests for their app?</p>
+                    <p class="fragment">Bonus: how often are tests run?</p>
+                </section>
+
+                <section>
+                    <h1>Testing, cont.</h1>
+                    <img src="img/bugs.jpg" width="250" />
+                    <h2>Who cares?</h2>
+                    <p>Biggest embarassment as a programmer: regressions</p>
+                    <div class="fragment">
+                        <p>Be disciplined at your craft: write a test for each bug</p>
+                        <p>Run your tests after each change. This will prevent regressions.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h1>Testing Desktop</h1>
+                    <p>(and native mobile apps)</p>
+                    <p>Established testing methods already in place.</p>
+                    <ul>
+                        <li class="fragment">Selenium for desktop web apps</li>
+                        <li class="fragment">Proprietary instrumentation for native mobile apps</li>
+                        <li class="fragment">Automation available</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Testing Mobile Web</h1>
+                    <p>Not so easy.</p>
+                    <ul>
+                        <li class="fragment">"Rent" time from a device testing service</li>
+                        <li class="fragment">No automation</li>
+                        <li class="fragment">So: not much different from a monkey or robot</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>Testing Hybrid Apps (PhoneGap)</h1>
+                    <img src="img/troll.png" width="300"/>
+                    <p>You get the worst of both worlds!</p>
+                </section>
+
+                <section data-state="soothe">
+                    <h1>Introducing: medic</h1>
+                    <img src="img/medibots.png" height="300"/>
+                    <h3>A distributed continuous integration testing system built for the mobile web</h3>
+                    <p><a href="http://github.com/filmaj/medic">http://github.com/filmaj/medic</a>
+                </section>
+
+                <section data-state="soothe">
+                    <h2>Continuous Integration</h2>
+                    <img src="img/ci.png" />
+                    <p>CI automates the testing process. You get continuous feedback as your codebase evolves - in real-time</p>
+                </section>
+
+                <section data-state="soothe">
+                    <h2>Mobile</h2>
+                    <p>Medic takes JavaScript test suites and deploys it to real mobile devices</p>
+                    <div class="fragment">
+                        <p>Currently supports Android, iOS and BlackBerry 10</p>
+                        <img src="img/aib.jpg" />
+                    </div>
+                </section>
+
+                <section data-state="soothe">
+                    <h2>Web</h2>
+                    <p>Uses adapter(s) built on top of popular JavaScript testing frameworks to report results</p>
+                    <div class="fragment">
+                        <p>Currently supports <a href="http://pivotal.github.com/jasmine/">Jasmine BDD</a></p>
+                        <img src="img/jasmine.png" />
+                    </div>
+                </section>
+
+                <section data-state="soothe">
+                    <h2>Distributed</h2>
+                    <div style="padding-left:180px;">
+                        <img src="img/medibots.png" width="150" style="float:left;">
+                        <span style="float:left;margin-top:70px;">---&gt;</span>
+                        <img src="img/couch.png" width="150" style="float:left;">
+                        <span style="float:left;margin-top:70px;">&lt;---</span>
+                        <img src="img/medibots.png" width="150" style="float:left;">
+                    </div>
+                    <ul>
+                        <li class="fragment">Each medic is a CI machine with connected mobile devices</li>
+                        <li class="fragment">Each medic runs tests</li>
+                        <li class="fragment">Each medic sends test results to single CouchDB server that aggregates test results</li>
+                        <li class="fragment">Test results are displayed on a <a href="http://ci.cordova.io" target="_blank">CI Dashboard</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>How PhoneGap Uses It</h2>
+                    <p>We run our HTML test suite (<a href="http://github.com/apache/cordova-mobile-spec">mobile-spec</a>) with it</p>
+                    <p class="fragment">This makes sure the PhoneGap JavaScript API is working properly across a slew of devices after every commit</p>
+                </section>
+
+                <section data-state="alert">
+                    <h2>The medic Vision</h2>
+                    <img src="img/mediclab.png" width="800" />
+                    <p>A portable device testing lab! Clients have issues? No problem, have them install medic, send your configuration to them, and get back results.</p>
+                </section>
+
+                <section data-state="alert">
+                    <h1>DEMO</h1>
+                    <img src="img/mad_scientist.jpg" />
+                </section>
+
+				<section>
+					<h2>Thanks!</h2>
+                    <h3>Next: Canucks vs. Flames at The Pint</h3>
+                    <h3>Come Join Us!</h3>
+                  <p><small><a href="http://twitter.com/filmaj">@filmaj</a></small></p>
+                  <p><small><a href="http://filmaj.ca">http://filmaj.ca</a></small></p>
+                  <p><small><a href="http://github.com/filmaj/medic">http://github.com/filmaj/medic</a></small></p>
+                  <img src="img/canucksflames.jpeg" height="300"/>
+				</section>
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+		<script src="lib/js/head.min.js"></script>
+
+		<script>
+			// Load the main reveal.js script
+			head.js( 'http://lab.hakim.se/reveal-js/js/reveal.min.js', function() {
+				// Parse the query string into a key/value object
+				var query = {};
+
+				location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+					query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+				} );
+
+				// Full list of configuration options available here:
+				// https://github.com/hakimel/reveal.js#configuration
+				Reveal.initialize({
+					controls: false,
+					progress: true,
+					history: true,
+
+					theme: query.theme || 'default', // default/neon/beige
+					transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+				});
+			} );
+			
+			// Load third party scripts
+			head.js( 'lib/js/classList.js' );
+			head.js( 'lib/js/highlight.js', function() {
+				// Fire off syntax highlighting for potential code samples in the slides
+				hljs.initHighlightingOnLoad();
+			} );
+
+			// If we're runnning the notes server we need to include some additional JS
+			// TODO Is there a better way to determine if we're running the notes server?
+			if( window.location.host === 'localhost:1947' ) {
+				head.js( 'socket.io/socket.io.js', 'plugin/speakernotes/client.js' );
+			}
+		</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-27149382-1']);
+            _gaq.push(['_trackPageview']);
+
+                (function() {
+                          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                                      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                                          })();
+                                            </script>
+	</body>
+</html>

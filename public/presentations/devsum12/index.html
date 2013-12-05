@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Going Cross-Platform with HTML5 and PhoneGap</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+
+		<link rel="stylesheet" href="lib/zenburn.css">
+	</head>
+	
+	<body>
+		
+		<div id="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-state="whiteout">
+					<h3>Tech, Lock-in, and the Web: Using PhoneGap &amp; HTML5 To Go Cross-Platform</h3>
+          <img src="assets/img/Logo.png" />
+          <p>Fil Maj, Adobe Systems</p>
+				</section>
+				
+				<section>
+					<h1>who's this?</h1>
+					<p>Fil Maj</p>
+          <p>Master Exploder at Adobe Systems, <em>eh</em></p>
+          <img src="assets/img/me.jpg" height="50%"/>
+					<p>
+						<i><small>- <a href="http://filmaj.ca">Fil Maj</a> / <a href="http://twitter.com/filmaj">@filmaj</a></small></i>
+					</p>
+				</section>
+
+        <section data-state="whiteout">
+          <img src="assets/img/html5.png" />
+        </section>
+				
+        <section data-state="alert">
+          <img src="assets/img/html5eh.png" />
+        </section>
+
+				<section>
+          <h1>PhoneGap</h1>
+          <p>... soon</p>
+          <p>but first: brief history of technology</p>
+          <p class="fragment">this is relevant, hang in there!</p>
+				</section>
+
+        <section data-state="soothe">
+          <h1>Technology</h1>
+          <p class="fragment">Tools that help us extend our perceived world</p>
+          <p class="fragment">The best technology helps us create connections</p>
+          <!-- tech exists today that takes both of these features
+               and makes it ubiquitous. you see it EVERYWHERE -->
+        </section>
+
+        <section>
+          <h1>Brief History</h1>
+          <p>awesome shit that made us smarter</p>
+          <ul>
+            <!-- perpetuation of information -->
+            <li class="fragment">literacy, alphabet</li> <!-- passing knowledge asynchronously, not through word-of-mouth. helped evolve cultures -->
+            <li class="fragment">maps, books</li> <!-- externalizing our knowledge, extending our intellect -->
+            <li class="fragment">printing press</li> <!-- accessibility to knowledge increases dramatically -->
+            <li class="fragment">telegraph</li> <!-- real-time communication possible over large distances -->
+            <li class="fragment">telephone</li>
+          </ul>
+          <p class="fragment">incremental tech that changed the way societies, cultures and the human race progressed</p>
+        </section>
+
+        <section>
+          <h2>Stepping it up a notch</h2>
+          <img src="assets/img/drinking.png" height="400" />
+          <p>taking it to the next level, 20th century style</p>
+        </section>
+
+        <section>
+          <h1>Computers</h1>
+          <p>An idea preceeded the computer...</p>
+        </section>
+
+        <section data-state="alert">
+          <h1>Memex</h1>
+          <!-- dude wanted to model knowledge more closely to how human memory works, less like a library index -->
+          <ul>
+            <li class="fragment">Article published in 1945 by Dr. Vannevar Bush, "As We May Think"</li>
+            <li class="fragment">Microfilm-based "knowledge desk"</li>
+            <li class="fragment">Using "associative links" between content</li>
+          </ul>
+          <blockquote class="fragment">... enlarged intimate supplement to one's memory.</blockquote>
+          <img class="fragment" src="assets/img/wiki.png" />
+        </section>
+
+        <section>
+          <h1>Intarwebz</h1>
+          <img src="assets/img/tank.jpeg" width="600" />
+          <p>ARPAnet, CSNET, et al, eventually lead to Tim-Berners Lee inventing the Web</p>
+        </section>
+
+        <section data-state="soothe">
+          <h1>HyperCard</h1>
+          <img src="assets/img/hypercard.gif" />
+          <ul>
+            <li class="fragment">Originally released in 1987</li>
+            <li class="fragment">Stack of cards that can be linked together</li>
+            <li class="fragment"><em>Super</em> easy to develop</li>
+            <li class="fragment">Basic scripting support included (HyperTalk)</li>
+            <li class="fragment"><strong>free</strong></li>
+            <li class="fragment">Essentially: sandboxed local web</li>
+          </ul>
+          <blockquote class="fragment">It was not lost on Apple or its mainstream developers that the power HyperCard gave to people could cut into the sales of ordinary shrink wrapped products.</blockquote>
+        </section>
+
+        <!-- possibly nokia communicator slide here -->
+
+        <section>
+          <h1>Today: Mobile Web</h1>
+          <p>Today we are connected <strong>all the fkn time</strong></p>
+          <ul>
+            <li class="fragment">our memory/knowledge extends beyond our mind</li>
+            <li class="fragment">our perceptions extended with new sensors</li>
+          </ul>
+          <h3 class="fragment">arguably making us more <em>intelligent</em> beings...</h3>
+        </section>
+
+        <section data-state="alert">
+          <h1>... arguable ;)</h1>
+          <img src="assets/img/jedicat.jpg" height="400" />
+        </section>
+
+        <section>
+          <h1>The Web</h1>
+          <p>pretty rad right?</p>
+          <img src="assets/img/igorskee.png" />
+        </section>
+
+        <section>
+          <h1>Proprietary APIs</h1>
+          <p>When we close a platform, we create <em>vendor lock-in</em></p>
+          <p class="fragment">creates a <strong>switching cost</strong></p>
+          <p class="fragment">tons of examples of this all around us</p>
+          <p class="fragment">inkjet printer &lt;=&gt; ink</p>
+          <p class="fragment">Connector Conspiracy</p>
+        </section>
+
+        <section data-state="whiteout">
+          <h2>Exhibit 1</h2>
+          <img src="assets/img/flash.jpg" />
+        </section>
+
+        <section>
+          <h2>Exhibit 2</h2>
+          <img src="assets/img/win95.jpeg" style="float:left;" />
+          <blockquote>The Windows API is so broad, so deep, and so functional that most software vendors would be crazy not to use it. And it is so deeply embedded in the source code of many Windows apps that there is a huge switching cost to using a different OS instead.</blockquote>
+          <small>- Aaron Contorer, internal Microsoft memo, Feb. 21, 1997</small>
+        </section>
+
+        <section>
+          <h2>Exhibit 3</h2>
+          <img src="assets/img/apple.png" />
+          <p>With early iPhone SDK, developers had to agree to an NDA that <q>forbade [them] from discussing the content of the iPhone APIs.</q> WTF!</p>
+          <p class="fragment">Luckily, Apple abandoned this section of their TOU in Oct. 2008.</p>
+        </section>
+
+        <section data-state="whiteout">
+          <h3>The Cure?</h3>
+          <img class="fragment" src="assets/img/thecure.jpg" style="float:left;" />
+          <p class="fragment">... not this. plz.</p>
+        </section>
+
+        <section>
+          <h1>We Fight This With Openness</h1>
+          <img src="assets/img/skydive_fight.jpg" />
+        </section>
+
+        <section>
+          <h1>Web As A Platform</h1>
+          <p class="fragment">(Short) tangent back in time...</p>
+        </section>
+
+        <section>
+          <h1>Remember Gopher?</h1>
+          <p>Competed with the web</p>
+          <p class="fragment">Attractive early on for smaller network resource use</p>
+          <p class="fragment">University of Minnesota maintained implementation</p>
+          <p class="fragment">Then UofM decided to start charging license fees for gopher</p>
+        </section>
+
+        <section>
+          <h2>Where'd the Rodent Go?</h2>
+          <img class="fragment" src="assets/img/gopher_fucked.jpg" height="400"/>
+        </section>
+
+        <section data-state="soothe">
+          <h2>The Open Web</h2>
+          <img src="assets/img/TBL.jpg" /><!-- fucking badass pic no? how can you argue with this dude -->
+          <p class="fragment"><small>Tim Berners-Lee, writer of the first HTTP and HTML specs, physicist working at CERN.</small></p>
+          <p class="fragment">He wanted to connect scientists at CERN so they could share data.</p>
+          <p class="fragment">So he invented the web.</p>
+          <p class="fragment"><strong>BADASS</strong></p>
+        </section>
+
+        <section data-state="whiteout">
+          <!-- back to this HTML5 thing -->
+          <img src="assets/img/html5.png" />
+        </section>
+
+        <section>
+          <h2>Back to HTML5 in the Real World</h2>
+          <p>Native apps are kicking web's ass</p>
+          <p class="fragment">APIs like accelerometer, compass, contacts, etc.</p>
+          <p class="fragment">BUT! Geo is here. Accelerometer is next. W3C DAP group leading the way.</p>
+        </section>
+
+        <section>
+          <h3>Fucking Finally: PhoneGap</h3>
+          <p><a href="phonegap.com">phonegap.com</a></p>
+          <img src="assets/img/phonegap_lab.png" height="300" />
+          <p>MIT license, as open as it gets!</p>
+          <p>Obtained by Adobe in November 2011</p>
+          <p>I work full-time on open source software. I'm lucky.</p>
+        </section>
+
+        <section>
+          <img src="assets/img/cordova_256.png" />
+          <h1 class="fragment">Apache Cordova</h1>
+          <p class="fragment"><a href="cordova.io">cordova.io</a></p>
+          <p class="fragment">PhoneGap -&gt; Cordova as Chrome -&gt; WebKit</p>
+        </section>
+
+        <section>
+          <h2>Write Apps With Web Tech</h2>
+          <img src="assets/img/html5eh.png" />
+        </section>
+
+        <section data-state="whiteout">
+          <h2>Deploy To Six Platforms</h2>
+          <div class="stack">
+            <img src="assets/img/wp7.png" width="200"/>
+            <img src="assets/img/android.jpeg" width="200" />
+            <img src="assets/img/ios.png" width="200" />
+            <img src="assets/img/bada.jpg" width="200" />
+            <img src="assets/img/webos.jpg" width="200" />
+            <img src="assets/img/blackberry.jpg" width="200" />
+          </div>
+        </section>
+
+        <section data-state="soothe">
+          <h2>Augment The Web With Native APIs</h2>
+          <img src="assets/img/javascript.png" />
+          <p>Get at those sensors!</p>
+          <p>Full API docs available at <a href="docs.phonegap.com">docs.phonegap.com</a></p>
+        </section>
+
+        <section>
+          <h1>Example: Accelerometer</h1>
+          <pre><code>
+            function onSuccess(acceleration) {
+              console.log('Acceleration X: ' + acceleration.x + '\n' +
+                    'Acceleration Y: ' + acceleration.y + '\n' +
+                    'Acceleration Z: ' + acceleration.z + '\n' +
+                    'Timestamp: '      + acceleration.timestamp + '\n');
+            };
+
+            function onError(e) {
+              console.log('Error! ' + e.message);
+            };
+
+            var options = {frequency:100}; // get updates every 100 ms
+
+            navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Deploy To App Stores</h2>
+          <p>PhoneGap/Cordova "wraps" your web assets into a native binary.</p>
+        </section>
+
+        <section data-state="alert">
+          <h2>Not A Silver Bullet</h2>
+          <p>Will not wash your dishes.</p>
+        </section>
+
+        <section data-state="alert">
+          <h2>Write Once, <em>Debug</em> Everywhere</h2>
+          <p>HyperCard didn't ship a debugger until 2.0!</p>
+          <img src="assets/img/troll.jpg" />
+        </section>
+
+        <section data-state="alert">
+          <h2>Hardcore 3D Shit</h2>
+          <p>Web tech is probably not the best choice for this problem.</p>
+          <p class="fragment">But! BlackBerry 6+ supports WebGL...</p>
+        </section>
+
+        <section data-state="alert">
+          <h2>PhoneGap API Finite</h2>
+          <img src="assets/img/docs.png" />
+        </section>
+
+        <section data-state="soothe">
+          <h1>Demo Time?</h1>
+          <img src="assets/img/demotime.jpg" />
+        </section>
+
+        <section data-state="soothe">
+          <h1>Tack, <em>eh</em></h1>
+          <img src="assets/img/beertime.jpg" style="float:left;display:inline;" /><img src="assets/img/sedins.jpg" style="float:right;display:inline;width:500px;" />
+          <p style="clear:both;"><a href="cordova.io">cordova.io</a>
+          <a href="phonegap.com">phonegap.com</a>
+          <a href="filmaj.ca">filmaj.ca</a>
+          <a href="twitter.com/filmaj">@filmaj</a></p>
+        </section>
+			</div>
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+		
+		<script src="js/reveal.js"></script>
+
+		<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+		<script src="lib/highlight.js"></script>
+		<script src="lib/classList.js"></script>
+		
+		<script>
+			// Parse the query string into a key/value object
+			var query = {};
+			location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+				query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+			} );
+
+			// Fires each time a new slide is activated
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				// event.indexh & event.indexv
+			} );
+
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// If true; each slide will be pushed to the browser history
+				history: true,
+
+				// Loops the presentation, defaults to false
+				loop: false,
+
+				// Flags if mouse wheel navigation should be enabled
+				mouseWheel: false,
+
+				// Apply a 3D roll to links on hover
+				rollingLinks: true,
+
+				// UI style
+				theme: query.theme || 'default', // default/neon
+
+				// Transition style
+				transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+			});
+
+			hljs.initHighlightingOnLoad();
+		</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-27149382-1']);
+            _gaq.push(['_trackPageview']);
+
+                (function() {
+                          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                                      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                                          })();
+                                            </script>
+	</body>
+</html>
