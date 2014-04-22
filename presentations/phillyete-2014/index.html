@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Testing Mobile with Appium</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-state="title">
+                  <h1 style="background-color:rgba(40,40,40,0.7);">Testing Mobile With Appium</h1>
+                  <br/>
+                  <img src="img/appium.jpg" />
+                  <br/>
+                  <br/>
+                  <a href="http://twitter.com/filmaj">Fil Maj, Mobile R&D, Sauce Labs</a>
+                  <br/>
+                  <a href="http://twitter.com/filmaj">@filmaj</a>
+                </section>
+
+                <section>
+                  <h1>Me</h1>
+                  <img src="img/fil.jpeg" />
+                  <p>Fil Maj</p>
+                  <ul>
+                    <li>Work at <a href="http://saucelabs.com">Sauce Labs</a></li>
+                    <li>Work on Mobile Testing Infrastructure</li>
+                    <li>Live in Vancouver, BC, Canada</li>
+                    <li>Drink beer, watch hockey (go Flyers!)</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h1>Back After A Year!</h1>
+                  <p>PhillyETE 2013 was awesome!</p>
+                  <p>Spoke about this same topic last year.</p>
+                  <p><strong>tl;dr</strong>: things are much better</p>
+                </section>
+
+                <section>
+                    <h1>Testing</h1>
+                    <img src="img/monkey.jpg" width="500" />
+                    <!-- who does it? -->
+                </section>
+
+                <section>
+                    <h1>Testing, cont.</h1>
+                    <img src="img/bugs.jpg" width="250" />
+                    <h2>Who cares?</h2>
+                    <p>Biggest embarassment as a programmer: regressions</p>
+                    <div class="fragment">
+                        <p>Be disciplined at your craft: write a test for each bug</p>
+                        <p>Run your tests after each change. This will prevent regressions.</p>
+                        <p>Over time you grow a set of tests for your application</p>
+                    </div>
+                </section>
+
+                <section data-state="soothe">
+                    <h2>Continuous Integration</h2>
+                    <img src="img/ci2.png" />
+                    <p>CI automates the testing process. You get continuous feedback as your codebase evolves - in real-time</p>
+                </section>
+
+                <section data-state="soothe">
+                    <h1>Testing Desktop Websites</h1>
+                    <img src="img/se2.png" />
+                    <p>Established testing system is in place: Selenium.</p>
+                    <!-- more on this in a bit -->
+                </section>
+
+                <section>
+                    <h1>Testing Mobile</h1>
+                    <img src="img/mobile_testing.jpg" height="250" />
+                    <p>Not so easy.</p>
+                    <ul>
+                        <li class="fragment">"Rent" time from a device testing service</li>
+                        <li class="fragment">Little to no automation (usually simulator based)</li>
+                        <li class="fragment">Not much different from a monkey</li>
+                    </ul>
+                </section>
+
+                <section>
+                  <h1>Selenium Can Save Us</h1>
+                  <img src="img/opensource.jpg" height="350" />
+                  <p>Open Source and Open Spec FTW</p>
+                </section>
+
+                <section>
+                  <h1>What is Selenium?</h1>
+                  <ul>
+                    <li class="fragment">Simply put: it is an HTTP API</li>
+                    <li class="fragment">Developed out of a need to test websites</li>
+                    <li class="fragment">Naturally this started on desktop</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h2>How Does Selenium Work?</h2>
+                  <img src="img/selenium_diagram.png" style="background:rgba(255,255,255,1);height:550px;"/>
+                </section>
+
+                <section>
+                  <h1>Selenium Tests</h1>
+                  <p>Scripts can be written in a variety of languages, as there are many "client" libraries</p>
+                  <p>JavaScript, Ruby, Java, C, you name it.</p>
+                </section>
+
+                <section>
+                  <h1>Selenium On Mobile</h1>
+                  <h2>Appium</h2>
+                  <img src="img/appium.jpg" />
+                  <p><a href="http://appium.io">http://appium.io</a></p>
+                  <p><a href="http://github.com/appium/appium">http://github.com/appium/appium</a></p>
+                  <pre><code style="text-align:center;font-size:200%;line-size:200%;">npm install -g appium</code></pre>
+                </section>
+
+                <section>
+                  <h1>What is Appium?</h1>
+                  <p class="fragment">An implementation of Selenium for mobile</p>
+                  <p class="fragment">Free and Open Source</p>
+                  <p class="fragment">Supports Android, iOS and FirefoxOS</p>
+                  <p class="fragment">Works with browsers, <strong>hybrid applications, and native applications</strong></p>
+                </section>
+
+                <section>
+                  <h1><em>All</em> types of apps!?</h1>
+                  <p>That's right!</p>
+                </section>
+
+                <section>
+                  <h1>Selenium is evolving</h1>
+                  <img src="img/evolution.jpg"/>
+                  <p>The spec is being pushed to address new automation needs</p>
+                  <p>Different types of apps, different types of interactions</p>
+                </section>
+
+                <section>
+                  <h1>Appium Demos</h1>
+                  <img src="img/cross-fingers.png" height="400"/>
+                  <p><a href="http://github.com/filmaj/appium-test">http://github.com/filmaj/appium-test</a></p>
+                </section>
+
+                <section>
+                  <h2>Selenium is Hard</h2>
+                  <img src="img/selenium_is_hard.png" height="400"/>
+                  <p>Lots of moving parts</p>
+                  <p>Infrastructure is hard: Windows, Mac, Linux, and now mobile...</p>
+                </section>
+
+                <section>
+                  <h1>Sauce Labs to the rescue!</h1>
+                  <img src="img/sauce_logo.jpg"/>
+                  <p>Let us handle the infrastructure: over 300 OS/browser combos, more being added every week</p>
+                  <p>You treat Sauce Labs like just another Selenium server endpoint</p>
+                </section>
+
+                <section>
+                    <h1>Sauce Labs Demo</h1>
+                    <img src="img/mad_scientist.jpg" />
+                </section>
+
+                <section>
+                  <h1>Coming Soon: Real Device Cloud</h1>
+                  <img src="img/futuristic-cloud-computing.png"/>
+                  <p>Instead of emulators, we plan on providing a cloud of real devices accessible to users for test runs</p>
+                </section>
+
+            <section>
+              <h3>Thanks!</h3>
+              <img src="img/sobriety.jpg" />
+              <p><small><a href="http://twitter.com/filmaj">@filmaj</a></small></p>
+              <p><small><a href="http://filmaj.ca">http://filmaj.ca</a></small></p>
+              <p><small><a href="http://saucelabs.com">http://saucelabs.com</a></small></p>
+              <p><small><a href="http://github.com/appium/appium">http://github.com/appium/appium</a></small></p>
+              <p><small><a href="http://github.com/filmaj/appium-test">http://github.com/filmaj/appium-test</a></small></p>
+            </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-27149382-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+	</body>
+</html>

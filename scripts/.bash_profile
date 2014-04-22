@@ -1,12 +1,13 @@
-export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin:~/sdks/android/sdk/tools:~/sdks/android/sdk/platform-tools:~/src/depot_tools:~/src/chromedriver:/Users/filmaj/bin/apache-ant-1.9.2/bin:/Users/filmaj/bin/apache-maven-3.0.5/bin
+export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin:~/sdks/android/sdk/tools:~/sdks/android/sdk/platform-tools:~/src/depot_tools:~/src/chromedriver:/Users/filmaj/bin/apache-ant-1.9.2/bin:/Users/filmaj/bin/apache-maven-3.1.1/bin
 export ANDROID_HOME="$HOME/sdks/android/sdk"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
 export PYTHONPATH=/Users/filmaj/src/sauce/lib:/Users/filmaj/src/sauce/cloud:$PYTHONPATH
 
 source ~/src/filmaj.github.com/scripts/git-completion.bash
 
-alias ls='ls -aGl'
+alias ll='ls -aGl'
 alias static='node ~/src/filmaj.github.com/scripts/static_server.js'
+alias ios-sim='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
 # startup virtualenv-burrito
 if [ -f $HOME/.venvburrito/startup.sh ]; then
