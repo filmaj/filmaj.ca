@@ -1,56 +1,37 @@
 /* Site-wide */
-
-/* taken from reveal.js github.com/hakimel/reveal.js */
-html {
-	background: #1c1e20;
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM1NTVhNWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMWMxZTIwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -moz-radial-gradient(center, ellipse cover,  rgba(85,90,95,1) 0%, rgba(28,30,32,1) 100%);
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(85,90,95,1)), color-stop(100%,rgba(28,30,32,1)));
-	background: -webkit-radial-gradient(center, ellipse cover,  rgba(85,90,95,1) 0%,rgba(28,30,32,1) 100%);
-	background: -o-radial-gradient(center, ellipse cover,  rgba(85,90,95,1) 0%,rgba(28,30,32,1) 100%);
-	background: -ms-radial-gradient(center, ellipse cover,  rgba(85,90,95,1) 0%,rgba(28,30,32,1) 100%);
-	background: radial-gradient(center, ellipse cover,  rgba(85,90,95,1) 0%,rgba(28,30,32,1) 100%);
+html, body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: black;
+  width: 100%;
+  min-height: 100%;
 }
 
-html, body {
-	position: relative;
-	padding: 0;
-	margin: 0;
-    font: 15px "helvetica",sans-serif;
-	color: black;
-	width: 100%;
-	min-height: 100%;
+a {
+  /*transition*/
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  color: #777;
+  text-decoration: none;
+  font-weight:500;
+  margin: 0 10px;
+  text-shadow: 1px 1px 0px white;
+}
+
+a:hover {
+  color: #555;
+  text-decoration:underline;
 }
 
 p { clear:both; }
 
-h1 { margin-top: 35px; }
-
-header {
-  margin: 0 auto;
-  text-align:center;
-}
-
-section.content {
-  max-width:640px;
-  margin-top:20px;
-}
-
-footer {
-  clear:both;
+section, nav {
+  display: inline-block;
   padding: 5px;
-}
-
-footer > div {
-  margin: 0 auto;
-  text-align:center;
-}
-
-/* Navigation bars */
-.whiteout {
-  max-width:600px;
-  margin: 10px auto;
-  padding:10px;
   border-radius:10px;
   background: #fff;
   background: -webkit-gradient( linear,0 0,0 100%,from(#fff),to(#e5eaee) );
@@ -66,46 +47,66 @@ footer > div {
   box-shadow: 0px 1px 5px #666;
 }
 
+/* Middle */
+section {
+  max-width:640px;
+  margin: 10px auto;
+  display:block;
+}
+
+section a {
+  margin:0;
+}
+
+/* Footer */
+footer {
+  clear:both;
+  padding: 5px;
+}
+
+footer > div {
+  margin: 0 auto;
+  text-align:center;
+}
+/* Navigation */
 nav {
-  display:inline;
+  max-width:600px;
   font-weight: 300;
   text-align: center;
   text-shadow: 0 1px 0 #fff;
   -webkit-tansition: all 10s linear infinite;
 }
-@media (max-width: 450px) {
-    nav {
-        display: block;
-    }
-}
-a {
-  /*transition*/
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  color: #777;
-  text-decoration: none;
-  font-weight:500;
-  margin: 0 10px;
-	text-shadow: 1px 1px 0px white;
+header {
+  margin: 0 auto;
+  text-align:center;
 }
 
-a:hover {
-  color: #555;
-  text-decoration:underline;
+header > h1 {
+  display: inline;
+  color:black;
+  font-family: 'Linden Hill', serif;
+  font-weight:normal;
+}
+@media (max-width: 660px) {
+  section {
+    margin:10px;
+  }
+}
+@media (max-width: 450px) {
+  section, nav {
+    padding:5px;
+  }
+  header a.avatar {
+    top:20px !important;
+  }
 }
 
 nav a {
   font-size: 20px;
+  display:inline-block;
 }
-nav img {
-  position:relative;
-  top:12px;
-}
-
-.content a {
-  margin:0;
+nav a > img {
+  vertical-align:middle;
 }
 
 header a.avatar {

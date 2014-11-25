@@ -4,26 +4,21 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>{{ page.title }}</title>
     <meta name="author" content="Fil Maj" />
-    <script type="text/javascript" src="/scripts/highlight.pack.js"></script>
     <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="/css/github.css" type="text/css" media="screen, projection" />
-    <script type="text/javascript">
-      hljs.tabReplace = '  ';
-      hljs.initHighlightingOnLoad();
-    </script>
   </head>
   <body>
     <header>
+      <h1>Fil Maj</h1>
       <a href="/" class="avatar"><img src="http://en.gravatar.com/avatar/82d945860586e7591638b1385f18c4bd" alt="Fil's picture" /></a>
       <nav class="whiteout">
         <a href="http://twitter.com/filmaj"><img src="/img/twitter-icon.png" alt="Fil's Twitter profile" /></a>
         <a href="http://github.com/filmaj"><img src="/img/github_32.png" alt="Fil's GitHub profile" /></a>
         <a href="/cv.html">CV</a>
-        <a href="/speaking.html">Speaking</a>
-        <a href="/posts/index.html">Blog</a>
+        <a href="/talks.html">Talks</a>
       </nav>
     </header>
-    <section class="content whiteout">
+    <section>
       {{ content }}
     </section>
   </body>
@@ -31,11 +26,19 @@
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-27149382-1']);
     _gaq.push(['_trackPageview']);
-
+    WebFontConfig = {
+        google: { families: [ 'Linden+Hill::latin' ] }
+    };
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript'; wf.async = 'true';
+      s.parentNode.insertBefore(wf, s);
     })();
   </script>
 </htmL>
