@@ -4,7 +4,8 @@ html, body {
   padding: 0;
   margin: 0;
   font-family: 'Fenix', serif;
-  color: black;
+  color: #1F1F1F;
+  background-color: #CDBDAE;
   width: 100%;
   min-height: 100%;
 }
@@ -15,7 +16,7 @@ a {
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  color: #777;
+  color: #A80000;
   text-decoration: none;
   font-weight:500;
   margin: 0 10px;
@@ -34,17 +35,17 @@ section, nav {
   padding: 5px;
   border-radius:10px;
   background: #fff;
-  background: -webkit-gradient( linear,0 0,0 100%,from(#fff),to(#e5eaee) );
+  background: -webkit-gradient( linear,0 0,0 100%,from(#fff),to(#FAFAFA) );
   /*linear-gradient*/
-  background: -webkit-gradient(linear,,from(#fff),to(#e5eaee));
-  background: -webkit-linear-gradient( top center,#fff,#e5eaee );
-  background: -moz-linear-gradient( top center,#fff,#e5eaee );
-  background: -o-linear-gradient( top center,#fff,#e5eaee );
-  background: linear-gradient( top center,#fff,#e5eaee );
+  background: -webkit-gradient(linear,,from(#fff),to(#FAFAFA));
+  background: -webkit-linear-gradient( top center,#fff,#FAFAFA );
+  background: -moz-linear-gradient( top center,#fff,#FAFAFA );
+  background: -o-linear-gradient( top center,#fff,#FAFAFA );
+  background: linear-gradient( top center,#fff,#FAFAFA );
   /*box-shadow*/
-  -webkit-box-shadow: 0 1px 2px #000;
-  -moz-box-shadow: 0 1px 2px #bdc9d5;
-  box-shadow: 0px 1px 5px #666;
+  -webkit-box-shadow: 0 1px 2px #7A5B3E;
+  -moz-box-shadow: 0 1px 2px #7A5B3E;
+  box-shadow: 0px 1px 2px #7A5B3E;
 }
 
 /* Middle */
