@@ -20,11 +20,9 @@ a {
   text-decoration: none;
   font-weight:500;
   margin: 0 10px;
-  text-shadow: 1px 1px 0px white;
 }
 
 a:hover {
-  color: #555;
   text-decoration:underline;
 }
 
@@ -74,7 +72,6 @@ nav {
   max-width:600px;
   font-weight: 300;
   text-align: center;
-  text-shadow: 0 1px 0 #fff;
   -webkit-tansition: all 10s linear infinite;
 }
 header {
