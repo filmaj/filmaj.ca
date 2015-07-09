@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Testing on Mobile: Automating the Pain Away</title>
+
+		<meta name="description" content="Testing, mobile and how to automate the labour away">
+		<meta name="author" content="Fil Maj">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/blood.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="images/phonesmash.gif">
+					<h1>Testing on Mobile</h1>
+					<h3>Automating the Pain Away</h3>
+					<p>
+						<small><a href="http://filmaj.ca">Fil Maj</a> / <a href="http://twitter.com/filmaj">@filmaj</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Agenda</h2>
+                    <ol style="font-size:85%;">
+                        <li>The Why (~x mins)
+                        <ul>
+                            <li>Bugs and Regressions</li>
+                            <li>Safety Net</li>
+                            <li>Next Step: Continuous Integration</li>
+                        </ul>
+                        </li>
+                        <li>The How (~x mins)
+                        <ul>
+                            <li>Different Testing Approaches</li>
+                            <li>Selenium as a <em>Specification</em></li>
+                            <li>Appium</li>
+                        </ul>
+                        </li>
+                        <li>hacktimenao
+                            <ol>
+                                <li>Prerequisites
+                                <ul>
+                                    <li>Mobile SDKs / Environments</li>
+                                    <li>Appium</li>
+                                </ul>
+                                </li>
+                                <li>Identify what you want to test</li>
+                                <li>Let's write tests!</li>
+                            </ol>
+                        </li>
+                    </ol>
+				</section>
+
+                <section data-background="images/filmaj.jpg">
+                    <h1>Ohai! I'm Fil</h1>
+                    <img src="images/sauce-labs-logo.png" style="border:0" />
+                </section>
+
+                <section>
+                    <h2>Ohai! who r u?</h2>
+                    <p>Designer? Developer? QA?</p>
+                    <aside class="notes">
+                        what kind of a group do we have here?
+                    </aside>
+                </section>
+
+				<section data-background="images/why_test.png" data-background-size="800px">
+                    <h1>Why Test?</h1>
+                    <h3>Audience Poll: Who does it?</h3>
+                    <p class="fragment" >Dedicated QA department?</p>
+                    <p class="fragment">Developers?</p>
+                    <p class="fragment">Unclear?</p>
+				</section>
+
+				<section data-background="images/why_test.png" data-background-size="800px">
+                    <h1>Why Test?</h1>
+                    <h3>Audience Poll: What kind of testing?</h3>
+                    <p class="fragment">Manual?</p>
+                    <p class="fragment">Unit?</p>
+                    <p class="fragment">Integration / End-to-End / Selenium?</p>
+				</section>
+
+                <section data-background="images/quality.jpg">
+                    <h3 style="margin-top:500px;">Quality is everyone's responsibility.</h3>
+                    <aside class="notes">
+                        if there's one attitude i recommend for teams to adopt, it is this one. 
+                        once most people on the team start adopting this approach, QA becomes everyone's problem
+                        and lowering the barrier of doing QA becomes a time-saver
+                    </aside>
+                </section>
+
+                <section data-background="images/bug.jpg">
+                    <div style="background-color:rgba(0,0,0,0.5);">
+                        <h1>Bugs</h1>
+                        <p>They suck. We have to fix them.</p>
+                        <p>There's something worse than just a <em>bug</em>, though...</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h1>Regressions</h1>
+                    <h5>A bug that, at one point, was identified and fixed, but at a later date, crept back into the product.</h5>
+                    <p>One of the biggest embarassments as a team delivering a product.</p>
+                </section>
+
+                <section>
+                    <h3>Preventing Regressions</h3>
+                    <ul>
+                        <li class="fragment">You release version 1 of your product. Yay!</li>
+                        <li class="fragment">You realize there's a bug in it. Boo...</li>
+                        <li class="fragment">
+                            You fix the bug, but then you also write a little program to verify that the bug doesn't exist.
+                            <br/>
+                            <em class="fragment">This little program is a test!</em>
+                        </li>
+                        <li class="fragment">You release version 2 of your product, which includes your bug fix. Yay!</li>
+                        <li class="fragment">Now every time you make a change, you run your test, <em>effectively preventing you from ever releasing that same bug again</em>.</li>
+                    </ul>
+                    <p class="fragment">LMAO, RIP, Bug</p>
+                </section>
+
+                <section data-background="images/net.jpg">
+                    <h2>The Power of Testing</h2>
+                    <p>Testing is a safety net.</p>
+                    <p>You are future-proofing your product.</p>
+                    <p class="fragment">Testing is a <strong>discipline</strong> and is <strong>everyone's responsibility</strong>.</p>
+                </section>
+
+                <section>
+                    <h3>Continuous Integration</h3>
+                    <img src="images/hudson.png" />
+                    <h4>Next-Level Testing Power Up: The Holy Grail</h4>
+                    <p class="fragment">It is Two Things:</p>
+                    <p class="fragment">Your tests being <em>automated</em> - fire and forget</p>
+                    <p class="fragment">Your automated test suite running <em>on every commit</em>.</p>
+                </section>
+
+                <section>
+                    <h2>How to Test</h2>
+                    <p>So many ways to approach testing your product - as many ways as there are to building it.</p>
+                </section>
+
+                <section>
+                    <h2>Testing Approaches</h2>
+                    <p>Different ways or experiencing and slicing your product up:</p>
+                    <ul>
+                        <li class="fragment"><strong>Manual</strong>. Slow, error prone, human required.</li>
+                        <li class="fragment"><strong>Unit</strong>. Testing code at the granular unit/module/class level.</li>
+                        <li class="fragment"><strong>Visual</strong>. Does it look like what it's supposed to look like?</li>
+                        <li class="fragment"><strong>Integration</strong>. Once you put all the pieces together, does it work?</li>
+                    </ul>
+                    <p class="fragment">We will be focussing on Integration testing, a.k.a. End-to-End testing.</p>
+                </section>
+
+                <section>
+                    <h2>Selenium For The Win</h2>
+                    <h4>(aka WebDriver)</h4>
+                    <p>Selenium is a tool that enables automation. It tells other software to do things for you.</p>
+                </section>
+
+                <section>
+                    <h2>What is WebDriver</h2>
+                    <p class="fragment">It is a <strong>specification</strong>.</p>
+                    <p class="fragment">The spec is for an HTTP API.</p>
+                    <p class="fragment">This HTTP API serves as an <em>abstraction</em> over proprietary, closed and/or differing automation APIs.</p>
+                    <p class="fragment">Free and open-source.</p>
+                </section>
+
+                <section data-background="#dddddd">
+                    <h2 style="color:black;">How Selenium Works</h2>
+                    <img src="images/selenium_diagram.png" />
+                    <aside class="notes">
+                        four components: the thing you want to automate, the driver (an API to automate the thing), the selenium server, which is an abstraction over the driver, and your test, which speaks to the server.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Where Does It Work?</h2>
+                    <p class="fragment">Desktop browsers (the initial automation platforms)</p>
+                    <p class="fragment">Today, thanks to Appium, all kinds of mobile goodness, too!</p>
+                </section>
+
+                <section data-background="images/appium.png" data-background-size="400px">
+                    <div style="background-color:rgba(0,0,0,0.5);">
+                        <h3>What is Appium?</h3>
+                        <p class="fragment">An implementation (+extension) of the WebDriver specification...</p>
+                        <p class="fragment">... designed specifically for mobile (Android, iOS, FirefoxOS) platforms...</p>
+                        <p class="fragment">... allowing automation of native, hybrid and web applications.</p>
+                    </div>
+                </section>
+
+                <section data-background="images/hacking.jpg">
+                    <div style="background-color:rgba(0,0,0,0.5);">
+                        <h2>Let's Get Hacking!</h2>
+                        <p>Let's get SDKs set up: <a href="http://developer.apple.com">developer.apple.com</a>, <a href="http://developer.android.com">developer.android.com</a></p>
+                        <p>Get Appium set up!</p>
+                        <p><a href="http://appium.io">appium.io</a></p>
+                        <code>npm install -g appium</code>
+                        <p>or, if you're hardcore, <a href="http://github.com/appium/appium">github.com/appium/appium</a></p>
+                        <p>Let's get everyone to writing a test!</p>
+                        <p>My own set of tests as a starting point: <a href="http://github.com/filmaj/appium-test">github.com/filmaj/appium-test</a></p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Image Attribution</h3>
+                    <p><a href="https://www.flickr.com/photos/dieselbug2007/414348333/in/photolist-CBDjM-pyfoz4-f12vq8-nPs6XQ-uZLGbg-6cgNzy-pNEHMV-dBQxKE-bCahK9-czYRPu-ekT1vr-dHTAp1-o6WHCk-o6DioD-FHtBo-o4TNGs-565kyS-nPsjPR-nPsjew-o6QRrq-o6WGGT-o6PLwQ-kdAbds-9an5xh-bevNHZ-bbSRU-gZXNNm-nHS9VZ-qKoZzC-nPsiVW-bcbQ3i-4epuVH-hhufg8-4XMses-aMiNpZ-o6Neth-8TxrKL-ddPsMJ-uxPQK-rnFaFc-htcz8p-htcy5x-9pDSh4-oQaKpX-f6H65d-rTYKyP-Gte91-ekYLQJ-htbd9f-sQNh1p">Quality sign</a></p>
+                    <p><a href="https://www.flickr.com/photos/guitavares/1703252007/in/photolist-3AvBtV-3AvCQ6-nBnM-4HfejV-9uf9NP-eX5jSM-8hrNEn-2MDS5B-55KzGa-4K3cDa-8Znir-bSd2B-8Znip-5kXysN-866V38-4ghkhC-866UZg-866UWV-4w8YGS-3epvkv-8kmZfe-cJMKPJ-7vWW3E-3MHdHM-6DWz8h-cv6EhY-khUV9-mZ5ShZ-bvDsfh-5q9bjU-4bLqJM-6iZn4u-6iVeZa-4ytuaC-63ayfX-JCqgh-57Zezw-h2xk5-bXZM4L-5NgYg1-71G2g8-cDj7c-bJT262-cDj7b-4B3Sn5-6z6KJH-6zaPAN-6z6KJc-PChLE-6huwa4">Software Bug</a></p>
+                    <p><a href="https://www.flickr.com/photos/rainchurch/6311895493/in/photolist-aBL7Cn-8kDCwc-nV5Vqt-aebusT-7Tx3yN-atDXwQ-aBz8pq-jFxbPt-fyZ2mz-atBg4t-aCntuf-589hgC-4L8zuA-atDSxE-atB16v-atDWeS-4L4vHV-LLGG-4L8vMq-jFxbKa-dURZjE-a64gqP-5Q8NTE-a64gae-a67acE-a67ary-a67a5C-a64hVr-a679uu-a64hKB-a64hkg-a67akJ-a64hD6-a6792E-a64j2r-a678k9-a678BC-a64ijB-a64jEZ-a64heR-a679RE-a64i2B-9nsZVT-9nw4a9-ak7tSd-a6798G-a64gSV-a64gYB-a67aNA-a67ayu">Safety Net</a></p>
+                    <p><a href="https://www.flickr.com/photos/clofresh/3384877145/in/photolist-6a7o3M-3xKDX6-3vQg9R-3vMZ7L-3vHyX2-3vMXoY-3vMYCA-8T18gC-8SX3A6-8ThRyW-8SX3pi-8SX3tv-8F2xeK-vLQKs-6TMD5S-3KJ8ju-4W4bEU-5tYhfL-9imr2h-9iimcr-8PaDRY-85NjRy-6cuh21-6cuh5b-6Vy9HP-8FBc7A-7x5yiZ-9a3zB1-9zewGu-7XHaJi-98KWFi-8FuZRs-76wP1Z-76wNXF-4HMXAY-kDuJBt-kDuJjp-kDvg3X-kDvgnz-kDuKxB-aqyWws-avnoWQ-kDuKng-pmv94-8H1SkE-kDvhmi-kDvhca-kDuKGe-kDwXku-kDwWMq">Hudson Icon</a></p>
+                    <p><a href="https://www.flickr.com/photos/adulau/9464930917/in/photolist-fqofd6-yGJ6F-oCSHz-AyGb7-oCT7x-7j6xqw-5aiWWj-5Vew2s-ziEWJ-oCT9J-8zDSxG-nhXe1-oCT6C-8QYrBh-3Putvo-aVrTfT-3RULze-7VzXR-bbdPdX-4WoxZV-4vSnu-yGFrF-4iR4MH-4rYGhX-oCT3F-4NKHig-myqTsK-oCKxT-4s3Mmd-oCT59-dpYE6B-79p1wW-9pNy3j-3R8Fyq-9GhW94-oCT4U-7oATva-8uwo-9pNw7Y-4eErsa-6bo6Kf-7RUwtv-7D7PPY-7S335j-afajTC-oCT9q-9pNuQy-6ZY5Yw-8iDkVc-Cswv3">Hacking Tents</a></p>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'socket.io/socket.io.js', async: true },
+					{ src: 'plugin/notes-server/client.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
