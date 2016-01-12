@@ -51,14 +51,14 @@
 				<section>
 					<h2>Agenda</h2>
                     <ol style="font-size:85%;">
-                        <li>The Why (~x mins)
+                        <li>The Why (~5 mins)
                         <ul>
                             <li>Bugs and Regressions</li>
                             <li>Safety Net</li>
                             <li>Next Step: Continuous Integration</li>
                         </ul>
                         </li>
-                        <li>The How (~x mins)
+                        <li>The How (~10 mins)
                         <ul>
                             <li>Different Testing Approaches</li>
                             <li>Selenium as a <em>Specification</em></li>
@@ -67,6 +67,7 @@
                         </li>
                         <li>hacktimenao
                             <ol>
+                                <li>A few demos from me (~5-10 mins)</li>
                                 <li>Prerequisites
                                 <ul>
                                     <li>Mobile SDKs / Environments</li>
@@ -99,6 +100,10 @@
                     <p class="fragment" >Dedicated QA department?</p>
                     <p class="fragment">Developers?</p>
                     <p class="fragment">Unclear?</p>
+                    <aside class="notes">
+                        presumably we're all involved in shipping some kind of product
+                        do you test, and if so, who does it?
+                    </aside>
 				</section>
 
 				<section data-background="images/why_test.png" data-background-size="800px">
@@ -112,9 +117,7 @@
                 <section data-background="images/quality.jpg">
                     <h3 style="margin-top:500px;">Quality is everyone's responsibility.</h3>
                     <aside class="notes">
-                        if there's one attitude i recommend for teams to adopt, it is this one. 
-                        once most people on the team start adopting this approach, QA becomes everyone's problem
-                        and lowering the barrier of doing QA becomes a time-saver
+                        if there's one thing to leave this workshop with, it's this message
                     </aside>
                 </section>
 
@@ -124,6 +127,9 @@
                         <p>They suck. We have to fix them.</p>
                         <p>There's something worse than just a <em>bug</em>, though...</p>
                     </div>
+                    <aside class="notes">
+                        when i think poor quality software, bugs are what come to mind
+                    </aside>
                 </section>
 
                 <section>
@@ -171,7 +177,7 @@
 
                 <section>
                     <h2>Testing Approaches</h2>
-                    <p>Different ways or experiencing and slicing your product up:</p>
+                    <p>Different ways of experiencing and slicing your product up:</p>
                     <ul>
                         <li class="fragment"><strong>Manual</strong>. Slow, error prone, human required.</li>
                         <li class="fragment"><strong>Unit</strong>. Testing code at the granular unit/module/class level.</li>
@@ -185,14 +191,21 @@
                     <h2>Selenium For The Win</h2>
                     <h4>(aka WebDriver)</h4>
                     <p>Selenium is a tool that enables automation. It tells other software to do things for you.</p>
+                    <aside class="notes">
+                        who has heard of selenium? uses it?
+                    </aside>
                 </section>
 
                 <section>
-                    <h2>What is WebDriver</h2>
+                    <h2>What is WebDriver?</h2>
+                    <p class="fragment">It is commonly referred to as Selenium (for maximum confusion)</p>
                     <p class="fragment">It is a <strong>specification</strong>.</p>
                     <p class="fragment">The spec is for an HTTP API.</p>
                     <p class="fragment">This HTTP API serves as an <em>abstraction</em> over proprietary, closed and/or differing automation APIs.</p>
                     <p class="fragment">Free and open-source.</p>
+                    <aside class="notes">
+                        anyone heard of phonegap? its a wrapper around web tech, allowing you to package html, css and js into a mobile app binary. it provides native APIs via a javascript abstraction layer. selenium works in the same way!
+                    </aside>
                 </section>
 
                 <section data-background="#dddddd">
@@ -205,7 +218,7 @@
 
                 <section>
                     <h2>Where Does It Work?</h2>
-                    <p class="fragment">Desktop browsers (the initial automation platforms)</p>
+                    <p class="fragment">Desktop browsers (the initial Selenium target)</p>
                     <p class="fragment">Today, thanks to Appium, all kinds of mobile goodness, too!</p>
                 </section>
 
@@ -215,12 +228,14 @@
                         <p class="fragment">An implementation (+extension) of the WebDriver specification...</p>
                         <p class="fragment">... designed specifically for mobile (Android, iOS, FirefoxOS) platforms...</p>
                         <p class="fragment">... allowing automation of native, hybrid and web applications.</p>
+                        <p class="fragment">srsly, mix-and-matching native/web automation is an amazingly powerful tool for all kinds of mobile products</p>
                     </div>
                 </section>
 
                 <section data-background="images/hacking.jpg">
                     <div style="background-color:rgba(0,0,0,0.5);">
                         <h2>Let's Get Hacking!</h2>
+                        <p>A few demos from me</p>
                         <p>Let's get SDKs set up: <a href="http://developer.apple.com">developer.apple.com</a>, <a href="http://developer.android.com">developer.android.com</a></p>
                         <p>Get Appium set up!</p>
                         <p><a href="http://appium.io">appium.io</a></p>
