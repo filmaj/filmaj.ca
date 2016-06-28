@@ -56,6 +56,27 @@ section {
 section a {
   margin:0;
 }
+section > h1, section > h2 {
+  position: relative;
+  float: left;
+  box-shadow: 0px 1px 2px #7A5B3E;
+}
+section > h1 {
+  margin: 10px auto;
+  padding: 5px;
+  border-radius: 10px;
+  left: -20px;
+  background: #B0A1BA;
+}
+
+section > h2 {
+  margin: 5px auto;
+  padding: 3px;
+  border-radius: 5px;
+  left: -10px;
+  background: #C8B8D3;
+  font-size: 1.25em;
+}
 
 /* Footer */
 footer {
