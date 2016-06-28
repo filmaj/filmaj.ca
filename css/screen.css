@@ -78,6 +78,10 @@ section > h2 {
   font-size: 1.25em;
 }
 
+section > ul {
+  clear: both;
+}
+
 /* Footer */
 footer {
   clear:both;
