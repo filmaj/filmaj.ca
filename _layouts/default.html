@@ -9,14 +9,23 @@
   </head>
   <body>
     <header>
-      <h1><a href="/">Fil Maj</a></h1>
-      <a href="/" class="avatar"><img src="http://en.gravatar.com/avatar/82d945860586e7591638b1385f18c4bd" alt="Fil's picture" /></a>
-      <nav class="whiteout">
-        <a href="http://twitter.com/filmaj"><img src="/img/twitter-icon.png" alt="Fil's Twitter profile" /></a>
-        <a href="http://github.com/filmaj"><img src="/img/github_32.png" alt="Fil's GitHub profile" /></a>
-        <a href="/cv.html">CV</a>
-        <a href="/talks.html">Talks</a>
-      </nav>
+      <div>
+        <a href="/" class="avatar"></a>
+        <nav id="social-nav" class="row">
+          <a href="https://twitter.com/filmaj" id="twitter-icon"></a>
+          <a href="https://github.com/filmaj" id="github-icon"></a>
+          <a href="https://www.flickr.com/photos/44056739@N07" id="flickr-icon"></a>
+          <a href="https://www.linkedin.com/in/fil-maj-b0a4419" id="linkedin-icon"></a>
+        </nav>
+      </div>
+      <div>
+        <a href="/" class="name">Fil Maj</a>
+        <nav id="site-nav">
+          <a href="/resume.html">Resume</a>
+          <a href="/presentations.html">Presentations</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
     </header>
     <section>
       {{ content }}
