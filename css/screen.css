@@ -35,9 +35,16 @@ section, header, nav, div {
 header {
   flex-direction: row;
 }
-
 nav a {
   flex-wrap: wrap;
+}
+#site-nav a {
+  font-size:1.25em;
+}
+#site-nav i {
+  position:relative;
+  top:6px;
+  margin-right:2px;
 }
 #social-nav {
   padding:0 10px 0 6px;
@@ -88,11 +95,15 @@ header a.avatar {
   height:136px;
 }
 header a.name {
-  font-size:2em;
+  font-size:2.5em;
 }
 
 /* Content */
 section {
   flex-wrap: wrap;
   padding: 5px;
+  font-size:1.25em;
+}
+section p {
+  margin:0.25em;
 }
