@@ -7,6 +7,55 @@ html, body {
   background-color: #D4DCE7;
   margin:0;
 }
+h1 {
+  font-size: 1.75em;
+}
+h2 {
+  font-size: 1.5em;
+}
+body {
+  font-size: 1.25em;
+}
+i.material-icons {
+  position:relative;
+  top:2px;
+}
+@media (max-width: 320px) { 
+  h1 {
+    font-size: 1.25em;
+  }
+  h2 {
+    font-size: 1em;
+  }
+  body {
+    font-size: 0.8em;
+  }
+  i.material-icons {
+    font-size:18px;
+    top:4px;
+  }
+}
+@media (min-width: 320px) and (max-width: 600px) { 
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.25em;
+  }
+  body {
+    font-size: 1em;
+  }
+  i.material-icons {
+    font-size:20px;
+  }
+}
+
+@media (min-width: 800px) { 
+  body {
+    margin: 0 auto;
+    width: 750px;
+  }
+}
 
 a {
   /*transition*/
@@ -102,8 +151,39 @@ header a.name {
 section {
   flex-wrap: wrap;
   padding: 5px;
-  font-size:1.25em;
 }
 section p {
   margin:0.25em;
+}
+section h1 {
+  margin:5px;
+}
+section h2 {
+  margin: 0 10px;
+}
+section h1 i {
+  position:relative;
+  top:2px;
+}
+/* Resume */
+.bar-track, .bar-fill {
+  border-radius: 3px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+}
+.bar-track {
+  height:25px;
+  background: #FBF4E3;
+  color:#FBF4E3;
+  margin: 1px 5px;
+}
+.bar-fill {
+  width:0%;
+  height:25px;
+  text-align:center;
+  background: #515C6B;
+}
+#toggle-btn {
+  align-self:flex-end; 
+  position:relative;
+  top:10px;
 }

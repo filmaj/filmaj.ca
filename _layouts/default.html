@@ -11,6 +11,7 @@
   <body>
     <header>
       <div>
+        <!-- thanks to cube-drone.com artist @classam for my rad avatar! -->
         <a href="/" class="avatar"></a>
         <nav id="social-nav" class="row">
           <a href="https://twitter.com/filmaj" id="twitter-icon"></a>
@@ -19,13 +20,20 @@
           <a href="https://www.linkedin.com/in/fil-maj-b0a4419" id="linkedin-icon"></a>
         </nav>
       </div>
-      <div>
+      <div style="width:100%;">
         <a href="/" class="name">Fil Maj</a>
         <nav id="site-nav">
           <a href="/resume"><i class="material-icons">rowing</i>Resume</a>
           <a href="/talks"><i class="material-icons">screen_share</i>Talks</a>
           <a href="/contact"><i class="material-icons">textsms</i>Contact</a>
         </nav>
+          <a id="toggle-btn" href="#" onclick="return toggle();" style="visibility:
+              {% if page.resume %}
+                visible
+              {% else %}
+                hidden
+              {% endif %}
+;"><i class="material-icons">timeline</i><i class="material-icons">swap_vert</i></a>
       </div>
     </header>
     <section>
@@ -33,6 +41,17 @@
     </section>
   </body>
   <script type="text/javascript">
+    function toggle() {
+        var tl = document.getElementById("resume-timeline");
+        var work_tl = document.getElementById("work-timeline");
+        if (tl.style.flexDirection == 'column-reverse') {
+            tl.style.flexDirection = 'column';
+            work_tl.style.flexDirection = 'column';
+        } else {
+            tl.style.flexDirection = 'column-reverse';
+            work_tl.style.flexDirection = 'column-reverse';
+        }
+    }
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-27149382-1']);
     _gaq.push(['_trackPageview']);
