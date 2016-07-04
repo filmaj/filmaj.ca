@@ -28,12 +28,12 @@
           <a href="/contact"><i class="material-icons">textsms</i>Contact</a>
         </nav>
           <a id="toggle-btn" href="#" onclick="return toggle();" style="visibility:
-              {% if page.resume %}
+              {% if page.has_timeline %}
                 visible
               {% else %}
                 hidden
               {% endif %}
-;"><i class="material-icons">timeline</i><i class="material-icons">swap_vert</i></a>
+;"><i class="material-icons">autorenew</i></a>
       </div>
     </header>
     <section>
@@ -41,15 +41,22 @@
     </section>
   </body>
   <script type="text/javascript">
-    function toggle() {
-        var tl = document.getElementById("resume-timeline");
-        var work_tl = document.getElementById("work-timeline");
-        if (tl.style.flexDirection == 'column-reverse') {
-            tl.style.flexDirection = 'column';
-            work_tl.style.flexDirection = 'column';
+    // timeline-flipper method for the toggle button
+    // used on both resume and talks pages
+    function flip(el) {
+        if (el.style.flexDirection == "column-reverse") {
+            el.style.flexDirection = "column";
         } else {
-            tl.style.flexDirection = 'column-reverse';
-            work_tl.style.flexDirection = 'column-reverse';
+            el.style.flexDirection = "column-reverse";
+        }
+    }
+    function toggle() {
+        var resume = document.getElementById("resume-timeline");
+        if (resume) {
+            flip(resume);
+            flip(document.getElementById("work-timeline"));
+        } else {
+            flip(document.getElementById("talks-timeline"));
         }
     }
     var _gaq = _gaq || [];

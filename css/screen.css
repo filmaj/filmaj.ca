@@ -166,6 +166,9 @@ section h1 i {
   top:2px;
 }
 /* Resume */
+#resume-timeline {
+  flex-direction:column-reverse;
+}
 .bar-track, .bar-fill {
   border-radius: 3px;
   box-shadow: inset 0 0 5px rgba(0,0,0,.2);
