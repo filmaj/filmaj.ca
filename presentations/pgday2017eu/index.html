@@ -311,7 +311,7 @@
                     <h2>Essential Unit Testing Tool: Mocking</h2>
                     <p class="fragment">Recall that unit testing relies on isolating our logic to small units.</p>
                     <p class="fragment">This can make executing code that is <strong>highly coupled</strong> to other units difficult.</p>
-                    <p class="fragment"><strong>Mocking</strong> is a technique where we use software dummies to stand-in for other units or dependencies or even function parameters in order to keep tests <em>focussed</em>. </p>
+                    <p class="fragment"><strong>Mocking</strong> is a technique where we use software dummies to stand-in for other units, dependencies or even function parameters in order to keep tests <em>focussed</em>. </p>
                     <aside class="notes">
                         also called stubbing. lets look at the second set of tests that depict this technique, in increasingly more complex unit tests. the second set of tests exercise the javascript function responsible for doing the search: it'll validate the input, make an API call to spotify to search for music, delegate rendering of the results to another function, and finally handle any errors during the call to the spotify api. That's at least four tests, if not more.
                     </aside>
@@ -322,26 +322,47 @@
                     <p>... and UI testing...</p>
                     <p>.. and other terms - but the idea is always the same:</p>
                     <h3 class="fragment">Treat the software-under-test as a single, whole package, and interact with it as your customers do.</h3>
+                    <aside class="notes">
+                        remember the assumption that failures are caused by your code, first and foremost? while that may be true 90% of the time, there are times when that assumption does not hold. where the interactions between the dependencies of your code, your code itself, and anything else cause weird behaviour. 
+                    </aside>
+                </section>
+                <section>
+                    <h2>End-to-End Testing, cont.</h2>
+                    <p>This kind of testing used to be done <strong>manually</strong>.</p>
+                    <img src="images/manual-testing.gif" />
+                </section>
+                <section>
+                    <h2>End-to-End Testing, cont.</h2>
+                    <p>What we want is an <strong>automated</strong> way to replace UI interactions.</p>
+                    <p>In that sense, it is the opposite of unit testing with <em>mocking</em>:</p>
+                    <ul>
+                        <li class="fragment">No disassembling our code into small <em>units</em> we test individually - instead we test the entire application.</li>
+                        <li class="fragment">No use of mocks - bring on the I/O.</li>
+                    </ul>
+                    <aside class="notes">
+                        integration testing treats your entire application as one giant package, with everything included: UI, integrations with other API/services. in other words, _nothing_ is mocked - which is completely the opposite from what we did during unit testing. that introduces its own challenges, but the benefit is we are testing and playing with a version of the software that is identical, or very close, to what our users will be using.
+                        HEAVY! expensive, slow. if you dont need to do integration testing, dont do it. generally, the larger the project and the longer it has been around, the more likely you need integration testing.
+                    </aside>
                 </section>
 
                 <section>
-                    <h2>Selenium For The Win</h2>
+                    <h2>Selenium</h2>
                     <h4>(aka WebDriver)</h4>
                     <p>Selenium is a tool that enables automation. It tells other software to do things for you.</p>
                     <aside class="notes">
                         who has heard of selenium? uses it?
+                        for web-based software projects, there is a web standard called WebDriver that allows us to automate UIs. it provides a way to load URLs, tap/click elements, and validate that the web app is in a particular state. not that different from our JS unit tests, except that we’re no longer isolating the JS
                     </aside>
                 </section>
 
                 <section>
                     <h2>What is WebDriver?</h2>
                     <p class="fragment">It is commonly referred to as Selenium (for maximum confusion)</p>
-                    <p class="fragment">It is a <strong>specification</strong>.</p>
-                    <p class="fragment">The spec is for an HTTP API.</p>
-                    <p class="fragment">This HTTP API serves as an <em>abstraction</em> over proprietary, closed and/or differing automation APIs.</p>
+                    <p class="fragment">It is a <strong>specification</strong> for an HTTP API.</p>
+                    <p class="fragment">This HTTP API serves as an <em>abstraction</em> over proprietary, closed and/or differing UI automation APIs.</p>
                     <p class="fragment">Free and open-source.</p>
                     <aside class="notes">
-                        anyone heard of phonegap? its a wrapper around web tech, allowing you to package html, css and js into a mobile app binary. it provides native APIs via a javascript abstraction layer. selenium works in the same way!
+                        where phonegap provides a JS API for various native device functionalities, selenium works in the _exact_ same way for automation APIs.
                     </aside>
                 </section>
 
@@ -349,24 +370,87 @@
                     <h2 style="color:black;">How Selenium Works</h2>
                     <img src="images/selenium_diagram.png" />
                     <aside class="notes">
+                        very briefly cover how this works, and we will segue into how we will use it.
                         four components: the thing you want to automate, the driver (an API to automate the thing), the selenium server, which is an abstraction over the driver, and your test, which speaks to the server.
                     </aside>
-                </section>
-
-                <section>
-                    <h2>Where Does It Work?</h2>
-                    <p class="fragment">Desktop browsers (the initial Selenium target)</p>
-                    <p class="fragment">Today, thanks to Appium, all kinds of mobile goodness, too!</p>
                 </section>
 
                 <section data-background="images/appium.png" data-background-size="400px">
                     <div style="background-color:rgba(0,0,0,0.5);">
                         <h3>What is Appium?</h3>
                         <p class="fragment">An implementation (+extension) of the WebDriver specification...</p>
-                        <p class="fragment">... designed specifically for mobile (Android, iOS, FirefoxOS) platforms...</p>
+                        <p class="fragment">... designed specifically for mobile (Android, iOS) platforms...</p>
                         <p class="fragment">... allowing automation of native, hybrid and web applications.</p>
-                        <p class="fragment">srsly, mix-and-matching native/web automation is an amazingly powerful tool for all kinds of mobile products</p>
                     </div>
+                </section>
+
+                <section>
+                    <h2>Back to our App...</h2>
+                    <img src="images/nightwatch.png" />
+                    <p>Similar to Karma for unit testing, Nightwatch is a test runner purpose-built for integration testing in a browser.</p>
+                    <aside class="notes">We will use Nightwatch to glue our integration testing setup together</aside>
+                </section>
+
+                <section data-background="images/nightwatch.png">
+                    <div style="background-color:rgba(0,0,0,0.5);">
+                        <p>Let's set it up.</p>
+                        <p><a href="http://nightwatchjs.org/gettingstarted">http://nightwatchjs.org/gettingstarted</a></p>
+                    </div>
+                    <aside class="notes">
+                        We will use Nightwatch to glue our integration testing setup together
+                        first, let’s install it, and something called a selenium-server and chromedriver: npm install nightwatch selenium-server chromedriver —save-dev.
+                        our first integration testing environment will be a browser (chrome, in this case). and, just like how in our development loop / workflow, we test
+                        often using `phonegap serve` and loading up the browser, we will leverage this same approach to run integration tests in chrome.
+                        this will be a stepping stone to running these integration tests on mobile.
+                        lets go over the nightwatch config to see whats in there. lets cover the basic setup, the selenium server and chromedriver bits, and the default test environment.
+                    </aside>
+
+                </section>
+                <section>
+                    <p>We need one more bit of glue: a <code>runner.js</code> script.</p>
+                    <p class="fragment">It will handle running <code>phonegap serve</code> for us, and kicking off nightwatch. Let's take a look.</p>
+                    <aside class="notes">
+                        we also need to write what im calling a ‘runner’ script - something that gives us the flexbility to set up the testing environment in such a way that it works for our phonegap app. in particular, the runner script will run `phonegap serve` for us, and once its running, only then will it kick off nightwatch.
+                        it will also help run some extra processes to test inside mobile emulators, but i will show that off in a bit.
+                    </aside>
+                </section>
+                <section>
+                    <h2>Web Integration Test</h2>
+                    <p>Let's take a look at what integration tests in this case look like.</p>
+                    <aside class="notes">
+                       writing our first test. simple: load the url, make sure the find tracks button is present.
+                    </aside>
+                </section>
+                <section>
+                    <h2>Let's give it a shot!</h2>
+                </section>
+                <section>
+                    <h2>What about Mobile?</h2>
+                    <p>That Appium thing we talked about earlier - how do we get it to run our tests in a mobile environment?</p>
+                </section>
+                <section data-background="images/appium.png" data-background-size="400px">
+                    <div style="background-color:rgba(0,0,0,0.5);">
+                        <h3>Appium</h3>
+                        <p>But! The browser is not the same as a PhoneGap (hybrid) application:</p>
+                        <p class="fragment">Don't need to manage URLs.</p>
+                        <p class="fragment">Differentiating between "web" vs. "native" contexts.</p>
+                    </div>
+                    <aside class="notes">
+                       even though the automation API is identical, the app running inside a browser vs running inside a native app container are two vastly different contexts. two main differences:
+                            1. there is no concept of URL loading in a cordova app. so explicitly loading the URL is not needed, and in fact would probably fail.
+                            2. phonegap apps are native apps, but your app lives inside what is called a webview within the native application. so when automating the UI of a phonegap app, we need to have the tests find this webview and _change the context of the UI automation to the webview.
+                    </aside>
+                </section>
+                <section data-background="images/appium.png" data-background-size="400px">
+                    <div style="background-color:rgba(0,0,0,0.5);">
+                        <h3>Appium, cont.</h3>
+                        <p>We can easily factor out this difference in environments using a <code>before</code> clause in our tests. Let's take a look.</p>
+                    </div>
+                    <aside class="notes">
+                        so we need to tweak the tests such that the browser context and the native app context are both handled. we can do so by factoring out these differences into test scripts that run before/after all the tests, or each of the tests.
+                        lets also show the different mobile environments we are testing in the nightwatch config, and how our runner script will start appium for us. note how we are pointing our test runner to the final built native binaries - we are literally testing what we eventuall ship to our customers.
+                        worth noting that we probably want to build a new mobile binary before running the tests - to package up any changes and test those, too.
+                    </aside>
                 </section>
 
                 <section data-background="images/hacking.jpg">
