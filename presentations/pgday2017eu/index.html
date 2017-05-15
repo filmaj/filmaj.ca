@@ -165,10 +165,9 @@
                     <h3>Continuous Integration</h3>
                     <img src="images/hudson.png" />
                     <h4>Next-Level Testing Power Up: The Holy Grail</h4>
-                    <p class="fragment">It is Two Things:</p>
                     <p class="fragment">Your tests being <em>automated</em> - fire and forget</p>
                     <p class="fragment">Your automated test suite running <em>on every commit</em>.</p>
-                    <p class="fragment">In this workshop, I want to work through testing an app that has no tests, and then slowly move towards setting up CI for this app.</p>
+                    <p class="fragment">Workshop Goal: instrument a PhoneGap app a) with tests and then b) automate them</p>
                 </section>
 
                 <section>
@@ -207,10 +206,28 @@
                     <aside class="notes">
                         should be focused on JUST the logic of your units. so, really disassembling your app into smaller parts we can test individually.
                         its expected that the programming languages / frameworks / programs you leverage as dependencies that make up your app (phoengap, cordova, the browser) are well tested and works. the assumption is that the main contributors to errors/failure in your app is YOUR code. so focus on testing YOUR code first and foremost.
-                        no i/o (file/network)!!!!! if your unit test does network calls, its not a unit test.
                     </aside>
                 </section>
 
+                <section data-background="images/unit-test-isolation.png">
+                    <h2>Unit Testing, cont.</h2>
+                    <p>As the first line of defense against bugs and regressions, we want unit tests to:</p>
+                    <ul>
+                        <li class="fragment">Be easy to run, since we will run them all the time during development.</li>
+                        <li class="fragment">Be fast. Slow unit tests make me less likely to run them.</li>
+                    </ul>
+                    <aside class="notes">
+                        the second part (fast unit tests) actually enforces the principle of isolation: any kind of i/o will slow your test.
+                    </aside>
+                </section>
+
+                <section data-background="images/unit-test-isolation.png">
+                    <h2>How Not to Unit Test</h2>
+                    <img src="images/unit-test-death.png" />
+                    <aside class="notes">
+                        no i/o (file/network)!!!!! if your unit test does network calls, its not a unit test, because we violate the principle of isolation.
+                    </aside>
+                </section>
                 <section data-background="images/unit-test-isolation.png">
                     <h2>Unit Testing a PhoneGap Application</h2>
                     <p class="fragment">A PhoneGap app is composed of HTML, JavaScript and CSS.</p>
@@ -221,10 +238,13 @@
                 <section>
                     <h2>Quick Look at Star Track JavaScript</h2>
                     <p><a href="https://github.com/phonegap/phonegap-app-star-track/blob/master/www/js/my-app.js">https://github.com/phonegap/phonegap-app-star-track/blob/master/www/js/my-app.js</a></p>
+                    <aside class="notes">
+                        this is a single-page app, and all of the app's logic is contained within a single JS file. if your app's source is split among multiple files, the same approach I will be dtailing applies to you, too. the single-js-file scenario is generally trickier to test properly than a more modular approach.
+                    </aside>
                 </section>
 
                 <section>
-                    <h2>So How Do We Test This?</h2>
+                    <h2>So How Do We Unit Test This?</h2>
                     <p>Three requirements:</p>
                     <ol>
                         <li class="fragment">We need an environment where we can load our application's JavaScript and execute it.</li>
@@ -235,7 +255,7 @@
 
                 <section>
                     <img src="images/karma-banner.png" style="border:0"/>
-                    <p>A versatile test runner that meets our three requirements, and works with any testing library.</p>
+                    <p>A versatile JavaScript test runner that meets our three requirements, and works with any testing library.</p>
                     <p><a href="karma-runner.github.io">karma-runner.github.io</a></p>
                     <p>Refer to Karma's site for installation, or just jump straight to my fork of the Star Track app.</p>
                 </section>
@@ -244,6 +264,7 @@
                     <img src="images/karma-banner.png" style="border:0"/>
                     <h2>Requirement 1</h2>
                     <h4>Environment for our JavaScript</h4>
+                    <p class="fragment">To start, follow the installation guide to get all the Karma pieces in place - let's run through it quickly.</p>
                     <p class="fragment">Let me walk through the Karma config to explain how Karma loads our app's JS.</p>
                     <aside class="notes">
                         cover basepath, files, browsers, autowatch and single run. we will turn autowatch on and single run off so that we can
@@ -253,7 +274,7 @@
                         FIRST - just like in the browser! similarly, our tests rely on our own app code, so our tests get included last.
                         another common gotcha is coupling the logic (JS) to the view (HTML/document). some simple tweaks to the basic structure of our app let us
                         decouple the javascript from the document almost entirely. let me show you how that's done in the star track app case - there is a single init()
-                        call that kicks off finding DOM elements, binding to their events, that kinda stuff. 
+                        call that kicks off finding DOM elements, binding to their events, that kinda stuff.
                     </aside>
                 </section>
 
