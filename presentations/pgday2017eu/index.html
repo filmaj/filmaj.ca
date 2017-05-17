@@ -539,7 +539,8 @@
                     <img src="images/codecov.png" />
                     <p>A measure of how much of your code is being executed by your tests.</p>
                     <p class="fragment">Don't waste your time forcing this to 100%! It's just another data point. Good goal: continuous improvement, make it generally go up, not down.</p>
-                    <p class="fragment">Let me show you how to hook it up to Karma and see it in action. </p>
+                    <p class="fragment">Let me show you how to hook it up to Karma and see it in action.</p>
+                    <p class="fragment">You can also easily hook it into your PR process, just like Travis, using <a href="http://codecov.io">http://codecov.io</a>.</p>
                     <aside class="notes">
                         another useful little extra tool you can hook into your dev cycle is code coverage reporting. its a metrics that tells you what % of your code your tests are exercising.
                         its a rough metric, and doesnt tell you much other than how much of your code you are testing. dont chase this metric too much! code coverage does not tell you about the quality of your tests, just how much of your code is being exercised. human judgment still needed. i find it is useful to know how code coverage _changes_ as code changes. does a pull request drop code coverage, or increase it? if coverage is dropped, perhaps thats one thing to look at in the PR: does it have sufficient test coverage? were tests written at all?
