@@ -174,6 +174,7 @@
                     <h4>Next-Level Testing Power Up: The Holy Grail</h4>
                     <p class="fragment">Your tests being <em>automated</em> - fire and forget</p>
                     <p class="fragment">Your automated test suite running <em>on every commit</em>.</p>
+                    <p class="fragment">You get feedback very quickly about your changes - did they break the tests?</p>
                     <p class="fragment">Workshop Goal: instrument a PhoneGap app a) with tests and then b) automate them</p>
                 </section>
 
@@ -206,10 +207,12 @@
                 </section>
 
                 <section data-background="images/unit-test-isolation.png">
-                    <h2>Unit Testing</h2>
-                    <p>Testing the building blocks that make up your app, one block (or <em>unit</em>) at a time.</p>
-                    <p class="fragment">The driving assumption is that the majority of quality problems in your application come from <em>your</em> code/logic.</p>
-                    <h3 class="fragment">Therefore, we focus unit tests on your application's logic.</h3>
+                    <div style="background-color:rgba(0,0,0,0.75);">
+                        <h2>Unit Testing</h2>
+                        <p>Testing the building blocks that make up your app, one block (or <em>unit</em>) at a time.</p>
+                        <p class="fragment">The driving assumption is that the majority of quality problems in your application come from <em>your</em> code/logic.</p>
+                        <h3 class="fragment">Therefore, we focus unit tests on your application's logic.</h3>
+                    </div>
                     <aside class="notes">
                         should be focused on JUST the logic of your units. so, really disassembling your app into smaller parts we can test individually.
                         its expected that the programming languages / frameworks / programs you leverage as dependencies that make up your app (phoengap, cordova, the browser) are well tested and works. the assumption is that the main contributors to errors/failure in your app is YOUR code. so focus on testing YOUR code first and foremost.
@@ -217,29 +220,36 @@
                 </section>
 
                 <section data-background="images/unit-test-isolation.png">
-                    <h2>Unit Testing, cont.</h2>
-                    <p>As the first line of defense against bugs and regressions, we want unit tests to:</p>
-                    <ul>
-                        <li class="fragment">Be easy to run, since we will run them all the time during development.</li>
-                        <li class="fragment">Be fast. Slow unit tests make me less likely to run them.</li>
-                    </ul>
+                    <div style="background-color:rgba(0,0,0,0.75);">
+                        <h2>Unit Testing, cont.</h2>
+                        <p>As the first line of defense against bugs and regressions, we want unit tests to:</p>
+                        <ul>
+                            <li class="fragment">Be easy to run, since we will run them all the time during development.</li>
+                            <li class="fragment">Be fast. Slow unit tests make me less likely to run them.</li>
+                        </ul>
+                    </div>
                     <aside class="notes">
                         the second part (fast unit tests) actually enforces the principle of isolation: any kind of i/o will slow your test.
                     </aside>
                 </section>
 
                 <section data-background="images/unit-test-isolation.png">
-                    <h2>How Not to Unit Test</h2>
-                    <img src="images/unit-test-death.png" />
+                    <div style="background-color:rgba(0,0,0,0.75);">
+                        <h2>How Not to Unit Test</h2>
+                        <img src="images/unit-test-death.png" />
+                    </div>
                     <aside class="notes">
+                        the previous two principles around unit tests leads certain constraints that are helpful to hold yourself to
                         no i/o (file/network)!!!!! if your unit test does network calls, its not a unit test, because we violate the principle of isolation.
                     </aside>
                 </section>
                 <section data-background="images/unit-test-isolation.png">
-                    <h2>Unit Testing a PhoneGap Application</h2>
-                    <p class="fragment">A PhoneGap app is composed of HTML, JavaScript and CSS.</p>
-                    <p class="fragment">The logic in your code mostly exists in JavaScript.</p>
-                    <h4 class="fragment">So for your PhoneGap application, we will be unit testing JavaScript.</h4>
+                    <div style="background-color:rgba(0,0,0,0.75);">
+                        <h2>Unit Testing a PhoneGap Application</h2>
+                        <p class="fragment">A PhoneGap app is composed of HTML, JavaScript and CSS.</p>
+                        <p class="fragment">The logic in your code mostly exists in JavaScript.</p>
+                        <h4 class="fragment">So for your PhoneGap application, we will be unit testing JavaScript.</h4>
+                    </div>
                 </section>
 
                 <section>
@@ -263,7 +273,7 @@
                 <section>
                     <img src="images/karma-banner.png" style="border:0"/>
                     <p>A versatile JavaScript test runner that meets our three requirements, and works with any testing library.</p>
-                    <p><a href="karma-runner.github.io">karma-runner.github.io</a></p>
+                    <p><a href="http://karma-runner.github.io">karma-runner.github.io</a></p>
                     <p>Refer to Karma's site for installation, or just jump straight to my fork of the Star Track app.</p>
                 </section>
 
@@ -459,14 +469,50 @@
                         worth noting that we probably want to build a new mobile binary before running the tests - to package up any changes and test those, too.
                     </aside>
                 </section>
+
+                <section data-background="images/appium.png" data-background-size="400px">
+                    <div style="background-color:rgba(0,0,0,0.5);">
+                        <h3>Let's Give it a Run!</h3>
+                    </div>
+                </section>
+
                 <section>
-                    CI title slide
+                    <h3>Continuous Integration</h3>
+                    <p>Classic software development lifecycle:</p>
+                    <ol>
+                        <li>Develop - <strong>manual</strong></li>
+                        <li>Test - <strong>manual</strong></li>
+                        <li>Release - <strong>manual</strong></li>
+                    </ol>
+                </section>
+                <section>
+                    <h3>Continuous Integration, cont.</h3>
+                    <p>Continuous integration-powered development lifecycle:</p>
+                    <ol>
+                        <li>
+                            <ul>
+                                <li>Develop - <strong>manual</strong></li>
+                                <li>Test - <strong>automated</strong> - run <em>while</em> you develop</li>
+                            </ul>
+                        </li>
+                        <li>Release - <strong>manual</strong></li>
+                    </ol>
                     <aside class="notes">
-                        the idea is to automate the _running_ of all of these things we’ve talked about today on every change we make to our app. ideally the people involved in app development are running all these awesome testing tools we’ve talked about locally. but in a big team, sometimes we forget to do that, or people’s environments are slightly different than our own or our customers’. so investing a little bit of time in automating the running of tests and checks on every commit can go a long way to saving time.
+                        ideally the people involved in app development are running all these awesome testing tools we’ve talked about locally. but in a big team, sometimes we forget to do that, or people’s environments are slightly different than our own or our customers’.
+                        the idea is to automate the _running_ of all of these things we’ve talked about today on every change we make to our app. 
+                        so investing a little bit of time in automating the running of tests and checks on every commit can go a long way to saving time.
+                        the karma unit tests we ran earlier, and its autowatch/autorun features, is a great example of tightening up the development and testing phases of the software development lifecycle, speeding up delivery.
+                        you can take it even one step further and automate the releasing of your application to achieve Continuous Deployment - where every phase of the SDL other than development itself is automated. quite common these days with web applications and services. less so with mobile apps, mostly due to typical app store review processes.
                     </aside>
                 </section>
                 <section>
-                    When should CI run / be triggered?
+                    <h2>CI Details</h2>
+                    <img src="images/branching.png" />
+                    <p>Suggest to automate running your tests and checks on every commit to a couple of different typical source code version control locations:</p>
+                    <ul>
+                        <li class="fragment">On the <code>master</code> branch (or whatever branch used to reflect production or release-candidates)</li>
+                        <li class="fragment">On Pull Request (or ready-to-review) branches</li>
+                    </ul>
                     <aside class="notes">
                        id suggest running the tests on two different code change events/branches/locations:
                          1. master, or whatever branch you use with your team that denotes “what is in production”.
@@ -474,34 +520,34 @@
                        it might seem like overkill, but in git, merge commits can sometimes include unintentional changes, so having one extra run on master over and above a PR can help catch those. PLUS: this is automated. a computer will do this work for us. it is mindless to me and you. all it takes is some compute time in the cloud. so why not?
                     </aside>
                 </section>
-                <section>
-                    Travis
+                <section data-background="images/travis.png" data-background-size="600px">
+                    <div style="background-color:rgba(0,0,0,0.6);">
+                        <h2>Travis</h2>
+                        <p>A simple, free and beautiful service for enhancing software project with automation - perfect for CI!</p>
+                        <p class="fragment">Let's walk through setting up Travis for our app.</p>
+                    </div>
                     <aside class="notes">
+                        who is familiar with Travis?
                         a simple, free, and beautiful tool called travis is free for public repos. let me show you how to set it up. you log into travis with your github, enable travis runs for your repo of choice, tweak some settings (go over them), and then write up a travis.yml file (go over the basics). push those changes up, and travis will start executing the tests for you!
                         if we want to run karma on every change, we have to make sure to run it not in the ‘watch’ mode, like we did in the earlier unit testing section. we want to run it once, and report back.
                         it’s super useful when hook into PRs, too. you get provided that feedback at code-review and code-sharing time.
+                        so lets put together a pull request that _breaks_ the tests, and have travis report it back to us.
                     </aside>
                 </section>
                 <section>
-                    Code Coverage
+                    <h2>Code Coverage</h2>
+                    <img src="images/codecov.png" />
+                    <p>A measure of how much of your code is being executed by your tests.</p>
+                    <p class="fragment">Don't waste your time forcing this to 100%! It's just another data point. Good goal: continuous improvement, make it generally go up, not down.</p>
+                    <p class="fragment">Let me show you how to hook it up to Karma and see it in action. </p>
                     <aside class="notes">
                         another useful little extra tool you can hook into your dev cycle is code coverage reporting. its a metrics that tells you what % of your code your tests are exercising.
-                        its a rough metric, and doesnt tell you much other than how much of your code you are testing. dont chase this metric too much! code coverage does not tell you about the quality of your tests, just how much of your code is being exercised. human judgment still needed.
-                    </aside>
-                </section>
-                <section>
-                    Travis and Code Coverage demos
-                    <aside class="notes">
+                        its a rough metric, and doesnt tell you much other than how much of your code you are testing. dont chase this metric too much! code coverage does not tell you about the quality of your tests, just how much of your code is being exercised. human judgment still needed. i find it is useful to know how code coverage _changes_ as code changes. does a pull request drop code coverage, or increase it? if coverage is dropped, perhaps thats one thing to look at in the PR: does it have sufficient test coverage? were tests written at all?
                         let me show you to get up and running with one such tool kinda already built into karma:
-                         —> demo, npm install karma-coverage codecov —save-dev. editing karma config to show a summary of that on every run.
-                         nice eh? lets also have travis run codecoverage and report it back to us. useful, again, in PRs! lets demo.
+                        —> npm install karma-coverage codecov —save-dev. editing karma config to show a summary of that on every run (via reporter). needs to preprocess your js files (to figure out the coverage metrics). run `npm run unit` and check the report out at the bottom.
+                        you can also have travis run codecoverage and report it back to us. useful, again, in PRs! show .travis.yml.
+                        lets demo.
                     </aside>
-                </section>
-
-                <section data-background="images/appium.png" data-background-size="400px">
-                    <div style="background-color:rgba(0,0,0,0.5);">
-                        <h3>Let's Give it a Run!</h3>
-                    </div>
                 </section>
 
                 <section data-background="images/hacking.jpg">
