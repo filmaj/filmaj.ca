@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Testing PhoneGap Apss</title>
+		<title>Testing PhoneGap Apps</title>
 
 		<meta name="description" content="Testing, mobile and how to automate the labour away">
 		<meta name="author" content="Fil Maj">
@@ -58,12 +58,12 @@
                             <li>Goal: Continuous Integration</li>
                         </ul>
                         </li>
-                        <li>The How (~30 mins)
+                        <li>The How (~45 mins)
                         <ul>
                             <li>Overview of Different Testing Approaches:
                                 <ul>
-                                    <li>Unit Testing (~15 mins)</li>
-                                    <li>UI Testing (~15 mins)</li>
+                                    <li>Unit Testing (~20 mins)</li>
+                                    <li>UI Testing (~20 mins)</li>
                                 </ul>
                             </li>
                             <li>Automating Testing with Continuous Integration</li>
@@ -157,8 +157,15 @@
                     <h2>The Power of Testing</h2>
                     <p>Testing is a safety net.</p>
                     <p>You are future-proofing your product.</p>
-                    <p>It is also a powerful design tool (more on this later).</p>
-                    <p class="fragment">Testing is a <strong>discipline</strong> and is <strong>everyone's responsibility</strong>.</p>
+                    <p class="fragment">It is also a powerful design tool - it lets you reason and formalize your architecture.</p>
+                    <aside class="notes">
+                        weve talked about how testing can help us incrementally improve the quality of our software, and prevent regressions.
+                        but what about testing as a way to shape software in the first place? who has heard of Test Driven Development?
+                        consider how your test suite would evolve differently, and how that shapes your program, if every test added was
+                        from a bug to prevent a regression, vs. a meaningful test describing a high level feature.
+                        "it should not *due to specific bug behaviour*"
+                        "it should interact with module X in this particular way"
+                    </aside>
                 </section>
 
                 <section>
@@ -450,6 +457,44 @@
                         so we need to tweak the tests such that the browser context and the native app context are both handled. we can do so by factoring out these differences into test scripts that run before/after all the tests, or each of the tests.
                         lets also show the different mobile environments we are testing in the nightwatch config, and how our runner script will start appium for us. note how we are pointing our test runner to the final built native binaries - we are literally testing what we eventuall ship to our customers.
                         worth noting that we probably want to build a new mobile binary before running the tests - to package up any changes and test those, too.
+                    </aside>
+                </section>
+                <section>
+                    CI title slide
+                    <aside class="notes">
+                        the idea is to automate the _running_ of all of these things we’ve talked about today on every change we make to our app. ideally the people involved in app development are running all these awesome testing tools we’ve talked about locally. but in a big team, sometimes we forget to do that, or people’s environments are slightly different than our own or our customers’. so investing a little bit of time in automating the running of tests and checks on every commit can go a long way to saving time.
+                    </aside>
+                </section>
+                <section>
+                    When should CI run / be triggered?
+                    <aside class="notes">
+                       id suggest running the tests on two different code change events/branches/locations:
+                         1. master, or whatever branch you use with your team that denotes “what is in production”.
+                         2. pull requests. PRs are a medium in which someone signals intent to change the software - perfect opportunity to run and report test results to.
+                       it might seem like overkill, but in git, merge commits can sometimes include unintentional changes, so having one extra run on master over and above a PR can help catch those. PLUS: this is automated. a computer will do this work for us. it is mindless to me and you. all it takes is some compute time in the cloud. so why not?
+                    </aside>
+                </section>
+                <section>
+                    Travis
+                    <aside class="notes">
+                        a simple, free, and beautiful tool called travis is free for public repos. let me show you how to set it up. you log into travis with your github, enable travis runs for your repo of choice, tweak some settings (go over them), and then write up a travis.yml file (go over the basics). push those changes up, and travis will start executing the tests for you!
+                        if we want to run karma on every change, we have to make sure to run it not in the ‘watch’ mode, like we did in the earlier unit testing section. we want to run it once, and report back.
+                        it’s super useful when hook into PRs, too. you get provided that feedback at code-review and code-sharing time.
+                    </aside>
+                </section>
+                <section>
+                    Code Coverage
+                    <aside class="notes">
+                        another useful little extra tool you can hook into your dev cycle is code coverage reporting. its a metrics that tells you what % of your code your tests are exercising.
+                        its a rough metric, and doesnt tell you much other than how much of your code you are testing. dont chase this metric too much! code coverage does not tell you about the quality of your tests, just how much of your code is being exercised. human judgment still needed.
+                    </aside>
+                </section>
+                <section>
+                    Travis and Code Coverage demos
+                    <aside class="notes">
+                        let me show you to get up and running with one such tool kinda already built into karma:
+                         —> demo, npm install karma-coverage codecov —save-dev. editing karma config to show a summary of that on every run.
+                         nice eh? lets also have travis run codecoverage and report it back to us. useful, again, in PRs! lets demo.
                     </aside>
                 </section>
 
