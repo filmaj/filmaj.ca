@@ -11,12 +11,18 @@ Leveraging all AWS.
 
 ## DNS
 
-Route53
+> AWS Route53
 
 ## CDN
 
-Cloudfront
+> AWS Cloudfront
 
 ## Static Site Hosting
 
-S3
+> AWS S3
+
+- There's a filmaj.ca bucket configured for static hosting, with public GET permissions on it.
+
+# Automation
+
+Leveraging Travis to build and upload the site to S3.
