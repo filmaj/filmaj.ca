@@ -5,7 +5,7 @@ html, body {
   font-family: 'Merriweather', serif;
   color: black;
   background-color: #D4DCE7;
-  margin:0 auto;
+  margin: 0 auto;
 }
 h1 {
   font-family: 'Open Sans', sans-serif;
@@ -19,13 +19,13 @@ body {
   font-size: 1.25em;
 }
 #site-nav a {
-  font-size:1.25em;
+  font-size: 1.25em;
 }
 i.material-icons {
-  position:relative;
-  top:2px;
+  position: relative;
+  top: 2px;
 }
-@media (max-width: 320px) { 
+@media (max-width: 320px) {
   h1 {
     font-size: 1.25em;
   }
@@ -36,14 +36,14 @@ i.material-icons {
     font-size: 0.8em;
   }
   i.material-icons {
-    font-size:18px;
-    top:4px;
+    font-size: 18px;
+    top: 4px;
   }
   #site-nav a {
     font-size: 1em
   }
 }
-@media (min-width: 320px) and (max-width: 600px) { 
+@media (min-width: 320px) and (max-width: 600px) {
   h1 {
     font-size: 1.5em;
   }
@@ -54,7 +54,7 @@ i.material-icons {
     font-size: 1em;
   }
   i.material-icons {
-    font-size:20px;
+    font-size: 20px;
   }
   #site-nav a {
     font-size: 1em
@@ -64,12 +64,12 @@ i.material-icons {
 a {
   /*transition*/
   transition: all 0.2s ease;
-  color:#5A4815; /* it's my hair colour in my avatar, teehee */
+  color: #5A4815; /* it's my hair colour in my avatar, teehee */
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 /* Layout */
@@ -84,7 +84,7 @@ section, header, nav, div {
   flex-direction: row;
 }
 
-/* Header/Navigation */ 
+/* Header/Navigation */
 header {
   flex-direction: row;
   margin: 0 auto;
@@ -93,62 +93,62 @@ nav a {
   flex-wrap: wrap;
 }
 #site-nav i {
-  position:relative;
-  top:6px;
-  margin-right:2px;
+  position: relative;
+  top: 6px;
+  margin-right: 2px;
 }
 #social-nav {
-  padding:0 10px 0 6px;
+  padding: 0 10px 0 6px;
 }
 #social-nav a {
   -webkit-filter: brightness(0%);
   filter: brightness(0%);
-  background-size:contain;
+  background-size: contain;
   margin: 0 auto;
 }
 
 a#github-icon {
-  width:26px;
-  height:26px;
+  width: 26px;
+  height: 26px;
   background-image: url(/img/github_32.png);
-  margin-top:2px;
-  margin-left:0;
+  margin-top: 2px;
+  margin-left: 0;
 }
 a#twitter-icon {
-  width:32px;
-  height:32px;
+  width: 32px;
+  height: 32px;
   background-image: url(/img/twitter-icon.png);
-  margin-right:0;
+  margin-right: 0;
 }
 a#flickr-icon {
-  width:25px;
-  height:25px;
+  width: 25px;
+  height: 25px;
   background-image: url(/img/flickr-icon.png);
   filter: brightness(100%);
   -webkit-filter: brightness(100%);
-  margin-top:2px;
+  margin-top: 2px;
 }
 a#linkedin-icon {
-  width:28px;
-  height:28px;
+  width: 28px;
+  height: 28px;
   background-image: url(/img/linkedin-icon.png);
-  background-position:0px 0px;
-  background-size:37px 28px;
+  background-position: 0px 0px;
+  background-size: 37px 28px;
 }
 
 /*
  * major props to @classam and cube-drone.com creator for my wonderful avatar.
- * fanks budday 
+ * fanks budday
  */
 header a.avatar {
   background-image: url(/img/me/fil.png);
-  width:136px;
-  height:136px;
+  width: 136px;
+  height: 136px;
   margin-left: auto;
 }
 header h1 {
-  font-size:2.5em;
-  margin:0;
+  font-size: 2.5em;
+  margin: 0;
 }
 
 /* Content */
@@ -158,40 +158,40 @@ section {
   max-width: 1000px;
 }
 section p {
-  margin:0.25em;
+  margin: 0.25em;
 }
 section h1 {
-  margin:5px;
+  margin: 5px;
 }
 section h2 {
   margin: 0 10px;
 }
 section h1 i {
-  position:relative;
-  top:2px;
+  position: relative;
+  top: 2px;
 }
 /* Resume */
 #resume-timeline {
-  flex-direction:column-reverse;
+  flex-direction: column-reverse;
 }
 .bar-track, .bar-fill {
   border-radius: 3px;
   box-shadow: inset 0 0 5px rgba(0,0,0,.2);
 }
 .bar-track {
-  height:25px;
+  height: 25px;
   background: #FBF4E3;
-  color:#FBF4E3;
+  color: #FBF4E3;
   margin: 1px 5px;
 }
 .bar-fill {
-  width:0%;
-  height:25px;
-  text-align:center;
+  width: 0%;
+  height: 25px;
+  text-align: center;
   background: #515C6B;
 }
 #toggle-btn {
-  align-self:flex-end; 
-  position:relative;
-  top:10px;
+  align-self: flex-end;
+  position: relative;
+  top: 10px;
 }
