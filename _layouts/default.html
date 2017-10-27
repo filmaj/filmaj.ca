@@ -6,12 +6,17 @@
     <title>{{ page.title }}</title>
     <meta name="author" content="Fil Maj" />
     <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   </head>
   <body>
-    <header>
-      <div>
-        <!-- thanks to cube-drone.com artist @classam for my rad avatar! -->
+    <header class="row">
+      <nav id="site-nav">
+        <h1><a href="/">Fil Maj</a></h1>
+        <a href="/resume"><i class="material-icons">rowing</i>Resume</a>
+        <a href="/talks"><i class="material-icons">screen_share</i>Talks</a>
+        <a href="/contact"><i class="material-icons">textsms</i>Contact</a>
+      </nav>
+      <!-- thanks to cube-drone.com artist @classam for my rad avatar! -->
+      <div class="column">
         <a href="/" class="avatar"></a>
         <nav id="social-nav" class="row">
           <a href="https://twitter.com/filmaj" id="twitter-icon"></a>
@@ -19,20 +24,12 @@
           <a href="https://www.flickr.com/photos/44056739@N07" id="flickr-icon"></a>
           <a href="https://www.linkedin.com/in/fil-maj-b0a4419" id="linkedin-icon"></a>
         </nav>
-      </div>
-      <div style="width:100%;">
-        <a href="/" class="name">Fil Maj</a>
-        <nav id="site-nav">
-          <a href="/resume"><i class="material-icons">rowing</i>Resume</a>
-          <a href="/talks"><i class="material-icons">screen_share</i>Talks</a>
-          <a href="/contact"><i class="material-icons">textsms</i>Contact</a>
-        </nav>
-          <a id="toggle-btn" href="#" onclick="return toggle();" style="visibility:
-              {% if page.has_timeline %}
-                visible
-              {% else %}
-                hidden
-              {% endif %}
+        <a id="toggle-btn" href="#" onclick="return toggle();" style="visibility:
+                {% if page.has_timeline %}
+                  visible
+                {% else %}
+                  hidden
+                {% endif %}
 ;"><i class="material-icons">autorenew</i></a>
       </div>
     </header>
@@ -63,7 +60,7 @@
     _gaq.push(['_setAccount', 'UA-27149382-1']);
     _gaq.push(['_trackPageview']);
     WebFontConfig = {
-        google: { families: [ 'Linden+Hill::latin', 'Fenix::latin' ] }
+        google: { families: [ 'Open Sans:700', 'Merriweather:300,700', 'Material+Icons' ] }
     };
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -72,9 +69,9 @@
       s.parentNode.insertBefore(ga, s);
       var wf = document.createElement('script');
       wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
       wf.type = 'text/javascript'; wf.async = 'true';
       s.parentNode.insertBefore(wf, s);
     })();
   </script>
-</htmL>
+</html>
