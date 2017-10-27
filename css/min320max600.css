@@ -1,0 +1,15 @@
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.2em;
+}
+body {
+  font-size: 1em;
+}
+i.material-icons {
+  font-size: 20px;
+}
+#site-nav a {
+  font-size: 1em
+}

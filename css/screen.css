@@ -25,41 +25,6 @@ i.material-icons {
   position: relative;
   top: 2px;
 }
-@media (max-width: 320px) {
-  h1 {
-    font-size: 1.25em;
-  }
-  h2 {
-    font-size: 1em;
-  }
-  body {
-    font-size: 0.8em;
-  }
-  i.material-icons {
-    font-size: 18px;
-    top: 4px;
-  }
-  #site-nav a {
-    font-size: 1em
-  }
-}
-@media (min-width: 320px) and (max-width: 600px) {
-  h1 {
-    font-size: 1.5em;
-  }
-  h2 {
-    font-size: 1.2em;
-  }
-  body {
-    font-size: 1em;
-  }
-  i.material-icons {
-    font-size: 20px;
-  }
-  #site-nav a {
-    font-size: 1em
-  }
-}
 
 a {
   /*transition*/
