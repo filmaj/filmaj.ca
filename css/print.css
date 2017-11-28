@@ -1,0 +1,32 @@
+#site-nav>a, #site-nav+div {
+  display: none;
+}
+h1, h2 {
+  font-family: 'Open Sans', sans-serif;
+}
+body  {
+  font-family: 'Merriweather', serif;
+  color: black;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+h1 {
+  font=size: 1.75em;
+}
+h2 {
+  font-size: 1.5em;
+}
+i.material-icons {
+  position: relative;
+  top: 4px;
+  left: -2px;
+}
+.bar-holder, .bar-holder div.bar-track {
+  list-style-type: circle;
+  display: list-item;
+}
+.bar-holder {
+  display: none;
+}
