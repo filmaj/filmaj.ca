@@ -128,7 +128,7 @@ header h1 {
 section {
   flex-wrap: wrap;
   padding: 5px;
-  max-width: 1000px;
+  max-width: 750px;
 }
 section p {
   margin: 0.25em;
