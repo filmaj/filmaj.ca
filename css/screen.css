@@ -10,13 +10,16 @@ html, body {
 h1 {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.75em;
+  line-height: 1.25em;
 }
 h2 {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5em;
+  line-height: 1.25em;
 }
 body {
   font-size: 1.25em;
+  line-height: 1.25em;
 }
 #site-nav a {
   font-size: 1.25em;
