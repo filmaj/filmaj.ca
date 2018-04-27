@@ -2,27 +2,31 @@
 html, body {
   display: flex;
   flex-direction: column;
-  font-family: 'Merriweather', serif;
-  color: black;
-  background-color: #D4DCE7;
+  font-family: 'Source Serif Pro', serif;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: white;
   margin: 0 auto;
 }
 h1 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.75em;
   line-height: 1.25em;
 }
 h2 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.5em;
   line-height: 1.25em;
 }
 body {
-  font-size: 1.25em;
-  line-height: 1.25em;
+  font-size: 100%;
+  line-height: 1.56em;
 }
 #site-nav a {
   font-size: 1.25em;
+  color: rgb(0, 0, 0);
+}
+#site-nav a:hover {
+  text-decoration: underline;
 }
 i.material-icons {
   position: relative;
@@ -32,12 +36,13 @@ i.material-icons {
 a {
   /*transition*/
   transition: all 0.2s ease;
-  color: #5A4815; /* it's my hair colour in my avatar, teehee */
+  color: rgb(251, 37, 27);
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 
 /* Layout */
