@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>Adobe's Involvement in Open Source<br/>A Look At The Numbers</h3>
+					<img src="img/fil.png" style="border:none;box-shadow:none;background:none;"/>
+					<p>🍻 Filip Maj</p>
+					<p>🎮 Senior Computer Scientist</p>
+					<p>🌱 Developer Ecosystem</p>
+				</section>
+				<section>
+					<h2>Why is Open Source Involvement Important?</h2>
+				</section>
+				<section data-background-image="img/abhay.png">
+					<h2>Adobe Cloud Platform</h2>
+					<blockquote cite="https://insideadobetv.mediaplatform.com/#!/video/1906/Cloud%20Tech%20All%20Hands%20-%20April%2024,%202018" style="font-size:30px;background:rgba(0,0,0,0.7);">
+						"Four priorities at the highest level. Number one: Cloud Platform. This is one of the biggest bets the company is making. The days of us building siloed stacks are not going to serve us well in the future. Three foundational bets that Adobe made two years ago: multi-cloud, content platform and data platform. Content is uniquely ours, and we cannot afford to have fifteen different content repositories that are disconnected and siloed."  
+					</blockquote>
+					<p>- Abhay Parasnis, CTO, Adobe</p>
+					<aside class="notes">Of the four top-level 2018 priorities Abhay last talked about at the Cloud Tech all hands, Cloud Platform came up first, and note how the word "siloed" was used negatively - twice. That is the entire point in assembling a platform instead of a product: you create a foundation upon which products can be built.</aside>
+				</section>
+				<section>
+					<h3>Why Delineate Platform vs. Product?</h3>
+					<ol>
+						<li class="fragment">⚗️ Value provided is distilled down to its essence - "Content is uniquely ours"</li>
+						<li class="fragment">🏗 A foundation exists for value generation (e.g. product creation and sales) to be opened up to third parties</li>
+					</ol>
+					<p class="fragment">TL;DR: what 🆒 stuff can <em>others</em> build on top of Adobe content, data and services?</p>
+				</section>
+				<section>
+					<h3>Who Do We Care About?</h3>
+					<p class="fragment">Developers, developers, developers</p>
+					<img class="fragment" src="img/ballmer.gif" style="max-height: 450px;" />
+					<aside class="notes">Funnily enough, Steve Ballmer had this figured out long ago!</aside>
+				</section>
+				<section>
+					<h3>Developer Experience Matters</h3>
+					<p>A good experience necessitates:</p>
+					<ul>
+						<li class="fragment">📝 Up-to-date, accurate and tested docs</li>
+						<li class="fragment">🍤 Code samples</li>
+						<li class="fragment">📦 Functional SDKs &amp; Client Libraries</li>
+						<li class="fragment">📞 Responsive support for these assets</li>
+					</ul>
+					<p class="fragment">Why all of this? So that devs can get to “Hello World” fast and start using our platform ASAP</p>
+					<aside class="notes">So if our goal is attract developers to our platform, what do we need to do to bring them on board and have them stick around?</aside>
+				</section>
+				<section>
+					<h3>This Is Not Easy</h3>
+					<p>Keeping these assets up to date and providing support is challenging</p>
+					<aside class="notes">Keeping these assets up to date and providing support is challenging and typically fails</aside>
+				</section>
+				<section>
+					<h3>Open Source Is The Way</h3>
+					<p>👨‍👩‍👧‍👦 The industry-standard way of achieving this is to place these assets in the hands of the developer community</p>
+					<p class="fragment">🚜 Adobe developers end up working elbow-to-elbow with our customers - who are also developers</p>
+					<p class="fragment">🌱 In this way we plant the seeds of a developer ecosystem that is critical to the business</p>
+					<aside class="notes">The industry-standard way of achieving this is to place these assets in the hands of the developer community. These assets, which are in our user's critical path, over time increase in quality merely by being open. Meanwhile, Adobe developers get to interact with our users (remember, who are also developers), gain insight into what is important for them, and can therefore build more value for them. An obvious benefit to the business. These behaviours plant the seeds of our developer ecosystem.</aside>
+				</section>
+				<section>
+					<h3>It Seems That We Understand This</h3>
+					<blockquote cite="https://git.corp.adobe.com/OpenSourceAdvisoryBoard/opensource_submission_process/issues/93#issuecomment-1218859">
+						"We hope [open-sourcing this library we developed internally at Adobe] will increase Adobe presence and visibility in the Machine Learning community as we contribute back to the community. At the same time, this effort will also help with our platform’s adoption."
+					</blockquote>
+					<p><img src="img/wchung.jpeg" style="background: none;border: none;box-shadow: none;max-height: 100px;vertical-align: middle;margin: 10px;" />Wei Chung, Senior Computer Scientist at Adobe</p>
+					<p style="font-size:22px;"><a href="https://git.corp.adobe.com/OpenSourceAdvisoryBoard/opensource_submission_process/issues/93">https://git.corp.adobe.com/OpenSourceAdvisoryBoard/opensource_submission_process/issues/93</a></p>
+				</section>
+				<section>
+					<h3>SO! Measuring Adobe + Open Source</h3>
+					<p>Inspiration was a blog post from 2017 trying to rank companies in Open Source: <a href="https://medium.freecodecamp.org/the-top-contributors-to-github-2017-be98ab854e87">https://medium.freecodecamp.org/the-top-contributors-to-github-2017-be98ab854e87</a>.</p>
+					<p class="fragment">TL;DR: analyze <a href="https://github.com">Github.com</a>'s massive public data via <a href="https://githubarchive.org">githubarchive.org</a>.</p>
+				</section>
+				<section>
+					<h3>56th in 2017</h3>
+					<img src="img/adobe-2017.png" />
+					<aside class="notes">So this person from Google developer relations measured activity of employees of top tech companies on Github, and looked at how many people are active across what number of projects, and how many Github stars these projects are gaining over time. We ended up ranking 56th, with 38 unique contributors on Github across 55 repositories. According to this research, the top three projects in terms of being 'starred' in 2017 were Brackets, source serif pro and CEP resources, with the star numbers next to them.</aside>
+				</section>
+				<section>
+					<h3>Only 38 Adobians active on Github!?</h3>
+					<img src="../../img/funnay/confusion.gif" />
+					<p>That seems wrong, right?</p>
+				</section>
+				<section>
+					<h3>How It Worked</h3>
+					<p>The original approach used Github user's git configuration email, and specifically the domain portion of the email, to associate users to companies.</p>
+					<pre class="fragment">
+						<code data-trim>
+						➜ echo "maj@adobe.com" | pcregrep -o1 "\b[a-zA-Z0-9.-]+@([a-zA-Z0-9.-]+\.[a-zA-Z0-9.-]+)\b"
+						adobe.com
+						</code>
+					</pre>
+					<p class="fragment">... but who puts their company email in their git config, amirite? ✉️</p>
+				</section>
+				<section>
+					<h3>What We Changed</h3>
+					<ol style="font-size:28px;">
+						<li class="fragment">🛒 Every month, we gather all Github usernames that were active that month on Github with at least one commit to a public project - about ~1.3 million usernames.</li>
+						<li class="fragment">🔨 We then pound the Github REST API to pull out the "Company" field from the user's Github profile:<br /><img src="img/profile.png" style="max-height:250px;float:right;"/></li>
+						<li class="fragment">⏰ (this takes about 72 hours)</li>
+						<li class="fragment">🚢 We store these user-company associations in our own SQL DB, and import into Google BigQuery when we need to, for easy cross-referencing with <a href="https://githubarchive.org">githubarchive.org</a> Github activity data</li>
+						<li class="fragment">📦 There's a repository with the details:<br /><a href="https://git.corp.adobe.com/dx/oss-contributors">git.corp.adobe.com/dx/oss-contributors</a></li>
+					</ol>
+				</section>
+				<section>
+					<h3>Give Me The Numbers!</h3>
+				</section>
+				<section>
+					<h3>Number of Contributors by Company, Q1 2018</h3>
+					<img src="img/contributors-2018.png" style="max-height:500px;" />
+					<aside class="notes">Adobe sits at 34th by number of contributors active on Github in the first quarter of 2018, with 115 unique employees active on Github projects that received at least one star in Q1 2018</aside>
+				</section>
+				<section>
+					<h4>Adobe Contributors and Projects, Quarter over Quarter</h4>
+					<img src="img/contributors-repos-qoq.png" style="max-height:450px;" />
+					<aside class="notes">We can see that in terms of sheer number of contributors and breadth of projects contributed to, we peaked in the first half of 2017, then fell off a bit, and have come back with a vengeance in the first quarter of 2018.</aside>
+				</section>
+				<section>
+					<h3>Adobe vs. Top Competitors, Q1 2018</h3>
+					<img src="img/top-projects.png" />
+					<aside class="notes">How do we stack up vs. Salesforce and Apple? And isn't cool that we can take a look and see where our competitors are being active in?.</aside>
+				</section>
+				<section>
+					<h4>What About Individuals at Adobe?</h4>
+					<p>🤗 How can we recognize active Adobians?</p>
+				</section>
+				<section>
+					<h4>A Sneak Preview</h4>
+					<img src="img/top-adobians.png" />
+				</section>
+				<section>
+					<h4>Thanks, Devon and Kai! 👏</h4>
+					<img src="img/devon.png" style="float:left;max-height:300px;" />
+					<img src="img/kai.png" style="float:right;max-height:300px;" />
+				</section>
+				<section>
+					<h3>More Work To Be Done</h3>
+					<p class="fragment">Sorely needed: count other <em>kinds</em> of contributions:</p>
+					<ul>
+						<li class="fragment">Issues created / commented on / closed</li>
+						<li class="fragment">Pull requests issued / reviewed / merged</li>
+					</ul>
+					<p class="fragment">These are valuable contributions that we need to acknowledge, too.</p>
+				</section>
+				<section>
+					<h3>A Plea</h3>
+					<p>📈 Those of us here understand that Open Source is a process that makes superior software in less time.</p>
+					<p class="fragment">☹️ <em>So why are we as Adobe, overall, so slow to engage and contribute back?</em></p>
+					<p class="fragment">📣 Be vocal about helping to nurture our developer ecosystem! Demand your team contributes back to the open source projects it inevitably relies on!</p>
+					<p class="fragment">❓ Ask your Director or VP next time you have a chance: why aren't we more involved in open source?</p>
+				</section>
+				<section>
+					<h3>Adobe + Open Source = ❤️</h3>
+					<p>With greater open source involvement, Adobe can gain the trust of the wider development community faster while positively investing in its employees and driving more usage to its platform.</p>
+					<h4>Thanks! ✌</h4>
+					<p>-filmaj</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+			Reveal.configure({ slideNumber: 'c/t' });
+		</script>
+	</body>
+</html>
