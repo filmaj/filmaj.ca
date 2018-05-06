@@ -26,4 +26,6 @@ Leveraging all AWS.
 
 # Automation
 
-Leveraging Travis to build and upload the site to S3.
+Leveraging Travis to build and upload the site to S3. Post-upload it also invalidates changed files in CloudFront.
+
+For details see the `.travis.yml` file.
