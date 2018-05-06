@@ -1,2 +1,9 @@
 highlighter: rouge
 permalink: pretty
+defaults:
+  -
+    scope:
+      path: "presentations"
+      type: "pages" # previously `page` in Jekyll 2.2.
+    values:
+      layout: "presentation" # overrides previous default layout

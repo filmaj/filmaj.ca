@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }}</title>
+    <meta name="author" content="Fil Maj" />
+    <link rel="stylesheet" href="../lib/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../lib/reveal.js/css/theme/moon.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/reveal.js/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal.js/css/print/pdf.css' : '../lib/reveal.js/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+          {{ content }}
+      </div>
+    </div>
+    <script src="../lib/reveal.js/lib/js/head.min.js"></script>
+    <script src="../lib/reveal.js/js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            dependencies: [
+                { src: '../lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../lib/reveal.js/plugin/notes/notes.js', async: true },
+                { src: '../lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }/*,
+                { src: '../lib/reveal.js/socket.io/socket.io.js', async: true },
+                { src: '../lib/reveal.js/plugin/notes/notes.js', async: true },
+                { src: '../lib/reveal.js/plugin/notes-server/client.js', async: true }*/
+            ]
+        });
+        Reveal.configure({ slideNumber: 'c/t' });
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-27149382-1']);
+      _gaq.push(['_trackPageview']);
+      WebFontConfig = {
+          google: { families: [ 'Source Sans Pro:Semi-Bold', 'Source Serif Pro:Regular', 'Material+Icons' ] }
+      };
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.type = 'text/javascript'; wf.async = 'true';
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+  </body>
+</html>
