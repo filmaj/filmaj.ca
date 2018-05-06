@@ -1,239 +1,176 @@
-<!doctype html>
-<html lang="en">
-	
-	<head>
-		<meta charset="utf-8">
-		
-		<title>Expanding PhoneGap with Plugins</title>
+---
+title: Expanding PhoneGap with Plugins
+---
+<section data-state="title">
+    <h1>{{ page.title }}</h1>
+    <p>05/2013</p>
+</section>
 
+<section>
+    <h2>me</h2>
+    <p>(Fil Maj)</p>
+    <img src="img/beer.png" height="300" />
+    <p>Master Exploder @ Adobe</p>
+    <p>Work on all things PhoneGap, mobile, web and beer</p>
+    <a href="http://twitter.com/filmaj">@filmaj</a>
+</section>
 
-		<link rel="stylesheet" href="../lib/reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="../lib/reveal.js/css/theme/moon.css">
+<section data-state="soothe">
+    <img src="img/phonegaplogo.png" width="400" />
+    <p>Native mobile apps built with HTML5</p>
+</section>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../lib/reveal.js/lib/css/zenburn.css">
+<section>
+    <h1>PhoneGap APIs are Plugins</h1>
+    <img src="img/Plugin.png" height="300" />
+</section>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal.js/css/print/pdf.css' : '../lib/reveal.js/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	
-	<body>
-		
-		<div class="reveal">
+<section>
+    <h1>Understanding PhoneGap</h1>
+    <ul>
+        <li class="fragment">Chromeless Browser "View" (WebView)</li>
+        <li class="fragment">Native Runtime</li>
+        <li class="fragment">A JavaScript-based bridge connecting the two</li>
+    </ul>
+</section>
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section data-state="title">
-                    <h1>Expanding PhoneGap with Plugins</h1>
-                    <p>05/2013</p>
-                </section>
+<section>
+    <h2>We Must Go Deeper</h2>
+    <img src="img/inception.png" />
+</section>
 
-                <section>
-                    <h2>me</h2>
-                    <p>(Fil Maj)</p>
-                    <img src="img/beer.png" height="300" />
-                    <p>Master Exploder @ Adobe</p>
-                    <p>Work on all things PhoneGap, mobile, web and beer</p>
-                    <a href="http://twitter.com/filmaj">@filmaj</a>
-                </section>
+<section>
+    <h2>JavaScript</h2>
+    <img src="img/beerjs.png" height="400" style="float:right;" />
+    <ul>
+        <li class="fragment">Available <i>everywhere</i>:<br/> mobile platforms, server,<br/> your fridge, etc.</li>
+        <li class="fragment">Provides a consistent API<br/> surface for all PhoneGap<br/>platforms</li>
+    </ul>
+</section>
 
-                <section data-state="soothe">
-                    <img src="img/phonegaplogo.png" width="400" />
-                    <p>Native mobile apps built with HTML5</p>
-                </section>
+<section data-state="soothe">
+    <h2>JavaScript-to-Native</h2>
+    <ul>
+        <li class="fragment"><code>cordova.exec();</code></li>
+        <li class="fragment">PhoneGap's cross-platform<br/>giant flying eagle into native<br/>
+            <img src="img/harry_potter_flying.gif" width="600"/>
+        </li>
+    </ul>
+</section>
 
-                <section>
-                    <h1>PhoneGap APIs are Plugins</h1>
-                    <img src="img/Plugin.png" height="300" />
-                </section>
+<section>
+    <h1>WARNING</h1>
+    <img src="img/warning-sign-cow.jpg" />
+    <p>Code Ahead</p>
+</section>
 
-                <section>
-                    <h1>Understanding PhoneGap</h1>
-                    <ul>
-                        <li class="fragment">Chromeless Browser "View" (WebView)</li>
-                        <li class="fragment">Native Runtime</li>
-                        <li class="fragment">A JavaScript-based bridge connecting the two</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>We Must Go Deeper</h2>
-                    <img src="img/inception.png" />
-                </section>
-
-                <section>
-                    <h2>JavaScript</h2>
-                    <img src="img/beerjs.png" height="400" style="float:right;" />
-                    <ul>
-                        <li class="fragment">Available <i>everywhere</i>:<br/> mobile platforms, server,<br/> your fridge, etc.</li>
-                        <li class="fragment">Provides a consistent API<br/> surface for all PhoneGap<br/>platforms</li>
-                    </ul>
-                </section>
-
-                <section data-state="soothe">
-                    <h2>JavaScript-to-Native</h2>
-                    <ul>
-                        <li class="fragment"><code>cordova.exec();</code></li>
-                        <li class="fragment">PhoneGap's cross-platform<br/>giant flying eagle into native<br/>
-                            <img src="img/harry_potter_flying.gif" width="600"/>
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h1>WARNING</h1>
-                    <img src="img/warning-sign-cow.jpg" />
-                    <p>Code Ahead</p>
-                </section>
-
-                <section>
-                    <h2><code>cordova.exec();</code></h2>
-                    <img src="img/js.png" style="float:left;height:200px" />
-                    <pre style="width:690px;float:right;margin-top:32px;"><code style="font-size:175%;line-height:120%;">
+<section>
+    <h2><code>cordova.exec();</code></h2>
+    <img src="img/js.png" style="float:left;height:200px" />
+    <pre style="width:690px;float:right;margin-top:32px;"><code style="font-size:175%;line-height:120%;">
 cordova.exec(win, fail,
-        service, action, args);
-                    </code></pre>
-                    <ul>
-                        <li><code>win</code>: success callback</li>
-                        <li><code>fail</code>: failure callback</li>
-                        <li><code>service</code>: native class that will do the work</li>
-                        <li><code>action</code>: native method that will do the work</li>
-                        <li><code>args</code>: arguments to pass into native method</li>
-                    </ul>
-                </section>
+    service, action, args);
+    </code></pre>
+    <ul>
+        <li><code>win</code>: success callback</li>
+        <li><code>fail</code>: failure callback</li>
+        <li><code>service</code>: native class that will do the work</li>
+        <li><code>action</code>: native method that will do the work</li>
+        <li><code>args</code>: arguments to pass into native method</li>
+    </ul>
+</section>
 
-                <section>
-                    <h2>Service + Action</h2>
-                    <div class="fragment"> 
-                        <img src="img/config.png" height="300" />
-                        <h3>config.xml document</h3>
-                        <p>Routes JavaScript <code>exec</code> to native code</p>
-                    </div>
-                </section>
+<section>
+    <h2>Service + Action</h2>
+    <div class="fragment"> 
+        <img src="img/config.png" height="300" />
+        <h3>config.xml document</h3>
+        <p>Routes JavaScript <code>exec</code> to native code</p>
+    </div>
+</section>
 
-                <section>
-                    <h1>Mapping Service+Action</h1>
-                    <pre class="fragment"><code>
+<section>
+    <h1>Mapping Service+Action</h1>
+    <pre class="fragment"><code>
 &lt;plugin name="SERVICE!" value="native class identifier"/&gt;
-                    </code></pre>
-                    <div class="fragment">
-                        <p>e.g. (Android)</p>
-                        <pre><code>
+    </code></pre>
+    <div class="fragment">
+        <p>e.g. (Android)</p>
+        <pre><code>
 &lt;plugin name="Accelerometer"
-        value="org.apache.cordova.AccelListener"/&gt;
-                        </code></pre>
-                    </div>
-                </section>
+value="org.apache.cordova.AccelListener"/&gt;
+        </code></pre>
+    </div>
+</section>
 
-                <section data-state="alert">
-                    <h2>PhoneGap Bootup</h2>
-                    <img src="img/Plugin.png" height="300" />
-                    <ol>
-                    <li class="fragment">Each <code>&lt;plugin&gt;</code> is loaded first</p>
-                    <li class="fragment">Once all plugins are loaded, main PhoneGap event <code>deviceready</code> is fired and WebView is shown</li>
-                    <li class="fragment">Calls to <code>cordova.exec</code> are routed to appropriate class</p>
-                    </ol>
-                </section>
+<section data-state="alert">
+    <h2>PhoneGap Bootup</h2>
+    <img src="img/Plugin.png" height="300" />
+    <ol>
+    <li class="fragment">Each <code>&lt;plugin&gt;</code> is loaded first</p>
+    <li class="fragment">Once all plugins are loaded, main PhoneGap event <code>deviceready</code> is fired and WebView is shown</li>
+    <li class="fragment">Calls to <code>cordova.exec</code> are routed to appropriate class</p>
+    </ol>
+</section>
 
-                <section>
-                    <h1>Demo!</h1>
-                    <img src="img/cross-fingers.png" height="400"/>
-                    <p>Let's write JavaScript for the simplest plugin: Echo.</p>
-                </section>
+<section>
+    <h1>Demo!</h1>
+    <img src="img/cross-fingers.png" height="400"/>
+    <p>Let's write JavaScript for the simplest plugin: Echo.</p>
+</section>
 
-                <section>
-                    <h1>The Future</h1>
-                    <h3>PhoneGap 3.0 in July</h3>
-                    <img src="img/future.png" />
-                </section>
+<section>
+    <h1>The Future</h1>
+    <h3>PhoneGap 3.0 in July</h3>
+    <img src="img/future.png" />
+</section>
 
-                <section>
-                    <h1>Plugin Manifest</h1>
-                    <p><code>plugin.xml</code> describes:</p>
-                    <ul>
-                        <li class="fragment">Native bits: classes, frameworks, libraries, and where to put them</li>
-                        <li class="fragment">Web assets: HTML, CSS, JS, images, etc.</li>
-                    </ul>
-                </section>
+<section>
+    <h1>Plugin Manifest</h1>
+    <p><code>plugin.xml</code> describes:</p>
+    <ul>
+        <li class="fragment">Native bits: classes, frameworks, libraries, and where to put them</li>
+        <li class="fragment">Web assets: HTML, CSS, JS, images, etc.</li>
+    </ul>
+</section>
 
-                <section>
-                    <h2>Plugin Tooling: Plugman!</h2>
-                    <img src="img/plugman.png" height="250" />
-                    <p>(Un)installs plugin.xml-ready PhoneGap Plugins</p>
-                    <p>Supports Android, iOS, BlackBerry 10</p>
-                    <p><a href="http://github.com/apache/cordova-plugman">http://github.com/apache/cordova-plugman</a></p>
-                    <p><a href="http://npmjs.org/package/plugman"><code>npm install -g plugman</code></a></p>
-                </section>
+<section>
+    <h2>Plugin Tooling: Plugman!</h2>
+    <img src="img/plugman.png" height="250" />
+    <p>(Un)installs plugin.xml-ready PhoneGap Plugins</p>
+    <p>Supports Android, iOS, BlackBerry 10</p>
+    <p><a href="http://github.com/apache/cordova-plugman">http://github.com/apache/cordova-plugman</a></p>
+    <p><a href="http://npmjs.org/package/plugman"><code>npm install -g plugman</code></a></p>
+</section>
 
-                <section>
-                    <h2>Plugman-friendly Plugins</h2>
-                    <p><a href="http://github.com/phonegap-build">https://github.com/phonegap-build</a></p>
-                    <img src="img/build.png" height="200" />
-                    <p>Plugins available on Adobe's PhoneGap Build service using this!</p>
-                </section>
+<section>
+    <h2>Plugman-friendly Plugins</h2>
+    <p><a href="http://github.com/phonegap-build">https://github.com/phonegap-build</a></p>
+    <img src="img/build.png" height="200" />
+    <p>Plugins available on Adobe's PhoneGap Build service using this!</p>
+</section>
 
-                <section>
-                    <h2>Browser of the Future</h2>
-                    <img src="img/phonegaplogo.png" />
-                    <ul>
-                        <li class="fragment">Plug-n-play plugin ecosystem</li>
-                        <li class="fragment">Build-your-own-browser</li>
-                        <li class="fragment">Customize your PhoneGap app with whatever APIs you need</li>
-                    </ul>
-                </section>
+<section>
+    <h2>Browser of the Future</h2>
+    <img src="img/phonegaplogo.png" />
+    <ul>
+        <li class="fragment">Plug-n-play plugin ecosystem</li>
+        <li class="fragment">Build-your-own-browser</li>
+        <li class="fragment">Customize your PhoneGap app with whatever APIs you need</li>
+    </ul>
+</section>
 
-                <section>
-                    <h1>Demo #2: Plugman</h1>
-                    <img src="img/mad_scientist.jpg" height="400"/>
-                </section>
+<section>
+    <h1>Demo #2: Plugman</h1>
+    <img src="img/mad_scientist.jpg" height="400"/>
+</section>
 
-                <section data-state="soothe">
-                    <h1>Thanks, eh!</h1>
-                    <img src="img/soup-of-the-day-fail.jpeg" height="400" style="float:left;" />
-                    <p><a href="http://twitter.com/filmaj">@filmaj</a></p>
-                    <p><small><a href="http://github.com/apache/cordova-plugman">http://github.com/apache/cordova-plugman</a></small></p>
-                    <p><a href="http://phonegap.com">phonegap.com</a></p>
-                    <p><a href="http://build.phonegap.com">build.phonegap.com</a></p>
-                    <p><a href="http://npmjs.org/package/plugman"><code>npm install -g plugman</code></a></p>
-                </section>
-			</div>
-		</div>
-
-		<script src="../lib/reveal.js/lib/js/head.min.js"></script>
-		<script src="../lib/reveal.js/js/reveal.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: '../lib/reveal.js/plugin/markdown/marked.js' },
-					{ src: '../lib/reveal.js/plugin/markdown/markdown.js' },
-					{ src: '../lib/reveal.js/plugin/notes/notes.js', async: true },
-					{ src: '../lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }/*,
-					{ src: '../lib/reveal.js/socket.io/socket.io.js', async: true },
-					{ src: '../lib/reveal.js/plugin/notes-server/client.js', async: true }*/
-				]
-			});
-			Reveal.configure({ slideNumber: 'c/t' });
-		</script>
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-27149382-1']);
-            _gaq.push(['_trackPageview']);
-
-                (function() {
-                          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                                      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                                          })();
-                                            </script>
-	</body>
-</html>
+<section data-state="soothe">
+    <h1>Thanks, eh!</h1>
+    <img src="img/soup-of-the-day-fail.jpeg" height="400" style="float:left;" />
+    <p><a href="http://twitter.com/filmaj">@filmaj</a></p>
+    <p><small><a href="http://github.com/apache/cordova-plugman">http://github.com/apache/cordova-plugman</a></small></p>
+    <p><a href="http://phonegap.com">phonegap.com</a></p>
+    <p><a href="http://build.phonegap.com">build.phonegap.com</a></p>
+    <p><a href="http://npmjs.org/package/plugman"><code>npm install -g plugman</code></a></p>
+</section>
