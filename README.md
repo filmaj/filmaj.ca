@@ -2,6 +2,7 @@
 
 # wat
 
+    $ git submodule update --init
     $ gem install jekyll # jekyll? still, fil? geez
     $ jekyll build
 
