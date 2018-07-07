@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Collaborating with Pull Requests Using the Github Desktop App
+description: Using Github's pull requests and its desktop app to centralize collaborative editing
 ---
 # Collaborating with Pull Requests Using the Github Desktop App
 
