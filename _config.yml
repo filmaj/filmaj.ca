@@ -1,5 +1,5 @@
 highlighter: rouge
-permalink: pretty
+permalink: /:year/:title/
 defaults:
   -
     scope:
