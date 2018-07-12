@@ -66,12 +66,11 @@
         }
     }
     function toggle() {
-        var resume = document.getElementById("resume-timeline");
-        if (resume) {
-            flip(resume);
-            flip(document.getElementById("work-timeline"));
-        } else {
-            flip(document.getElementById("talks-timeline"));
+        var timelines = document.querySelectorAll(".timeline");
+        if (timelines.length) {
+            timelines.forEach(function(timeline) {
+                flip(timeline);
+            });
         }
     }
     var _gaq = _gaq || [];
