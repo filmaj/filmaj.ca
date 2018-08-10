@@ -4,6 +4,8 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ page.title }}</title>
+    <script type="text/javascript" async src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async src="js/analytics.js"></script>
     <!-- the following is brought to you by realfavicongenerator.net -->
     <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
@@ -60,17 +62,11 @@
         Reveal.configure({ slideNumber: 'c/t' });
     </script>
     <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-27149382-1']);
-      _gaq.push(['_trackPageview']);
       WebFontConfig = {
           google: { families: [ 'Source Sans Pro:Semi-Bold', 'Source Serif Pro:Regular', 'Material+Icons' ] }
       };
       (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
         var wf = document.createElement('script');
         wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
         '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
