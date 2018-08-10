@@ -5,6 +5,9 @@ description: Using Github's pull requests and its desktop app to centralize coll
 ---
 # Collaborating with Pull Requests Using the Github Desktop App
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 I'm lucky enough to have the privilege of working with a cross-disciplinary team.
 The ability to lean on each others' varied experiences and expertise is an incredible
 asset and feels empowering. It is also super fun and rewarding to be able to learn
