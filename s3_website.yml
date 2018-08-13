@@ -3,3 +3,22 @@ s3_secret: <%= ENV['S3_SECRET_KEY'] %>
 s3_bucket: filmaj.ca
 cloudfront_distribution_id: <%= ENV['CLOUDFRONT_DISTRIBUTION_ID'] %>
 cloudfront_invalidate_root: true
+cloudfront_wildcard_invalidation: true
+gzip: true
+exclude_from_upload:
+  - README.md
+  - package-lock.json
+  - package.json
+  - CONTRIBUTING.md
+  - LICENSE
+  - Gruntfile.js
+  - bower.json
+  - (scss$)
+  - reveal.js/css/theme/source
+  - reveal.js/css/theme/template
+  - reveal.js/node_modules
+  - reveal.js/demo.html
+  - reveal.js/index.html
+  - reveal.js/test
+  - reveal.js/plugin/markdown/example.html
+  - reveal.js/plugin/markdown/example.md

@@ -9,4 +9,4 @@ before_install:
   - git submodule update --init --recursive
 install: gem install jekyll -v 3.6.2 && gem install s3_website
 script: jekyll build
-after_success: s3_website push
+after_success: s3_website push --force --verbose
