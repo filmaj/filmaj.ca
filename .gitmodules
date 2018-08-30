@@ -1,3 +1,6 @@
 [submodule "presentations/lib/reveal.js"]
 	path = presentations/lib/reveal.js
 	url = git@github.com:hakimel/reveal.js.git
+[submodule "presentations/ossna-2018"]
+	path = presentations/ossna-2018
+	url = https://github.com/stevengill/ossna-2018.git
