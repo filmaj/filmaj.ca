@@ -1,0 +1,105 @@
+---
+title: Introduction to the Platform API (Content Services)
+description: Workshop to guide participants to interact with Adobe's Platform API over HTTP
+---
+<section>
+	<h3>Introduction to the Platform API</h3>
+	<h4>What You Need</h4>
+	<ul>
+		<li>📡  Wifi: network blah, password blah</li>
+		<li>📨 Postman (<a href="http://getpostman.com">http://getpostman.co</a>),
+			an HTTP helper tool</li>
+		<li>🔑 TODO: credentials, set up test account for attendees</li>
+		<li>💻 Postman Scripts (grab from <a
+									href="https://git.corp.adobe.com/pages/devrel/acpapi-quickstart">https://git.corp.adobe.com/pages/devrel/acpapi-quickstart</a></li>
+	</ul>
+</section>
+<section>
+	<h2>Agenda</h2>
+	<ol>
+	    <li>📋 Overview of Platform API Capabilities (2 minutes)</li>
+		<li>💡 Key Platform API Concepts (5 minutes)</li>
+		<li>🔑 Authentication (5 minutes)</li>
+		<li>🔍 Exploring Content (5 minutes)</li>
+		<li>🗂 Working with Assets (10 minutes)</li>
+		<li>🖼 Introducing Renditions (if we have time)</li>
+	</ol>
+</section>
+<section>
+	<h3>📋 Overview of Platform API Capabilities</h3>
+	<ul>
+		<li class="fragment">🗄<b>Storage</b>: store and retrieve assets</li>
+		<li class="fragment">🗂<b>Organization and Permissions</b>:
+			filesystem-like directory heirarchy with customizable access control</li>
+		<li class="fragment">🖼<b>Renditions</b>: dynamic asset modification</li>
+		<li class="fragment">✨<b>and lots more!</b> (but we will focus on the
+			above in this workshop)</li>
+	</ul>
+</section>
+<section>
+	<h3>💡 Key Platform API Concepts</h3>
+	<p>There are two and a half key concepts required to internalize to be
+	successful with the Platform API.</p>
+</section>
+<section>
+	<h3>💡 Key Platform API Concept #1</h3>
+	<h4>Content Organization</h4>
+	<p class="fragment">🗂 All assets are organized into directories, similar to a traditional
+	desktop file system hierarchy.</p>
+</section>
+<section>
+	<h3>💡 Key Platform API Concept #2</h3>
+	<h4>Links, not URLs</h4>
+	<p class="fragment">⛓  Whenever you query the API for a particular resource, you will get
+	<u>links</u> that point you to available operations on the resource.</p>
+	<p class="fragment">URLs are intentionally obfuscated - so don't read into
+	them.</p>
+</section>
+<section>
+	<h3>💡 Key Platform API Concept #2.5</h3>
+	<h4>Links, not URLs</h4>
+	<p>Therefore a typical flow for interacting with the API is:</p>
+	<ol>
+		<li class="fragment">🔍 Query a resource (say, your root directory)</li>
+		<li class="fragment">⛓  Based on the response, see available
+			sub-resources (i.e. children of directory), or inspect (directory) <u>links</u>
+		to see available operations (on the directory)</li>
+		<li class="fragment">🛀 Rinse and repeat: Follow up with another query, following either
+			links or children</li>
+	</ol>
+</section>
+<section>
+	<h3>🔑 Authentication</h3>
+	<p>We have set up a test account for you all. We use the credentials for
+	this test account, together with api keys and client secrets, to create an
+	<i>access token</i> that gives us access to the Platform API.</p>
+	<p class="fragment">We will use Postman to run through scenarios, or
+	scripts, that interact with the Platform API, showing off its capabilities.</p>
+	<p class="fragment">So load up Postman and the first Script: "Create and
+	Delete a Directory"</p>
+</section>
+<section>
+	<h3>🔍 Exploring Content</h3>
+	<img src="img/directories.png" height="500" />
+</section>
+<section>
+	<h3>🗂 Working with Assets</h3>
+	<p>Next, load up the "Upload an Image and Delete It" collection.</p>
+	<img src="img/assets.png" height="500" />
+</section>
+<section>
+	<h3>🖼 Introducing Renditions</h3>
+	<p>Finally, load up the "Upload an Image and Get a Rendition" collection.</p>
+	<img src="img/renditions.png" height="500" />
+</section>
+<section>
+	<h3>That's It!</h3>
+	<p>Thanks for attending!</p>
+	<h4>Further Resources</h4>
+	<ul>
+		<li>ACP API Quickstart: <a
+									href="https://git.corp.adobe.com/pages/devrel/acpapi-quickstart">https://git.corp.adobe.com/pages/devrel/acpapi-quickstart</a></li>
+		<li>ACP API HTTP Reference: <a
+									href="https://git.corp.adobe.com/pages/devrel/acpapi-http-reference">https://git.corp.adobe.com/pages/devrel/acpapi-http-reference</a></li>
+	</ul>
+</section>
