@@ -2,6 +2,11 @@
 title: Introduction to the Platform API (Content Services)
 description: Workshop to guide participants to interact with Adobe's Platform API over HTTP
 ---
+<style>
+code {
+	color: yellow;
+}
+</style>
 <section>
 	<h3>Introduction to the Platform API</h3>
 	<h4>What You Need</h4>
@@ -9,9 +14,8 @@ description: Workshop to guide participants to interact with Adobe's Platform AP
 		<li>📡  Wifi: network blah, password blah</li>
 		<li>📨 Postman (<a href="http://getpostman.com">http://getpostman.co</a>),
 			an HTTP helper tool</li>
-		<li>🔑 TODO: credentials, set up test account for attendees</li>
-		<li>💻 Postman Scripts (grab from <a
-									href="https://git.corp.adobe.com/pages/devrel/acpapi-quickstart">https://git.corp.adobe.com/pages/devrel/acpapi-quickstart</a></li>
+		<li>🔑 Credentials (I will hand these out in a bit)</li>
+		<li>💻 Postman Scripts (grab from <a href="https://git.corp.adobe.com/pages/devrel/acpapi-quickstart/#http-requestresponse-samples">https://git.corp.adobe.com/pages/devrel/acpapi-quickstart/#http-requestresponse-samples</a></li>
 	</ul>
 </section>
 <section>
@@ -69,14 +73,33 @@ description: Workshop to guide participants to interact with Adobe's Platform AP
 	</ol>
 </section>
 <section>
-	<h3>🔑 Authentication</h3>
-	<p>We have set up a test account for you all. We use the credentials for
-	this test account, together with api keys and client secrets, to create an
+	<h4>🔑 Authentication</h4>
+	<p style="font-size: 75%;">We have set up test accounts for you all. We use credentials for
+	these test accounts, together with api keys and client secrets, to create an
 	<i>access token</i> that gives us access to the Platform API.</p>
-	<p class="fragment">We will use Postman to run through scenarios, or
-	scripts, that interact with the Platform API, showing off its capabilities.</p>
-	<p class="fragment">So load up Postman and the first Script: "Create and
-	Delete a Directory"</p>
+	<ol>
+		<li>First, choose an account. All account emails follow the form
+			<code>maj+acp{robot}@adobetest.com</code> where available robots are:
+			<code>golem</code>, <code>talus</code>, <code>olympia</code>,
+			<code>hadaly</code>, <code>zat</code>, <code>gnut</code>,
+			<code>jenkins</code>, <code>speedy</code>, <code>norby</code>,
+			<code>bors</code>, <code>frost</code> and <code>chip</code>.</li>
+		<li>Password for all of these accounts is <code>TechSummit20!9</code></li>
+		<li>All of the other credentials are pre-packaged in the Postman
+			collections</li>
+	</ol>
+</section>
+<section>
+	<h3>Using Postman</h3>
+	<ul>
+		<li>We will use Postman to run through scenarios, or
+	scripts, that interact with the Platform API, showing off its
+	capabilities.</li>
+		<li class="fragment">So load up Postman and the first Script: "Create and
+	Delete a Directory"</li>
+		<li class="fragment">Make sure you customize the email and password in
+			Postman's Environment Variables! (let me show you how to do that)</li>
+	</ul>
 </section>
 <section>
 	<h3>🔍 Exploring Content</h3>
