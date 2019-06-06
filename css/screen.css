@@ -33,7 +33,7 @@ i.material-icons {
   top: 3px;
 }
 
-a {
+a[href] {
   /*transition*/
   transition: all 0.2s ease;
   color: rgb(251, 37, 27);
