@@ -8,5 +8,8 @@ before_install:
   - sed -i 's/git@github.com:/git:\/\/github.com\//' .gitmodules
   - git submodule update --init --recursive
 install: gem install jekyll -v 3.6.2 && gem install s3_website
-script: jekyll build
-after_success: s3_website push --verbose
+script:
+  - jekyll build
+after_success:
+  - jdk_switcher use openjdk8
+  - s3_website push --verbose
