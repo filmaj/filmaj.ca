@@ -46,13 +46,6 @@
           <a href="https://www.flickr.com/photos/44056739@N07" id="flickr-icon"></a>
           <a href="https://www.linkedin.com/in/fil-maj-b0a4419" id="linkedin-icon"></a>
         </nav>
-        <a id="toggle-btn" href="#" onclick="return toggle();" style="visibility:
-                {% if page.has_timeline %}
-                  visible
-                {% else %}
-                  hidden
-                {% endif %}
-;"><i class="material-icons">swap_vert</i></a>
       </div>
     </header>
     <section>
@@ -63,10 +56,22 @@
     // timeline-flipper method for the toggle button
     // used on both resume and talks pages
     function flip(el) {
-        if (el.style.flexDirection == "column-reverse") {
-            el.style.flexDirection = "column";
-        } else {
-            el.style.flexDirection = "column-reverse";
+        let styles = window.getComputedStyle(el);
+        let flex = styles.getPropertyValue('flex-direction');
+        if (flex.includes('column')) {
+          if (flex == "column-reverse") {
+              el.style.flexDirection = "column";
+          } else {
+              el.style.flexDirection = "column-reverse";
+          }
+        } else if (flex.includes('row')) {
+          if (flex == "row-reverse") {
+              el.style.flexDirection = "row";
+              el.style.justifyContent = "flex-start";
+          } else {
+              el.style.flexDirection = "row-reverse";
+              el.style.justifyContent = "flex-end";
+          }
         }
     }
     function toggle() {

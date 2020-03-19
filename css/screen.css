@@ -4,7 +4,7 @@ html, body {
   flex-direction: column;
   font-family: 'Source Serif Pro', serif;
   color: rgba(0, 0, 0, 0.8);
-  background-color: white;
+  background-color: #FBF5F0;
   margin: 0 auto;
 }
 h1 {
@@ -23,10 +23,6 @@ body {
 }
 #site-nav a {
   font-size: 1.25em;
-  color: rgb(0, 0, 0);
-}
-#site-nav a:hover {
-  text-decoration: underline;
 }
 i.material-icons {
   position: relative;
@@ -34,15 +30,14 @@ i.material-icons {
 }
 
 a[href] {
-  /*transition*/
   transition: all 0.2s ease;
-  color: rgb(251, 37, 27);
+  color: #E5625E;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
+a[href]:hover {
+  text-decoration: underline;
+  color: #890620;
 }
 
 /* Layout */
@@ -50,11 +45,28 @@ section, header, nav, div {
   display: flex;
   flex-direction: column;
 }
+summary {
+  margin: 5px;
+}
 .col {
   flex-direction: column;
 }
 .row {
   flex-direction: row;
+}
+.timeline {
+  display: flex;
+  flex-direction: column-reverse;
+}
+span.timeline, a.timeline {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  margin-right: 2px;
+}
+/* Horizontal row/row-reverse flex layout needs padding */
+span.timeline > span, a.timeline > span {
+  margin: 2px;
 }
 
 /* Header/Navigation */
@@ -139,32 +151,22 @@ section h1 {
 section h2 {
   margin: 0 10px;
 }
+section h3 {
+  margin: 0 15px;
+}
 section h1 i {
   position: relative;
   top: 2px;
 }
 /* Resume */
+section nav ul {
+  padding-inline-start: 20px;
+}
 #resume-timeline {
   flex-direction: column-reverse;
 }
-.bar-track, .bar-fill {
-  border-radius: 3px;
-  box-shadow: inset 0 0 5px rgba(0,0,0,.2);
-}
-.bar-track {
-  height: 25px;
-  background: #FBF4E3;
-  color: #FBF4E3;
-  margin: 1px 5px;
-}
-.bar-fill {
-  width: 0%;
-  height: 25px;
-  text-align: center;
-  background: #515C6B;
-}
 #toggle-btn {
   align-self: flex-end;
-  position: relative;
+  position: sticky;
   top: 10px;
 }

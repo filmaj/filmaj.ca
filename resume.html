@@ -2,103 +2,45 @@
 layout: default
 title: Fil Maj's Resume
 description: Fil Maj's career and education in a nutshell
-has_timeline: true
 ---
+<div class="summary">
+    <h2><i class="material-icons">rowing</i>Generalist Senior Developer / Director of Engineering</h2>
+    <details>
+        <summary>
+            <b>TL;DR:</b> I'm a generalist web, mobile and systems developer with a few years of engineering management experience.
+        </summary>
+        I started as a <b>web</b> developer and learned various other programming paradigms when <b>mobile</b> exploded in the mid-2000s. I was one of the core developers of <a href="https://phonegap.com">PhoneGap</a>, a hybrid mobile application framework bridging the gap between web and mobile development. This work eventually led to <a href="https://news.adobe.com/press-release/adobe-creative-cloud-dps/adobe-announces-agreement-acquire-nitobi-creator-phonegap">an acquisition by Adobe</a>. In the early 2010s, I joined <a href="https://saucelabs.com">Sauce Labs</a> and worked on a large scale software-as-a-service product and gained experience with <b>networking and systems</b> in order to manage <b>fleets of thousands of VMs, containers, machines and mobile phones</b> running in data centers. In 2015 I shifted to management and eventually <b>directed an IT office of 25 people</b>, ensuring multiple engineering teams perform at a high level while focussing on people happiness. In 2016 I decided to take a break from management and went back to coding - it is what I love to do - and helped run an <a href="https://medium.com/adobetech/how-adobe-is-changing-its-culture-around-open-source-c9c7daa6dc2a"><b>Open Source Program Office</b></a> back at <a href="https://adobe.com">Adobe</a>.
+    </details>
+</div>
+<a id="toggle-btn" href="#" onclick="return toggle();">
+    <i class="material-icons">swap_vert</i>
+</a>
 <nav>
-    <ul class="timeline" style="display:flex;flex-direction: column-reverse;margin:0;">
-        <li><a href="#education">2003-2008: Education</a></li>
+    <ul style="margin:0;">
+        <li><a href="#proficiencies">Proficiencies</a></li>
+        <li><a href="#associations">Associations &amp; Certifications</a></li>
+    </ul>
+    <ul class="timeline" style="margin:0;">
+        <li><a href="#education" class="timeline"><span>2003</span><span>-</span><span>2008</span><span>Education</span></a></li>
         <li>
-            <a href="#work">2008-Present: Work</a>
-            <ul class="timeline" style="display:flex;flex-direction: column-reverse;">
-                <li><a href="#nitobi">2008-2011: Nitobi, Lead Software Developer</a></li>
-                <li><a href="#adobe-pt1">2011-2013: Adobe, Lead Computer Scientist</a></li>
-                <li><a href="#sauce">2013-2016: Sauce Labs, Director of Engineering</a></li>
-                <li><a href="#adobe-pt2">2016-Present: Adobe, Senior Computer Scientist</a></li>
+            <a class="timeline" href="#work"><span>2008</span><span>-</span><span>2020</span><span>Work</span></a>
+            <ul class="timeline">
+                <li><a class="timeline" href="#nitobi"><span>2008</span><span>-</span><span>2011</span><span>Nitobi, Lead Software Developer</span></a></li>
+                <li><a class="timeline" href="#adobe-pt1"><span>2011</span><span>-</span><span>2013</span><span>Adobe, Lead Computer Scientist</span></a></li>
+                <li><a class="timeline" href="#sauce"><span>2013</span><span>-</span><span>2016</span><span>Sauce Labs, Director of Engineering<span></a></li>
+                <li><a class="timeline" href="#adobe-pt2"><span>2016</span><span>-</span><span>2020</span><span>Adobe, Senior Computer Scientist</span></a></li>
             </ul>
         </li>
     </ul>
-    <ul style="margin:0;">
-        <li><a href="#proficiencies">Proficiencies</a></li>
-        <li><a href="#accomplishments">Accomplishments</a></li>
-    </ul>
 </nav>
-<div class="summary">
-    <h2><i class="material-icons">rowing</i>Generalist senior developer with management experience</h2>
-    <p>I started as a web developer. I got sucked into various other programming paradigms when mobile exploded in the mid-2000s. After I joined <a href="https://saucelabs.com">Sauce Labs</a>, I became comfortable with networking and systems in order to manage fleets of thousands of VMs, containers and machines. I became Director of Engineering at Sauce Labs' Vancouver, Canada office, ensuring multiple engineering teams perform at a high level, all the while focussing on engineer happiness as my top concern. In 2016 I decided to take a break from management and went back to coding, as in the end it is what I love to do.</p>
-</div>
-<div class="timeline" style="flex-direction: column-reverse;">
-    <div class="timeline-item">
-        <a name="education"><h1 id="education"><i class="material-icons">school</i>Education</h1></a>
-        <h2><i class="material-icons">event_note</i>2003-2008: Simon Fraser University</h2>
-        <p>I graduated from <a href="http://sfu.ca">Simon Fraser University</a> with a <b>B. A. Sc. in Computing Science with a specialization in artificial intelligence</b>. Yeah, that's right! AI! In 2008! Before it was cool!</p>
-    </div>
-    <div class="timeline-item">
-        <a name="work"><h1 id="work"><i class="material-icons">build</i>Work</h1></a>
-        <div class="timeline" style="flex-direction: column-reverse;">
-            <div>
-                <a name="nitobi"><h2><i class="material-icons">event_note</i>2008-2011: Nitobi, Lead Software Developer</h2></a>
-                <p>After graduating in 2008, I joined <a href="http://nitobi.com">Nitobi</a>, a web and mobile software development consultancy. There I worked on a few different projects:</p>
-                <ol>
-                  <li>trial-by-fire, as my first client work I essentially worked alone on a top-1000 web property for <a href="http://microsoft.com">Microsoft</a>, <a href="http://ieaddons.com">ieaddons.com</a>, getting 1.5-2.5 million daily unique visits</li>
-                  <li>on behalf of global travel giant <a href="http://www.sabre.com/">Sabre Holdings</a>, I developed mobile websites and applications for corporate travel under the <a href="http://getthere.com">GetThere</a> suite of apps</li>
-                  <li>open source work on <a href="http://phonegap.com">PhoneGap</a>, ranging from implementations on specific mobile platforms (Android, BlackBerry, iOS) to the tooling, as well as leveraging it for various consulting engagements</li>
-                  <li>then-<a href="http://nitobi.com">Nitobi</a>-now-<a href="http://adobe.com">Adobe</a>'s online mobile application compilation/deployment tool, <a href="http://build.phonegap.com">PhoneGap Build</a>, powered by a Ruby-on-Rails stack.</li>
-                </ol>
-            </div>
-            <div>
-                <a name="adobe-pt1"><h2><i class="material-icons">event_note</i>2011-2013: Adobe, Lead Computer Scientist</h2></a>
-                <p>In late 2011, <a href="http://nitobi.com">Nitobi</a> was acquired by <a href="http://adobe.com">Adobe</a>, where I continued work on <a href="http://phonegap.com">PhoneGap</a>. Most of my activity took place under the <a href="http://apache.org">Apache Software Foundation</a> as the <a href="http://cordova.io">Cordova</a> project.</p>
-                <p>My main projects at <a href="http://adobe.com">Adobe</a> were mostly <a href="http://cordova.io">Cordova</a>-specific and included:</p>
-                <ol>
-                  <li><a href="http://github.com/apache/cordova-cli">cordova-cli</a>, a <a href="http://nodejs.org">nodejs</a>-based command line tool for <a href="http://cordova.io">Cordova</a>-based applications - <a href="http://npmjs.org/package/cordova">available on npm</a> and downloaded over 100k times per week</li>
-                  <li><a href="http://github.com/apache/cordova-js">cordova-js</a>, the unified JavaScript layer for the <a href="http://cordova.io">Cordova</a> project</li>
-                  <li><a href="http://github.com/apache/cordova-android">cordova-android</a>, the <a href="http://developer.android.com">Android</a> implementation of <a href="http://cordova.io">Cordova</a></li>
-                  <li><a href="http://github.com/apache/cordova-ios">cordova-ios</a>, the <a href="http://developer.apple.com">iOS</a> implementation of <a href="http://cordova.io">Cordova</a></li>
-                  <li><a href="http://github.com/apache/cordova-blackberry">cordova-blackberry</a>, the <a href="http://developer.blackberry.com">BlackBerry</a> WebWorks implementation of <a href="http://cordova.io">Cordova</a></li>
-                  <li><a href="http://github.com/apache/cordova-wp7">cordova-wp7</a>, the <a href="http://developer.microsoft.com">Windows Phone 7</a> implementation of <a href="http://cordova.io">Cordova</a></li>
-                  <li><a href="http://github.com/apache/cordova-plugman">cordova-plugman</a>, a <a href="http://nodejs.org">nodejs</a>-based command line tool for installing and uninstalling <a href="http://cordova.io">Cordova</a> plugins - <a href="http://npmjs.org/package/plugman">available on npm</a></li>
-                </ol>
-            </div>
-            <div>
-                <a name="sauce"><h2><i class="material-icons">event_note</i>2013-2016: Sauce Labs, Director of Engineering</h2></a>
-                <p>In September of 2013, I joined <a href="http://saucelabs.com">Sauce Labs</a> where I started as a member of the Mobile R&amp;D team. This was the team responsible for designing and building <a href="https://saucelabs.com/mobile/">Sauce's mobile solution</a> - an on-demand service for access to virtual and real Android and iOS devices, mainly for testing native and web applications.<//p>
-                <p>I veered away from focusing on mobile development exclusively in my time at <a href="http://saucelabs.com">Sauce Labs</a>. I gained valuable experience managing fleets of both bare-metal and virtual machines of various operating systems (Linux, Windows and Mac) powering Sauce's SaaS testing service. I learned how to build and run a distributed, highly-available system, shifting my focus towards (<i>cringe</i>) DevOps, that is, design and maintenance of systems, from hardware up to software, from operational to programming concerns.</p>
-                <p>In my final two years at Sauce, I took the dive into management, coded less and worked on more organizational and process challenges such as hiring, mobile product strategy and team management as Director of Engineering for <a href="http://saucelabs.com">Sauce Labs</a>' brand new (at the time) <a href="https://www.google.ca/maps/place/Sauce+Labs/@49.2841762,-123.1082258,17z/data=!3m1!4b1!4m5!3m4!1s0x54867177658cda41:0x4254ea0eded58e1d!8m2!3d49.2841762!4d-123.1060371?hl=en">Vancouver, Canada office</a>. I also <a href="Fil-nmbc.pdf">completed a New Manager Bootcamp</a> at <a href="https://executive.berkeley.edu/programs/new-manager">UC Berkeley's Executive Education faculty</a>.</p>
-                <p>As an engineering manager I learned but also stressed a lot. In September 2016, I left <a href="http://saucelabs.com">Sauce Labs</a> and traveled Southeast Asia for six weeks because vacation is important and life's too short amirite? Thus ended my two year stint as an engineering manager. I might come back to it one day. In a startup, perhaps. Maybe.</p>
-            </div>
-            <div>
-                <a name="adobe-pt2"><h2><i class="material-icons">event_note</i>November 2016: Adobe, Senior Computer Scientist</h2></a>
-                <p>In November of 2016, I rejoined <a href="https://adobe.com">Adobe</a> with the <a href="http://phonegap.com">PhoneGap</a> team! I mostly worked in a supporting role, helping push stability, reliability and speed of delivery of the <a href="http://phonegap.com">PhoneGap</a> and <a href="http://cordova.io">Cordova</a> projects.</p>
-                <p>In November of 2017, a few co-workers and I moved to the Developer Relations team at <a href="https://adobe.com">Adobe</a> where I continued to work until June 2019. We worked to improve <a href="https://adobe.com">Adobe</a>'s developer ecosystem, both <a href="https://adobe.io">externally</a> and internally. In this role, I was personally focussed on increasing collaboration across teams, departments and organizations by influencing the environment we work in: by <a href="https://www.cio.com/article/3395460/how-and-why-adobe-is-making-open-source-a-strategic-priority.html">promoting open source and helping nurture open development projects and practices internally by being a key part of Adobe's Open Source Office</a>, <a href="/presentations/adobe-oss-eu-2018">influencing the developer experience of Adobe's nascent platform offerings to push adoption forward</a>, <a href="https://github.com/adobe/oss-contributors">tracking tech company involvement in open source</a> (<a href="https://docs.google.com/spreadsheets/d/1EosxNv67tC2IYFY_RFeCoSY3JipiVfYyky9VejKAS9k/edit#gid=566883526">📈</a>) as well as redesigning and developing Adobe's new developer portal (which, unfortunately, never saw the light of day before I was no longer part of the Developer Relations team). We also built various tools and resources to help Adobians be productive in open source: we built a <a href="https://github.com/adobe/cla-bot">serverless-powered GitHub App, Adobe's CLA Bot</a>, to check that contributors signed <a href="http://opensource.adobe.com/cla.html">Adobe's CLA</a>, evolved an <a href="https://github.com/adobe/starter-repo">Adobe open source starter repo</a> and put together <a href="https://github.com/adobe/open-development-template">documentation templates for open source projects in order to formalize their goals, workflow and governance</a> to help attract contributors. <b>These efforts helped double the number of active <a href="https://github.com/adobe">Adobians on GitHub</a> from 2017 to 2018</b>. Lastly, one of my responsibilities on this team was helping provide feedback on the Adobe Experience Platform's Content Services API and build starter resources for this API like tutorials and code samples.</p>
-                <p>In July 2019, I joined the <a href="https://opensource.magento.com">Community Engineering</a> team at <a href="https://magento.com">Magento</a> - an <a href="https://adobe.com">Adobe</a> company. My responsibilities are three-fold:</p>
-                <ul>
-                    <li><b>Project Management</b>: there are several community projects that make up the <a href="https://magento.com">Magento</a> ecosystem, not least of which is the core project, <a href="https://github.com/magento/magento2">magento2</a>, but this also includes projects like <a href="https://github.com/magento/inventory">MSI</a> and <a href="https://github.com/magento/adobe-stock-integration">Adobe Stock Integration</a>. I coordinate between the corporation and the community to push project evolution forward, ensure release deadlines are met while including the third party development community every step of the way.</li>
-                    <li><b>Training</b>: having a dedicated team to work with the community has its limits. <a href="https://magento.com">Magento</a> realizes this. As a result, more and more internal teams at <a href="https://magento.com">Magento</a> are being trained on how to work with the community in a transparent way. I am responsible for assembling the curriculum and running the training sessions.</li>
-                    <li><b>Public Relations</b>: I manage the main social media channels for our team, such as the <a href="https://twitter.com/magentoengcom">Community Engineering Twitter account</a> and our <a href="https://www.youtube.com/channel/UCUsdK3NnJ0LqhNJCrJDdiug">YouTube Channel</a>. I also help with writing posts on the <a href="https://community.magento.com/t5/Magento-DevBlog/bg-p/devblog">Magento DevBlog</a>.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 <div id="resume-other">
     <a name="proficiencies"><div id="proficiencies-languages"></a>
         <h1><i class="material-icons">assessment</i>Proficiencies &amp; Languages</h1>
-        <div class="bar-holder">
-            <div class="bar-track"><div class="bar-fill" style="width:95%">JavaScript</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:90%">Java</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:90%">Python</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:80%">C/C++</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:75%">C#</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:75%">sh</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:60%">Ruby</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:50%">PHP</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:45%">Go</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:35%">Objective-C</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:25%">Haskell</div></div>
-        </div>
-        <p>When it comes to programming, I feel confident in JavaScript, Java, C/C++, C#, Python, sh and Ruby, and can get by in PHP, Go, Objective-C and Haskell.</p>
-        <p>I pride myself most on my ability to learn new languages, frameworks, and methodologies. In my opinion, continuous learning is the foundation of being a great professional.</p>
-        <p>I've worked with a variety of technologies and have expertise in different areas including:
+        <p>I pride myself most on my ability to learn new languages, frameworks, and methodologies quickly. Technology is constantly evolving and language fluency is, in my opinion, a professional programming necessity.</p>
+        <p><b>Programming languages:</b> I am confident in JavaScript, Java, C/C++, C#, Python, sh and Ruby, and can get by in PHP, Go, Objective-C and Haskell.</p>
+        <details>
+            <summary><b>TL;DR:</b> I've worked with a variety of technologies and have expertise in node.js, all different kinds of IaaS (AWS, Azure, Google Cloud) but particularly focussed on functions-as-a-service, all things web (both frontend and backend), .NET, Ruby on Rails, relational and document databases, infrastructure-as-code and mobile development for both Android and iOS.</summary>
+            <p>A deeper dive into some of my favourite technologies:</p>
             <ul>
                 <li><a href="https://nodejs.org">node.js</a>, my favourite playground</li>
                 <li>Infrastructure-as-a-service offerings like <a href="https://aws.amazon.com">AWS</a>, <a href="https://azure.microsoft.com">Azure</a> and <a href="https://cloud.google.com">Google Cloud</a></li>
@@ -111,21 +53,98 @@ has_timeline: true
                 <li>Mobile development on <a href="https://developer.android.com">Android</a>, along with a good understanding of the <a href="https://source.android.com">Android Open Source Project</a>, all the way down to the kernel, as well as proficiency with using <a href="https://developer.android.com/ndk">Android's NDK</a></li>
                 <li>While not my forté, I have developed native <a href="https://developer.apple.com">iOS applications</a>, although I generally consider XCode to be my nemesis (let's be honest, who wants to code in an IDE that looks like iTunes)</li>
             </ul>
-        </p>
-        <div class="bar-holder">
-            <div class="bar-track"><div class="bar-fill" style="width:95%">English</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:80%">Polish</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:60%">Spanish</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:50%">French</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:15%">Farsi</div></div>
-            <div class="bar-track"><div class="bar-fill" style="width:10%">Italian</div></div>
-        </div>
-        <p>When it comes to humans, I'm fluent in English, Polish, Spanish and French and would probably fail terribly, but try regardless, to have a conversation in Farsi or Italian.</p>
+        </details>
+        <p>I'm fluent in English, Polish, Spanish and French and would probably fail terribly, but try regardless, to have a conversation in Farsi.</p>
     </div>
     <div>
-        <a name="accomplishments"><h1><i class="material-icons">beenhere</i>Accomplishments</h1></a>
+        <a name="associations"><h1><i class="material-icons">beenhere</i>Associations &amp; Certifications</h1></a>
         <p>I'm an <a href="http://apache.org">Apache Software Foundation</a> committer on the <a href="http://cordova.io">Cordova</a> project.</p>
-        <p>I'm a member of the World Wide Web Consortium, and have been involved in developing mobile device related standards as part of the Device API and Web Platform working groups.</p>
-        <p>In 2015, while working at <a href="https://saucelabs.com">Sauce Labs</a>, I <a href="Fil-nmbc.pdf">completed</a> the <a href="http://executive.berkeley.edu/programs/new-manager">New Manager Bootcamp</a> at Berkeley, CA.</p>
+        <p>I'm a member of the <a href="https://www.w3.org/">World Wide Web Consortium</a>, and have been involved in developing mobile device and web related standards as part of the Device API, <a href="https://www.w3.org/2019/webapps/">Web Applications</a> and Web Platform working groups.</p>
+        <p>I <a href="Fil-nmbc.pdf">completed</a> the <a href="http://executive.berkeley.edu/programs/new-manager">New Manager Bootcamp</a> at Berkeley, CA.</p>
+    </div>
+</div>
+<div class="timeline" style="flex-direction: column-reverse;">
+    <div class="timeline-item">
+        <a name="education"><h1 id="education"><i class="material-icons">school</i>Education</h1></a>
+        <h2><i class="material-icons">event_note</i><span class="timeline"><span>2003</span><span>-</span><span>2008</span></span>: Simon Fraser University</h2>
+        <p>I graduated from <a href="http://sfu.ca">Simon Fraser University</a> with a <b>B. A. Sc. in Computing Science with a specialization in artificial intelligence</b>. Yeah, that's right! AI! In 2008! Before it was cool!</p>
+    </div>
+    <div class="timeline-item">
+        <a name="work"><h1 id="work"><i class="material-icons">build</i>Work</h1></a>
+        <div class="timeline" style="flex-direction: column-reverse;">
+            <div>
+                <a name="nitobi"><h2><i class="material-icons">event_note</i><span class="timeline"><span>2008</span><span>-</span><span>2011</span></span>: Nitobi Inc.</h2></a>
+                <h3><i class="material-icons">keyboard</i>Lead Software Developer</h3>
+                <details>
+                    <summary><b>TL;DR:</b> After graduating in 2008, I joined <a href="http://nitobi.com">Nitobi</a>, a consultancy where I did web and mobile software development for various clients.</summary>
+                    <ol>
+                      <li>trial-by-fire, as my first client work I essentially worked alone on a top-1000 web property for <a href="http://microsoft.com">Microsoft</a>, <a href="http://ieaddons.com">ieaddons.com</a>, getting 1.5-2.5 million daily unique visits</li>
+                      <li>on behalf of global travel giant <a href="http://www.sabre.com/">Sabre Holdings</a>, I developed mobile websites and applications for corporate travel under the <a href="http://getthere.com">GetThere</a> suite of apps</li>
+                      <li>open source work on <a href="http://phonegap.com">PhoneGap</a>, ranging from implementations on specific mobile platforms (Android, BlackBerry, iOS) to the tooling, as well as leveraging it for various consulting engagements</li>
+                      <li>then-<a href="http://nitobi.com">Nitobi</a>-now-<a href="http://adobe.com">Adobe</a>'s online mobile application compilation/deployment tool, <a href="http://build.phonegap.com">PhoneGap Build</a>, powered by a Ruby-on-Rails stack</li>
+                    </ol>
+                </details>
+            </div>
+            <div>
+                <a name="adobe-pt1"><h2><i class="material-icons">event_note</i><span class="timeline"><span>2011</span><span>-</span><span>2013</span></span>: <a href="https://adobe.com">Adobe</a></h2></a>
+                <h3><i class="material-icons">android</i>Lead Computer Scientist</h3>
+                <details>
+                    <summary><b>TL;DR:</b> In late 2011, <a href="http://nitobi.com">Nitobi</a> was acquired by <a href="http://adobe.com">Adobe</a>, where I continued work on <a href="http://phonegap.com">PhoneGap</a>. Most of my activity took place under the <a href="http://apache.org">Apache Software Foundation</a> as the <a href="http://cordova.io">Cordova</a> project.</summary>
+                    <p>My projects at <a href="http://adobe.com">Adobe</a> were mostly <a href="http://cordova.io">Cordova</a>-specific and included:</p>
+                    <ol>
+                      <li><a href="http://github.com/apache/cordova-cli">cordova-cli</a>, a <a href="http://nodejs.org">nodejs</a>-based command line tool for <a href="http://cordova.io">Cordova</a>-based applications - <a href="http://npmjs.org/package/cordova">available on npm</a> and downloaded over 100k times per week</li>
+                      <li><a href="http://github.com/apache/cordova-js">cordova-js</a>, the unified JavaScript layer for the <a href="http://cordova.io">Cordova</a> project</li>
+                      <li><a href="http://github.com/apache/cordova-android">cordova-android</a>, the <a href="http://developer.android.com">Android</a> implementation of <a href="http://cordova.io">Cordova</a></li>
+                      <li><a href="http://github.com/apache/cordova-ios">cordova-ios</a>, the <a href="http://developer.apple.com">iOS</a> implementation of <a href="http://cordova.io">Cordova</a></li>
+                      <li><a href="http://github.com/apache/cordova-blackberry">cordova-blackberry</a>, the <a href="http://developer.blackberry.com">BlackBerry</a> WebWorks implementation of <a href="http://cordova.io">Cordova</a></li>
+                      <li><a href="http://github.com/apache/cordova-wp7">cordova-wp7</a>, the <a href="http://developer.microsoft.com">Windows Phone 7</a> implementation of <a href="http://cordova.io">Cordova</a></li>
+                      <li><a href="http://github.com/apache/cordova-plugman">cordova-plugman</a>, a <a href="http://nodejs.org">nodejs</a>-based command line tool for installing and uninstalling <a href="http://cordova.io">Cordova</a> plugins - <a href="http://npmjs.org/package/plugman">available on npm</a></li>
+                    </ol>
+                </details>
+            </div>
+            <div>
+                <a name="sauce"><h2><i class="material-icons">event_note</i><span class="timeline"><span>2013</span><span>-</span><span>2016</span></span>: <a href="http://saucelabs.com">Sauce Labs</a></h2></a>
+                <div class="timeline" style="flex-direction: column-reverse;">
+                    <div>
+                        <h3><i class="material-icons">mobile_friendly</i><span class="timeline"><span>2013</span><span>-</span><span>2014</span></span>Lead Software Engineer, Mobile R&amp;D</h3>
+                        <details>
+                            <summary><b>TL;DR:</b> In September of 2013, I joined <a href="http://saucelabs.com">Sauce Labs</a> where I started as a member of the Mobile R&amp;D team. This was the team responsible for designing and building <a href="https://saucelabs.com/mobile/">Sauce's mobile solution</a> - an on-demand service for access to virtual and real Android and iOS devices, mainly for testing native and web applications.</summary>
+                            <p>I veered away from focusing on mobile development exclusively in my time at <a href="http://saucelabs.com">Sauce Labs</a>. I gained valuable experience managing fleets of both bare-metal and virtual machines of various operating systems (Linux, Windows and Mac) powering Sauce's testing service. I learned how to build and run a distributed, highly-available system, shifting my focus towards (<i>cringe</i>) DevOps, that is, design and maintenance of systems, from hardware up to software, from operational to programming concerns.</p>
+                        </details>
+                    </div>
+                    <div>
+                        <h3><i class="material-icons">business_center</i><span class="timeline"><span>2015</span><span>-</span><span>2016</span></span>Director of Engineering, Vancouver</h3>
+                        <p>In my final two years at Sauce, I took the dive into management, coded less and worked on more organizational and process challenges such as hiring, mobile product strategy and team management as Director of Engineering for <a href="http://saucelabs.com">Sauce Labs</a>' new-at-the-time <a href="https://www.google.ca/maps/place/Sauce+Labs/@49.2841762,-123.1082258,17z/data=!3m1!4b1!4m5!3m4!1s0x54867177658cda41:0x4254ea0eded58e1d!8m2!3d49.2841762!4d-123.1060371?hl=en">Vancouver, Canada office</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a name="adobe-pt2"><h2><i class="material-icons">event_note</i><span class="timeline"><span>2016</span><span>-</span><span>2020</span></span>: <a href="https://adobe.com">Adobe</a></h2></a>
+                <div class="timeline" style="flex-direction: column-reverse;">
+                    <div>
+                        <h3><i class="material-icons">speed</i><span class="timeline"><span>2016</span><span>-</span><span>2017</span></span>Senior Computer Scientist, PhoneGap Team</h3>
+                        <p>In November of 2016, I rejoined <a href="https://adobe.com">Adobe</a> with the <a href="http://phonegap.com">PhoneGap</a> team! I mostly worked in a supporting role, helping push stability, reliability and speed of delivery of the <a href="http://phonegap.com">PhoneGap</a> and <a href="http://cordova.io">Cordova</a> projects.</p>
+                    </div>
+                    <div>
+                        <h3><i class="material-icons">two_wheeler</i><span class="timeline"><span>2017</span><span>-</span><span>2019</span></span>Senior Computer Scientist, Developer Experience</h3>
+                        <details>
+                            <summary><b>TL;DR:</b> In July 2017, a few co-workers from the <a href="https://phonegap.com">PhoneGap</a> team formed Adobe's Developer Experience team. We worked to improve <a href="https://adobe.com">Adobe</a>'s developer ecosystem, both <a href="https://adobe.io">externally</a> and internally (at the time of this writing Adobe is composed of over 8,000 engineers).</summary>
+                            <p>I was focussed on increasing collaboration across teams, departments and organizations inside the corporation by influencing the environment we work in: by <a href="https://www.cio.com/article/3395460/how-and-why-adobe-is-making-open-source-a-strategic-priority.html">promoting open source and helping nurture open development practices internally by helping evolve Adobe's Open Source Office</a>, <a href="/presentations/adobe-oss-eu-2018">influencing the developer experience of Adobe's nascent platform offerings to push adoption forward</a>, <a href="https://github.com/adobe/oss-contributors">tracking tech company involvement in open source</a> (<a href="https://docs.google.com/spreadsheets/d/1EosxNv67tC2IYFY_RFeCoSY3JipiVfYyky9VejKAS9k/edit#gid=566883526">📈</a>) as well as redesigning and developing Adobe's new developer portal. We also built various tools and resources to help Adobians be productive in open source: we built a <a href="https://github.com/adobe/cla-bot">serverless-powered GitHub App, Adobe's CLA Bot</a>, to check that contributors signed <a href="http://opensource.adobe.com/cla.html">Adobe's CLA</a>, evolved an <a href="https://github.com/adobe/starter-repo">Adobe open source starter repo</a> and put together <a href="https://github.com/adobe/open-development-template">documentation templates for open source projects in order to formalize their goals, workflow and governance</a> to help attract contributors. <b>These efforts helped double the number of active <a href="https://github.com/adobe">Adobians on GitHub</a> from 2017 to 2018</b>. Lastly, one of my responsibilities on this team was helping provide feedback on the <a href="https://www.adobe.io/apis/experienceplatform/home.html">Adobe Experience Platform</a>'s Content Services API and build starter resources for this API like tutorials and code samples.</p>
+                        </details>
+                    </div>
+                    <div>
+                        <h3><i class="material-icons">nature_people</i><span class="timeline"><span>2019</span><span>-</span><span>2020</span></span>Community Manager, Magento Community Engineering</h3>
+                        <details>
+                            <summary><b>TL;DR:</b> In July 2019, I joined the <a href="https://opensource.magento.com">Community Engineering</a> team at <a href="https://magento.com">Magento</a> - an <a href="https://adobe.com">Adobe</a> company. My responsibilities comprised of <b>Project Management</b>, <b>Training</b> and <b>Public Relations</b>.</summary>
+                        <ul>
+                            <li><b>Project Management</b>: there are several community projects that make up the <a href="https://magento.com">Magento</a> ecosystem, not least of which is the core project, <a href="https://github.com/magento/magento2">magento2</a>, but this also includes projects like <a href="https://github.com/magento/inventory">MSI</a> and <a href="https://github.com/magento/adobe-stock-integration">Adobe Stock Integration</a>. I coordinated between the corporation and the community to push project evolution forward, ensured release deadlines are met while including the third party development community every step of the way.</li>
+                            <li><b>Training</b>: getting a dedicated team working elbow-to-elbow with and coordinating a massive third party developer community to build software together has its limits. <a href="https://magento.com">Magento</a> realizes this. As a result, internal teams at <a href="https://magento.com">Magento</a> are being trained on how to work with the community in a transparent way. I was responsible for assembling the curriculum and running the training sessions.</li>
+                            <li><b>Public Relations</b>: I managed social media channels for our team, such as the <a href="https://twitter.com/magentoengcom">Community Engineering Twitter account</a> and our <a href="https://www.youtube.com/channel/UCUsdK3NnJ0LqhNJCrJDdiug">YouTube Channel</a>. I also helped with writing posts on the <a href="https://community.magento.com/t5/Magento-DevBlog/bg-p/devblog">Magento DevBlog</a>.</li>
+                        </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
