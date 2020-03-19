@@ -1,4 +1,4 @@
-#site-nav>a, #site-nav+div {
+#site-nav>a {
   display: none;
 }
 h1, h2 {
@@ -7,6 +7,9 @@ h1, h2 {
 body  {
   font-family: 'Source Serif Pro', serif;
   color: black;
+}
+section > nav {
+  display: none;
 }
 a {
   color: black;
@@ -18,15 +21,20 @@ h1 {
 h2 {
   font-size: 1.5em;
 }
+span.timeline, span.timeline > span, a.timeline, a.timeline > span {
+  margin: 0 2px;
+}
+details {
+  margin: 2px;
+}
 i.material-icons {
   position: relative;
   top: 4px;
   left: -2px;
 }
-.bar-holder, .bar-holder div.bar-track {
-  list-style-type: circle;
-  display: list-item;
+#toggle-btn {
+  display: none;
 }
-.bar-holder {
+summary > b {
   display: none;
 }
