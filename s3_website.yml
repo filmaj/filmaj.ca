@@ -1,7 +1,7 @@
 s3_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
 s3_secret: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
 s3_bucket: filmaj.ca
-cloudfront_distribution_id: <%= ENV['CLOUDFRONT_DISTRIBUTION_ID'] %>
+cloudfront_distribution_id: <%= ENV['AWS_CLOUDFRONT_DISTRIBUTION'] %>
 cloudfront_invalidate_root: true
 cloudfront_wildcard_invalidation: true
 gzip: true
