@@ -90,7 +90,7 @@ nav a {
   -webkit-filter: brightness(0%);
   filter: brightness(0%);
   background-size: contain;
-
+}
 a#github-icon {
   width: 26px;
   height: 26px;
