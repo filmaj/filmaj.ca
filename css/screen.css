@@ -84,13 +84,12 @@ nav a {
 }
 #social-nav {
   padding: 0 10px 0 6px;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 #social-nav a {
   -webkit-filter: brightness(0%);
   filter: brightness(0%);
   background-size: contain;
-}
 
 a#github-icon {
   width: 26px;
