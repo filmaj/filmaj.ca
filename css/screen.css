@@ -111,6 +111,9 @@ a#linkedin-icon {
   background-position: 0px 0px;
   background-size: 37px 28px;
 }
+a#mastodon-icon {
+  margin-top: 1px;
+}
 
 /*
  * major props to @classam and cube-drone.com creator for my wonderful avatar.
