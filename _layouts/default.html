@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ page.title }}</title>
     <script data-goatcounter="https://filmaj.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-6M1D1H6YQR');
-    </script>
-    <script type="text/javascript" async src="/js/autotrack.filmaj.js"></script>
-    <script type="text/javascript" async src="/js/analytics.js"></script>
     <!-- the following is brought to you by realfavicongenerator.net -->
     <link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
@@ -23,45 +14,39 @@
     <meta name="theme-color" content="#ffffff">
     <!-- and so ends realfavicongenerator.net's contributions. many thanks. -->
     <meta name="author" content="Fil Maj" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@filmaj" />
-    <meta name="twitter:title" content="{{ page.title }}" />
-    <meta name="twitter:description" content="{{ page.description }}" />
-    <meta name="twitter:image" content="https://filmaj.ca/img/me/fil.png" />
-    <meta name="twitter:image:alt" content="Fil's Avatar" />
     <link rel="me" href="https://social.lunchlurkers.com/@filmaj" />
-    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/max320.css" type="text/css" media="(max-width: 320px)" />
-    <link rel="stylesheet" href="/css/min320max600.css" type="text/css" media="(min-width: 320px) and (max-width: 600px)" />
-    <link rel="stylesheet" href="/css/print.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="/css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/wtf.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
   <body>
-    <header class="row">
-      <nav id="site-nav">
+    <main class="flow">
+      <header>
         <h1><a href="/">Fil Maj</a></h1>
-        <a href="/resume"><i class="material-icons">rowing</i>Resume</a>
-        <a href="/talks"><i class="material-icons">record_voice_over</i>Talks</a>
-        <a href="/posts"><i class="material-icons">local_library</i>Posts</a>
-        <a href="/contact"><i class="material-icons">contact_mail</i>Contact</a>
-      </nav>
-      <!-- thanks to cube-drone.com artist @classam for my rad avatar! -->
-      <div class="column">
-        <a href="/" class="avatar"></a>
-        <nav id="social-nav" class="row">
-          <a rel="me" href="https://twitter.com/filmaj" id="twitter-icon"></a>
-          <a rel="me" href="https://social.lunchlurkers.com/@filmaj" id="mastodon-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16">
-  <path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/>
-</svg>
-          </a>
-          <a rel="me" href="https://github.com/filmaj" id="github-icon"></a>
-          <a rel="me" href="https://www.linkedin.com/in/fil-maj-b0a4419" id="linkedin-icon"></a>
-        </nav>
-      </div>
-    </header>
-    <section>
-      {{ content }}
-    </section>
+        <a href="/resume"><span class="material-icons">rowing</span>Resume</a>
+        <a href="/talks"><span class="material-icons">record_voice_over</span>Talks</a>
+        <a href="/reads"><span class="material-icons">local_library</span>Links</a>
+        <a href="/contact"><span class="material-icons">contact_mail</span>Contact</a>
+        <!--
+        <div class="column">
+          <a href="/" class="avatar"></a>
+          <nav id="social-nav" class="row">
+            <a rel="me" href="https://twitter.com/filmaj" id="twitter-icon"></a>
+            <a rel="me" href="https://social.lunchlurkers.com/@filmaj" id="mastodon-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16">
+    <path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/>
+  </svg>
+            </a>
+            <a rel="me" href="https://github.com/filmaj" id="github-icon"></a>
+            <a rel="me" href="https://www.linkedin.com/in/fil-maj-b0a4419" id="linkedin-icon"></a>
+          </nav>
+        </div>
+        -->
+      </header>
+      <article>
+        {{ content }}
+      </article>
+    </main>
   </body>
   <script type="text/javascript">
     // timeline-flipper method for the toggle button
@@ -95,7 +80,7 @@
         return false;
     }
     WebFontConfig = {
-        google: { families: [ 'Source Sans Pro:Semi-Bold', 'Source Serif Pro:Regular', 'Material+Icons' ] }
+        google: { families: [ 'Source Sans Pro:Semi-Bold', 'Source Serif Pro:Regular' ] }
     };
     (function() {
       var s = document.getElementsByTagName('script')[0];

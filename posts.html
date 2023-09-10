@@ -11,7 +11,7 @@ has_timeline: true
   {% if currentdate != date %}
     {% unless forloop.first %}</ul></div>{% endunless %}
     <div class="timeline-item">
-        <h1 id="{{currentdate}}"><i class="material-icons">event_note</i>{{ currentdate }}</h1>
+        <h1 id="{{currentdate}}"><span class="material-icons">event_note</span>{{ currentdate }}</h1>
         <ul>
     {% assign date = currentdate %}
   {% endif %}
