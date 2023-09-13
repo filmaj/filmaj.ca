@@ -36,7 +36,8 @@
   --transition-fade: 200ms ease;
   --transition-bounce: 500ms cubic-bezier(0.5,0.05,0.2,1.5);
   --tracking: -0.05ch;
-  --tracking-s: -0.075ch
+  --tracking-s: -0.075ch;
+  --sidebar-threshold: 20rem;
 }
 
 body {
@@ -45,7 +46,8 @@ body {
   font-family: var(--font-base);
   font-size: var(--size-step-1);
   letter-spacing: var(--tracking);
-  line-height: 1.4
+  line-height: 1.4;
+  padding: var(--space-s);
 }
 
 /*
@@ -93,4 +95,65 @@ p, li, blockquote:not([class]), details {
   line-height: inherit !important;
   position: relative;
   top: 0.15em;
+  margin: 0.2em;
+}
+
+a {
+  color: currentcolor;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/*
+* Space
+* by Andy Bell (picallil.li)
+*/
+
+.flow * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+header > h1, header nav a {
+  white-space: nowrap;
+}
+
+.resume-toc {
+  --flow-space: 0.25em;
+}
+
+/*
+* Sidebar / header layout
+*/
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* Header */
+main > header {
+  flex-basis: var(--sidebar-threshold);
+  flex-grow: 1;
+}
+
+main > header > nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  padding: var(--space-s);
+}
+
+main > header > nav > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--sidebar-threshold) - 100%) * 999);
+}
+
+/* Content */
+main > article {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 65%;
 }
