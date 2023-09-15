@@ -1,10 +1,11 @@
-> my webpage :D
+> my webpage
 
-# wat
+# Quickstart
 
-    $ git submodule update --init
-    $ gem install jekyll # jekyll? still, fil? geez
-    $ jekyll build
+    git submodule update --init
+    gem install bundler
+    bundle install
+    bundle exec jekyll serve
 
 # Architecture
 
@@ -26,6 +27,6 @@ Leveraging all AWS.
 
 # Automation
 
-Leveraging Travis to build and upload the site to S3. Post-upload it also invalidates changed files in CloudFront.
+Leveraging GitHub Actions to build and upload the site to S3. Post-upload it also invalidates changed files in CloudFront.
 
-For details see the `.travis.yml` file.
+For details see the [`build.yml` file](./.github/workflows/build.yml).
