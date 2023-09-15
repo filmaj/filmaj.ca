@@ -52,5 +52,10 @@
       wf.type = 'text/javascript'; wf.async = 'true';
       s.parentNode.insertBefore(wf, s);
     })();
+    avatars = ['', '-irritated', '-simplesmile'];
+    setInterval(() => {
+      const index = Math.floor(Math.random() * avatars.length);
+      document.getElementById('avatar').src = `/img/me/fil${avatars[index]}.svg`;
+    }, 5000);
   </script>
 </html>
