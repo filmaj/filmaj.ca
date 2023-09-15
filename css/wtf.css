@@ -139,11 +139,20 @@ main > header {
   flex-grow: 1;
 }
 
+main > header > * {
+  padding-inline: var(--space-xs);
+}
+
+main > header > h1 > a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 main > header > nav {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
-  padding: var(--space-s);
 }
 
 main > header > nav > * {
