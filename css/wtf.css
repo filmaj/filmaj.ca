@@ -80,9 +80,10 @@ h4 {
 details summary, article > p, article > ul > li, nav li {
   max-width: 50ch;
   font-size: var(--size-step-1);
+  font-family: var(--font-serif);
 }
 
-p, li, blockquote:not([class]), details {
+p, ul, li, blockquote:not([class]) {
   max-width: 60ch;
   font-family: var(--font-serif);
   font-size: var(--size-step-0);
@@ -98,11 +99,11 @@ p, li, blockquote:not([class]), details {
   margin: 0.2em;
 }
 
-a {
-  color: currentcolor;
+a[href] {
+  color: black;
 }
 
-a:hover {
+a[href]:hover {
   text-decoration: none;
 }
 
@@ -113,6 +114,10 @@ a:hover {
 
 .flow * + * {
   margin-top: var(--flow-space, 1em);
+}
+
+ul {
+  padding-inline-start: 1.5rem;
 }
 
 header > h1, header nav a {
@@ -165,4 +170,9 @@ main > article {
   flex-basis: 0;
   flex-grow: 999;
   min-inline-size: 65%;
+}
+
+main > article > div {
+  max-width: 60ch;
+  margin-inline: auto;
 }
