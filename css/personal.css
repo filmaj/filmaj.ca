@@ -1,0 +1,62 @@
+/*
+* Sidebar / header layout
+*/
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* Header */
+main > header {
+  flex-basis: var(--sidebar-threshold);
+  flex-grow: 1;
+}
+
+main > header > * {
+  padding-inline: var(--space-xs);
+}
+
+header > h1, header nav a {
+  white-space: nowrap;
+}
+
+main > header > h1 > a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main > header > nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+main > header > nav > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--sidebar-threshold) - 100%) * 999);
+}
+
+/* Content */
+main > article {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 65%;
+}
+
+main > article > div {
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+/* Resume */
+
+ul {
+  padding-inline-start: 1.5rem;
+}
+
+.resume-toc {
+  --flow-space: 0.25em;
+}
