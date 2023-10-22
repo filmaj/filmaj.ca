@@ -77,26 +77,10 @@ h4 {
   max-width: 40ch;
 }
 
-details summary, article > p, article > ul > li, nav li {
+nav, details summary, p, ul, li, blockquote:not([class]) {
   max-width: 50ch;
   font-size: var(--size-step-1);
   font-family: var(--font-serif);
-}
-
-p, ul, li, blockquote:not([class]) {
-  max-width: 60ch;
-  font-family: var(--font-serif);
-  font-size: var(--size-step-0);
-}
-
-/* scale material icons */
-.material-icons {
-  font-size: inherit !important;
-  letter-spacing: inherit !important;
-  line-height: inherit !important;
-  position: relative;
-  top: 0.15em;
-  margin: 0.2em;
 }
 
 a[href] {
@@ -114,8 +98,4 @@ a[href]:hover {
 
 .flow * + * {
   margin-top: var(--flow-space, 1em);
-}
-
-ul {
-  padding-inline-start: 1.5rem;
 }

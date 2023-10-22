@@ -51,6 +51,16 @@ main > article > div {
   margin-inline: auto;
 }
 
+/* scale material icons */
+.material-icons {
+  font-size: inherit !important;
+  letter-spacing: inherit !important;
+  line-height: inherit !important;
+  position: relative;
+  top: 0.15em;
+  margin: 0.2em;
+}
+
 /* Resume */
 
 ul {
