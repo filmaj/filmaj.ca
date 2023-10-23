@@ -93,6 +93,8 @@ a[href]:hover {
   text-decoration: none;
 }
 
+abbr { font-variant-caps: all-small-caps; }
+
 /*
 * Space
 * by Andy Bell (picallil.li)
