@@ -83,6 +83,12 @@ nav, details summary, p, ul, li, blockquote:not([class]) {
   font-size: var(--size-step-1);
   font-family: var(--font-serif);
   text-align: justify;
+  margin-bottom: 0;
+}
+
+p + p {
+  text-indent: 1.4em; /* same as line height */
+  margin-top: 0 !important;
 }
 
 a[href] {
@@ -92,8 +98,6 @@ a[href] {
 a[href]:hover {
   text-decoration: none;
 }
-
-abbr { font-variant-caps: all-small-caps; }
 
 /*
 * Space
