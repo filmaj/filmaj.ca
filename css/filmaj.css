@@ -41,13 +41,14 @@
 }
 
 body {
+  padding: var(--space-s);
   background: var(--color-light);
   color: var(--color-dark);
   font-family: var(--font-base);
   font-size: var(--size-step-1);
   letter-spacing: var(--tracking);
   line-height: 1.4;
-  padding: var(--space-s);
+  hyphens: auto;
 }
 
 /*
@@ -81,6 +82,7 @@ nav, details summary, p, ul, li, blockquote:not([class]) {
   max-width: 50ch;
   font-size: var(--size-step-1);
   font-family: var(--font-serif);
+  text-align: justify;
 }
 
 a[href] {
