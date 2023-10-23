@@ -12,31 +12,29 @@ main {
 main > header {
   flex-basis: var(--sidebar-threshold);
   flex-grow: 1;
+  display: flex;
+  /*flex-direction: row;*/
+  justify-content: space-between;
 }
 
 main > header > * {
   padding-inline: var(--space-xs);
 }
 
-header > h1, header nav a {
+header h1, header nav a {
   white-space: nowrap;
+  text-wrap: nowrap;
 }
 
-main > header > h1 > a {
+.nav-type {
+  flex-grow: 1;
+}
+
+main > header nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-main > header > nav {
-  display: flex;
-  flex-wrap: wrap;
   gap: var(--space-xs);
-}
-
-main > header > nav > * {
-  flex-grow: 1;
-  flex-basis: calc((var(--sidebar-threshold) - 100%) * 999);
 }
 
 /* Content */
