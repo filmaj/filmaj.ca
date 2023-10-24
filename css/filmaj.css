@@ -48,6 +48,7 @@ body {
   font-size: var(--size-step-1);
   letter-spacing: var(--tracking);
   line-height: 1.4;
+  font-variant-numeric: oldstyle-nums;
   hyphens: auto;
 }
 
@@ -56,6 +57,7 @@ body {
 */
 
 h1, h2, h3, h4 {
+  font-variant-numeric: lining-nums;
   line-height: 1;
   letter-spacing: var(--tracking-s);
   max-width: 30ch;
@@ -86,6 +88,7 @@ nav, details summary, p, ul, li, blockquote:not([class]) {
   margin-bottom: 0;
 }
 
+/* indent consecutive paragraphs */
 p + p {
   text-indent: 1.4em; /* same as line height */
   margin-top: 0 !important;
