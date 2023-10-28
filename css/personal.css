@@ -2,6 +2,10 @@
 * Sidebar / header layout
 */
 
+:root {
+  --sidebar-threshold: 20rem;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +17,6 @@ main > header {
   flex-basis: var(--sidebar-threshold);
   flex-grow: 1;
   display: flex;
-  /*flex-direction: row;*/
   justify-content: space-between;
 }
 
@@ -31,10 +34,16 @@ header h1, header nav a {
 }
 
 main > header nav {
+  margin-top: 0.25em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-xs);
+}
+
+main > header nav > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--sidebar-threshold) - 100%) * 999);
 }
 
 /* Content */
@@ -56,7 +65,7 @@ main > article > div {
   line-height: inherit !important;
   position: relative;
   top: 0.15em;
-  margin: 0.2em;
+  margin-right: 0.2em;
 }
 
 /* Resume */
