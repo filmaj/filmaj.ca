@@ -24,8 +24,9 @@
   --size-step-4: clamp(2.0625rem,1.15rem + 4.56vw,5rem);
   --size-step-5: clamp(2.5rem,1.08rem + 7.09vw,7.0625rem);
   --size-step-6: clamp(3rem,0.84rem + 10.78vw,9.9375rem);
-  --font-base: Source Sans Pro,Inter,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-  --font-serif: Source Serif Pro,Georgia,sans-serif;
+  --font-base: source-sans-pro, sans-serif;
+  --font-serif: source-serif-pro, serif;
+  --font-mono: source-code-pro, monospace;
   --tracking: -0.05ch;
   --tracking-s: -0.075ch;
   --line-height: 1.35em;
@@ -77,12 +78,16 @@ h4 {
   max-width: 40ch;
 }
 
-nav, details summary, p, ul, li, blockquote:not([class]) {
+details summary, p, ul, li, blockquote:not([class]) {
   max-width: 50ch;
   font-size: var(--size-step-1);
   font-family: var(--font-serif);
   text-align: justify;
   margin-bottom: 0;
+}
+
+code {
+  font-family: var(--font-mono);
 }
 
 /* indent consecutive paragraphs */
