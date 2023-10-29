@@ -48,6 +48,7 @@ body {
   line-height: var(--line-height);
   font-variant-numeric: oldstyle-nums;
   hyphens: auto;
+  font-weight: 400;
 }
 
 /*
@@ -59,6 +60,7 @@ h1, h2, h3, h4 {
   line-height: 1;
   letter-spacing: var(--tracking-s);
   max-width: 30ch;
+  font-weight: 500;
 }
 
 h1 {
