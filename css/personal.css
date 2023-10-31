@@ -6,21 +6,21 @@
   --sidebar-threshold: 20rem;
 }
 
-main {
+body > div {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
 }
 
 /* Header */
-main > header {
+header {
   flex-basis: var(--sidebar-threshold);
   flex-grow: 1;
   display: flex;
   justify-content: space-between;
 }
 
-main > header > * {
+header > * {
   padding-inline: var(--space-xs);
 }
 
@@ -33,7 +33,7 @@ header h1, header nav a {
   flex-grow: 1;
 }
 
-main > header nav {
+header nav {
   margin-top: 0.25em;
   display: flex;
   flex-wrap: wrap;
@@ -41,19 +41,19 @@ main > header nav {
   gap: var(--space-xs);
 }
 
-main > header nav > * {
+header nav > * {
   flex-grow: 1;
   flex-basis: calc((var(--sidebar-threshold) - 100%) * 999);
 }
 
 /* Content */
-main > article {
+main {
   flex-basis: 0;
   flex-grow: 999;
   min-inline-size: 65%;
 }
 
-main > article > div {
+main > article {
   max-width: 60ch;
   margin-inline: auto;
 }
