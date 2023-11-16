@@ -80,7 +80,7 @@ h4 {
   max-width: 40ch;
 }
 
-details summary, p, ul, li, blockquote:not([class]) {
+details summary, p, ul, li, blockquote:not([class]), time {
   max-width: 50ch;
   font-size: var(--size-step-1);
   font-family: var(--font-serif);
