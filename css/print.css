@@ -1,0 +1,12 @@
+img#avatar, nav {
+  display: none;
+}
+
+* {
+  max-width: fit-content !important;
+}
+
+:root {
+  --color-light: white !important;
+  --color-dark: black !important;
+}
