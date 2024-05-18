@@ -7,6 +7,20 @@ img#avatar, nav {
 }
 
 :root {
-  --color-light: white !important;
-  --color-dark: black !important;
+  --flow-space: 0.45em;
+  --color-light: white;
+  --color-dark: black;
+  --color-dark-accent: black;
+  --color-primary: black;
+}
+ul {
+  --flow-space: 0.2em;
+  padding-left: 1em;
+}
+h2 span.material-icons {
+  display: none;
+}
+
+.salt-n-pepper {
+  display: none;
 }
