@@ -85,7 +85,7 @@ details summary, p, ul, li, blockquote:not([class]), time {
   max-width: 50ch;
   font-size: var(--size-step-1);
   font-family: var(--font-serif);
-  text-align: justify;
+  text-align: start;
   margin-bottom: 0;
 }
 
