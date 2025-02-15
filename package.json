@@ -5,9 +5,11 @@
     "start": "npx enhance dev",
     "lint": "npx @biomejs/biome check --write ./app/**/*.mjs",
     "enhance": "enhance",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "deploy": "npx @architect/architect deploy"
   },
   "devDependencies": {
+    "@architect/architect": "^11.1.0",
     "@biomejs/biome": "latest",
     "@enhance/cli": "latest",
     "@enhance/types": "^0.7.0"

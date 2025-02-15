@@ -7,9 +7,11 @@ export default async function Preflight({ req }) {
 function getPageTitle(path) {
   const titleMap = {
     '/': "Fil Maj's Home Page",
-    '/resume': "Fil Maj's Resume",
     '/contact': 'Contact Fil Maj',
+    '/reads': "Fil Maj's Favourite Reads",
+    '/resume': "Fil Maj's Resume",
+    '/talks': "Fil Maj's Prior Speaking Sessions",
   };
 
-  return titleMap[path];
+  return titleMap[path] || 'Fil Maj';
 }

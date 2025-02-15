@@ -1,6 +1,9 @@
 @app
 filmaj-ca
 
+@aws
+region ca-central-1
+
 @static
 fingerprint true
 
