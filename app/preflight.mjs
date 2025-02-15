@@ -1,13 +1,15 @@
 export default async function Preflight({ req }) {
   return {
-    pageTitle: getPageTitle(req.path)
-  }
+    pageTitle: getPageTitle(req.path),
+  };
 }
 
 function getPageTitle(path) {
   const titleMap = {
-    '/': 'Enhance Starter Project'
-  }
+    '/': "Fil Maj's Home Page",
+    '/resume': "Fil Maj's Resume",
+    '/contact': 'Contact Fil Maj',
+  };
 
-  return titleMap[path]
+  return titleMap[path];
 }

@@ -3,15 +3,17 @@
   "version": "0.0.1",
   "scripts": {
     "start": "npx enhance dev",
-    "enhance": "enhance"
+    "lint": "npx @biomejs/biome check --write 'app/**/*.mjs'",
+    "enhance": "enhance",
+    "test": "npm run lint"
   },
   "devDependencies": {
+    "@biomejs/biome": "latest",
     "@enhance/cli": "latest",
     "@enhance/types": "^0.7.0"
   },
   "dependencies": {
-    "@enhance/arc-plugin-enhance": "^11.0.4",
-    "@enhance/arc-plugin-styles": "^5.0.5",
-    "@enhance/styles-cribsheet": "^0.0.11"
+    "@enhance/arc-plugin-block-bots": "^0.0.5",
+    "@enhance/arc-plugin-enhance": "^11.0.4"
   }
 }
