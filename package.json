@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "npx enhance dev",
-    "lint": "npx @biomejs/biome check --write 'app/**/*.mjs'",
+    "lint": "npx @biomejs/biome check --write ./app/**/*.mjs",
     "enhance": "enhance",
     "test": "npm run lint"
   },
