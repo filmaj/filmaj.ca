@@ -28,11 +28,13 @@ jobs:
       - name: Staging Deploy
         if: github.ref == 'refs/heads/main'
         run: npx arc deploy --staging
-        env: &aws-creds
+        env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Production Deploy
         if: startsWith(github.ref, 'refs/tags/v')
         run: npx arc deploy --production
-        env: *aws-creds
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
