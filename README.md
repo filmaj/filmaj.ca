@@ -2,14 +2,13 @@
 
 # Quickstart
 
-    git submodule update --init
-    gem install bundler
-    bundle install
-    bundle exec jekyll serve
+    npm install
+    npm start
+    # open localhost:3333
 
-# Architecture
+# Overview
 
-Leveraging all AWS.
+Leveraging all AWS, powered by [Enhance](https://enhance.dev).
 
 ## DNS
 
@@ -18,15 +17,3 @@ Leveraging all AWS.
 ## CDN
 
 > AWS Cloudfront
-
-## Static Site Hosting
-
-> AWS S3
-
-- There's a filmaj.ca bucket configured for static hosting, with public GET permissions on it.
-
-# Automation
-
-Leveraging GitHub Actions to build and upload the site to S3. Post-upload it also invalidates changed files in CloudFront.
-
-For details see the [`build.yml` file](./.github/workflows/build.yml).
