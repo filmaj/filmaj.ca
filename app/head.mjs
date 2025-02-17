@@ -25,6 +25,7 @@ export default function Head(state) {
       <link rel="me" href="https://social.lunchlurkers.com/@filmaj">
       <link rel="stylesheet" type="text/css" href="/_public/css/reset.css">
       <link rel="stylesheet" type="text/css" href="/_public/css/filmaj.css">
+      <link rel="stylesheet" type="text/css" media="print" href="/_public/css/print.css">
       <link rel="stylesheet" type="text/css" href="https://use.typekit.net/cwg3htt.css">
       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     </head>

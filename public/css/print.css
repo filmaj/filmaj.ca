@@ -1,9 +1,18 @@
-img#avatar, nav {
+img#avatar,
+nav {
   display: none;
 }
 
 * {
   max-width: fit-content !important;
+}
+
+fm-layout main {
+  min-inline-size: 90% !important;
+}
+
+header nav {
+  display: none !important;
 }
 
 :root {
@@ -13,14 +22,8 @@ img#avatar, nav {
   --color-dark-accent: black;
   --color-primary: black;
 }
+
 ul {
   --flow-space: 0.2em;
   padding-left: 1em;
-}
-h2 span.material-icons {
-  display: none;
-}
-
-.salt-n-pepper {
-  display: none;
 }

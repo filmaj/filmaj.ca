@@ -1,6 +1,14 @@
 {
   "name": "filmaj.ca",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filmaj/filmaj.ca.git"
+  },
+  "bugs": {
+    "url": "https://github.com/filmaj/filmaj.ca/issues"
+  },
+  "homepage": "https://filmaj.ca",
   "scripts": {
     "start": "npx enhance dev",
     "lint": "npx @biomejs/biome check --write ./app/**/*.mjs",
