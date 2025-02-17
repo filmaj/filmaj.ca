@@ -6,7 +6,7 @@
     "lint": "npx @biomejs/biome check --write ./app/**/*.mjs",
     "enhance": "enhance",
     "test": "npm run lint",
-    "deploy": "npx @architect/architect deploy"
+    "deploy": "npx arc deploy"
   },
   "devDependencies": {
     "@architect/architect": "^11.1.0",
