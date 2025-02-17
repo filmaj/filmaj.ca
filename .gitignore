@@ -1,5 +1,17 @@
-_site
-**/node_modules
-**/*.swp
-**/.DS_Store
-.jekyll-cache
+node_modules/
+.env
+
+# Enhance temp files
+.enhance/
+
+# Generated assets
+public/static.json
+public/browser/
+public/bundles/
+public/pages/
+
+# Architect CloudFormation
+sam.json
+sam.yaml
+
+.DS_Store
