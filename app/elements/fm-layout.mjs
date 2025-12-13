@@ -1,5 +1,5 @@
 export default function Layout({ html, state }) {
-  const { attrs } = state;
+  const { attrs: _attrs } = state;
   return html`
 <style>
   :root {
